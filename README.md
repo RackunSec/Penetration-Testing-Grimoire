@@ -13,3 +13,4 @@ These sheets should be used for quick reference during the exam.
 * [*msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/msdos-post-exploitation.md) - This cheat sheet contains all MS-DOS post-exploitation processes used during my penetration tests
 * [*ftp-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/ftp-post-exploitation.md) - This cheat sheet contains all FTP-related post-exploitation techniques that I have done during my penetration tests.
 * [*netcat-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/netcat-post-exploitation.md) - This cheat sheet contains all netcat-related techniques that I used during the penetration tests.
+* [*msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
