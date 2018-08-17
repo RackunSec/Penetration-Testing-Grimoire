@@ -10,4 +10,4 @@ These are custiom scripts or tools that I whipped up during the lab training.
 
 ## Cheat Sheets
 These sheets should be used for quick reference during the exam. 
-* *msdos-post-exploitation.md* - This cheat sheet contains all post-exploitation processes used during my penetration tests
+* [*msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/msdos-post-exploitation.md) - This cheat sheet contains all post-exploitation processes used during my penetration tests
