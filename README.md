@@ -22,6 +22,7 @@ These sheets should be used for quick reference during the exam.
 ### Payload Development:
 * [*Payloads/msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
 
-## Vulnerabilities
+### Vulnerabilities:
 These cheat sheets are focused on identifiying and exploiting vulnerabilities in the target systems during a penetrtation test.
+#### Web Vulnerabilties
 * [*Vulnerabilities/Web/LFI.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Vulnerabilities/Web/LFI.md) - This cheat sheet covers all basics for enumerating files on a remote server and including files on a remote server which has an open Local File Inclusion, LFI, vulnerabiltiy.
