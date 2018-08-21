@@ -9,9 +9,12 @@ These are custiom scripts or tools that I whipped up during the lab training.
   * Run with `chmod +x bf.sh && ./bf.sh (URI) (PATH TO WORD LIST) (UID)`
 
 ## Cheat Sheets
-These sheets should be used for quick reference during the exam. 
-* [*msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/msdos-post-exploitation.md) - This cheat sheet contains all MS-DOS post-exploitation processes used during my penetration tests
-* [*ftp-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/ftp-post-exploitation.md) - This cheat sheet contains all FTP-related post-exploitation techniques that I have done during my penetration tests.
-* [*netcat-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/netcat-post-exploitation.md) - This cheat sheet contains all netcat-related techniques that I used during the penetration tests.
-* [*msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
-* [*shells-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/shells-post-exploitation.md) - This cheat sheet contains all shell-related tasks done during the penetration tests on the OSCP/PWK labs.
+These sheets should be used for quick reference during the exam.
+### post Exploitation of a Vulnerability:
+* [*msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/msdos-post-exploitation.md) - This cheat sheet contains all MS-DOS post-exploitation processes used during my penetration tests
+* [*ftp-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/ftp.md) - This cheat sheet contains all FTP-related post-exploitation techniques that I have done during my penetration tests.
+* [*netcat-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/netcat-post-exploitation.md) - This cheat sheet contains all netcat-related techniques that I used during the penetration tests.
+* [*shells-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/shells-post-exploitation.md) - This cheat sheet contains all shell-related tasks done during the penetration tests on the OSCP/PWK labs.
+
+### Payload Development:
+* [*msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
