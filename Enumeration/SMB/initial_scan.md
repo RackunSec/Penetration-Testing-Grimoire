@@ -18,8 +18,13 @@ This section describes methods for mounting and listing directories in Samaba (L
 
 `smbclient -N -L (TARGET IP)`
 ### Mounting shares
+To mount a share without knowing any valid users (anonymous/guest login),
 
 `smbclient "\\\\(TARGET IP)\\IPC\$\\" -N`
+
+To mount a share with an enumerated username,
+
+`smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)`
 
 ## NMAP
 The NMAP Scripting Engine (NSE) can be used to brute-force accounts on the server,
