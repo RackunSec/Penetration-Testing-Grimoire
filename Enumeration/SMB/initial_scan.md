@@ -11,3 +11,12 @@ This module contains method sof gathering information from targets that have Sam
 ## SMBMap
 
 `smbmap -H (TARGET IP)`
+
+## SMBClient
+This section describes methods for mounting and listing directories in Samaba (LINUX)/Windows shares.
+### Target information
+
+`smbclient -N -L (TARGET IP)`
+### Mounting shares
+
+`smbclient "\\\\(TARGET IP)\\IPC\$\\" -N`
