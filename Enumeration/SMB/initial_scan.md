@@ -20,3 +20,8 @@ This section describes methods for mounting and listing directories in Samaba (L
 ### Mounting shares
 
 `smbclient "\\\\(TARGET IP)\\IPC\$\\" -N`
+
+## NMAP
+The NMAP Scripting Engine (NSE) can be used to brute-force accounts on the server,
+
+`nmap --script smb-brute.nse -p445 (TARGET IP)``
