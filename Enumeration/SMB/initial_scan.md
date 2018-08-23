@@ -26,6 +26,11 @@ To mount a share with an enumerated username,
 
 `smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)`
 
+### File Transfers
+To get a file from the target server,
+
+`get "filename with or without spaces.txt"`
+
 ## NMAP
 The NMAP Scripting Engine (NSE) can be used to brute-force accounts on the server,
 
