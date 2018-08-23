@@ -1,4 +1,4 @@
-# SMB SCanning
+# SMB Scanning
 This module contains method sof gathering information from targets that have Samaba, or the Windows sharing service (SMB) enabled.
 ## Enum4LINUX
 
