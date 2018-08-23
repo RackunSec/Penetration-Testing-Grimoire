@@ -24,4 +24,4 @@ This section describes methods for mounting and listing directories in Samaba (L
 ## NMAP
 The NMAP Scripting Engine (NSE) can be used to brute-force accounts on the server,
 
-`nmap --script smb-brute.nse -p445 (TARGET IP)``
+`nmap --script smb-brute.nse -p445 (TARGET IP)`
