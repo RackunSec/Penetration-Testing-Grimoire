@@ -9,7 +9,7 @@ These are custom scripts or tools that I whipped up during the lab training.
   * Run with `chmod +x bf.sh && ./bf.sh (URI) (PATH TO WORD LIST) (UID)`
 
 ## Cheat Sheets
-These sheets should be used for quick reference during the exam.
+These sheets should be used for quick reference during the exam or course lab work (penetration testing).
 ### Enumeration of Services and Host Discovery
 * [*Enumeration/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/initial_scans.md)
 * [*Enumeration/SMB/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/SMB/initial_scan.md) - This module contains method sof gathering information from targets that have Samaba, or the Windows sharing service (SMB) enabled.
