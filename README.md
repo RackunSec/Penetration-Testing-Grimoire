@@ -16,7 +16,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 
 ### Post Exploitation of a Vulnerability:
 **SHELL SYNTAX**
-* [*Post Exploitation/msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/msdos-post-exploitation.md) - This cheat sheet contains all MS-DOS post-exploitation processes used during my penetration tests
+* [*Post Exploitation/msdos-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/msdos.md) - This cheat sheet contains all MS-DOS post-exploitation processes used during my penetration tests
 * [*Post Exploitation/ftp-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/ftp.md) - This cheat sheet contains all FTP-related post-exploitation techniques that I have done during my penetration tests.
 * [*Post Exploitation/netcat-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/netcat-post-exploitation.md) - This cheat sheet contains all netcat-related techniques that I used during the penetration tests.
 * [*Post Exploitation/shells-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/shells-post-exploitation.md) - This cheat sheet contains all shell-related tasks done during the penetration tests on the OSCP/PWK labs.
