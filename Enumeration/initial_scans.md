@@ -17,5 +17,4 @@ Below are the enumeration steps that should be taken on every system during the 
   * Use Developer Tools in Chrome or Firefox
   * Use BURP Suite Community Edition for input data analysis
 3. [__SQLMap__](https://github.com/weaknetlabs/OSCP-tools/blob/master/Vulnerabilities/Web/SQLMap.md) scan if any GET or POST input was found in the manual tests
-## Service Enumeration and Fingerprinting
-This section of this module will focus on the service scanning and techniques on how to get service information to be used for vulnerability analysis on the target system.
+4. [__Dirb__](https://tools.kali.org/web-applications/dirb) - Use the `dirb` tool to quickly scan for content on a web server. This could reveal test directories, vulnerable web application files, backups of web applications and files, and more.
