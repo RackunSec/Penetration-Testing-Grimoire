@@ -27,6 +27,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 
 **DATABASES**
 * [*Post Exploitation/Databases/mysql-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/Databases/mysql-post-exploitation.md) - This cheat sheet contains syntax to be used for any MySQL database access after the compromise of a web service or system.
+* [*Post Exploitation/Databases/oracle.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/Databases/oracle.md) - This cheat sheet is all about what to do when you successfully get SYSTEM access or DBA access to an Oracle database.
 
 ### Payload Development:
 * [*Payloads/msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
