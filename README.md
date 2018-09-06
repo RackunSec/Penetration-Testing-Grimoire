@@ -13,6 +13,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 ### Enumeration of Services and Host Discovery
 * [*Enumeration/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/initial_scans.md)
 * [*Enumeration/SMB/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/SMB/initial_scan.md) - This module contains method sof gathering information from targets that have Samaba, or the Windows sharing service (SMB) enabled.
+* [*Enumeration/nmap-port-scanning.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/nmap-port-scanning.md) - The NMAP host discovbery and service enumeration scanning tool.
 
 ### Post Exploitation of a Vulnerability:
 **SHELL SYNTAX**
