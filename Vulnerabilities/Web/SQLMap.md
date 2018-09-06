@@ -1,7 +1,7 @@
 # SQLMap SQL Injection Tool
 This module will cover the basics on using the SQL injection automation tool, SQLMap.
 ## Vulnerability Discovery
-This section will cover most of the vulnerability discovery methods that I have used during the penetyration tests.
+This section will cover most of the vulnerability discovery methods that I have used during the penetration tests.
 ### Be Specific
 The more specific we are to SQLMap the faster and more efficient it becomes. For instance, if we were to use the browser to test for a vulnerability manually and we see the error output specify that it is from a [MySQL](https://www.mysql.com/) service, we can then specify it to SQLMap to further attempt to exploit the discovered vulnerability as so,
 
