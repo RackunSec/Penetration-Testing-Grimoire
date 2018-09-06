@@ -18,6 +18,8 @@ This section of this module will focus on the service scanning and techniques on
 ### NMAP
 Initial `nmap` scan should be done without specifying a port range but adding service fingerprinting as,
 
-`nmap -A (target IP address)`
+`nmap -A (TARGET IP ADDRESS)`
 
-This type of scan takes a considerable amount of time to complete.
+This type of scan takes a considerable amount of time to complete. If it's moving terribly slow, I recommend doing the scan without the service fingerprinting and then performing the scan per port as you search for vulnerabilities. A full port scan, which could take hours depending on the network bandwidth and responses from the target system, can be done with the following `nmap` command,
+
+`nmap -A -p 0-65535 (TARGET IP ADDRESS)`
