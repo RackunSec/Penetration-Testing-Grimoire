@@ -8,6 +8,21 @@ The Initial `nmap` scan should be done without specifying a port range or servic
 
 This type of scan takes a considerable amount of time to complete depending on the bandwith of the network and responses from the target system. 
 
+## Specifying Ports
+Nmap allows us to specify single, multiple, or ranges of port(s) to scan. Knowning what ports that we want to discover will make the scanning and service enumeration process faster and more efficient. 
+
+Single port scan:
+
+`nmap -A -p 80 (TARGET IP ADDRESS)`
+
+Multiple port scan:
+
+`nmap -A -p 80,8080,443 (TARGET IP ADDRESS)`
+
+Port range scan:
+
+`nmap -p 80-443 (TARGET IP ADDRESS)`
+
 ## Single Service Enumeration Scan
 This scan can be done on a single port in attempt to enumerate what service is runnign on that port.
 
