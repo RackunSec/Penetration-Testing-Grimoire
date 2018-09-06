@@ -65,7 +65,10 @@ please provide a comma separate list of absolute directory paths: C:\WINDOWS\Tem
 Where you can see that I have specified the writeable directory on the target server, the programming language used by the vulnerabile web application, and to use the Metasploit Framework tunnel.
 
 ### OS-Shell
-SQLMap has the ability to 
+SQLMap has the ability to spawn remote shells on some vulnerable systems with a couple pieces of information:
+1. A writeable directory on the target system
+2. What (web) programming language does the system support
+We perform this type of attack simply by using the `--os-shell` argument to SQLMap.
 
 ### Database Information Gathering
 Most of the options for database discovery are pretty straight forward. Some steps to gathering the most of the database information would commonly be,
