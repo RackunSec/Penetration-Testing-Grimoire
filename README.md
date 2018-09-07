@@ -4,7 +4,7 @@ Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. Du
 
 ### gri·moire
 #### /ɡrimˈwär/
-noun
+*noun*
 
 a book of magic spells and invocations.
 
