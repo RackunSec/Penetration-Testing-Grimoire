@@ -37,7 +37,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 * [*Post Exploitation/Databases/oracle.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/Databases/oracle.md) - This cheat sheet is all about what to do when you successfully get SYSTEM access or DBA access to an Oracle database.
 
 ### Payload Development:
-* [*Payloads/msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests.
+* [*Payloads/msfvenom-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/msfvenom-post-exploitation.md) - This cheat sheet contains all msfvenom-related techniques that I used during the penetration tests. This will describe how payloads are generated using this tool to be used for bind and reverse shells.
 * [*Payloads/pre-compilation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/pre-compilation.md) - This module describes how to compile exploits for target systems which have no C libraries or even C compilers installed.
 #### Web Application Payloads/Shells:
 * [*Payloads/Web/perlwebshell.cgi*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/Web/perlwebshell.cgi) - This is a simple CGI/Perl web shell to upload to a victim machine and execute via the browser. This file must be accessible from the web service to execute.
