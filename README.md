@@ -43,6 +43,11 @@ These sheets should be used for quick reference during the exam or course lab wo
 #### Web Application Payloads/Shells:
 * [*Payloads/Web/perlwebshell.cgi*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Payloads/Web/perlwebshell.cgi) - This is a simple CGI/Perl web shell to upload to a victim machine and execute via the browser. This file must be accessible from the web service to execute.
 
+### Privilege Escalation
+These cheat sheets and tools should be used to identify ways to escalate privileges during the post exploitation process.
+#### Tools
+* [*Privilege Escalation/Tools/linuxprivchecker.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) - This is a mirror of a tool commonly used during the post-exploutation phase of the penetration test of a LINUX system.
+
 ### Vulnerabilities:
 These cheat sheets are focused on identifiying and exploiting vulnerabilities in the target systems during a penetrtation test.
 #### Web Vulnerabilities
