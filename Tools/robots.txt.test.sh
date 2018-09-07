@@ -1,4 +1,5 @@
 #!/bin/bash
+# 2018 DOuglas Berdeaux WeakNetLabs.com
 # Pass to me the URL:
 # e.g.:
 # ./robots.txt.test.sh http://10.10.0.22
