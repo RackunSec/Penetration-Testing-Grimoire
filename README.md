@@ -28,6 +28,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 * [*Post Exploitation/ftp-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/ftp.md) - This cheat sheet contains all FTP-related post-exploitation techniques that I have done during my penetration tests.
 * [*Post Exploitation/netcat-post-exploitation*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/netcat-post-exploitation.md) - This cheat sheet contains all netcat-related techniques that I used during the penetration tests.
 * [*Post Exploitation/shells-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/shells-post-exploitation.md) - This cheat sheet contains all shell-related tasks done during the penetration tests on the OSCP/PWK labs.
+* [*Post Exploitation/meterpreter-shell.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/meterpreter-shell.md) - This sheet contains Meterpreter commands that should be used upon every spawn on the service on a target system.
 #### FILE ENUMERATION
 **Microsoft Windows**
 * [*Post Exploitation/File Enumeration/WINDOWS.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/File%20Enumeration/WINDOWS.md) - This cheat sheet can be used with a file disclosure vulnerability, such as LFI on a Microsoft Windows server.
