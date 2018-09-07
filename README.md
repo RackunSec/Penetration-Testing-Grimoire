@@ -45,7 +45,7 @@ These sheets should be used for quick reference during the exam or course lab wo
 
 ### Privilege Escalation
 These cheat sheets and tools should be used to identify ways to escalate privileges during the post exploitation process.
-* [Privilege Escalation/privilege-escalation-resources.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/privilege-escalation-resources.md) - This is simply a list oof resources used often during a penetration test for ideas on the privilege escalation process.
+* [*Privilege Escalation/privilege-escalation-resources.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/privilege-escalation-resources.md) - This is simply a list oof resources used often during a penetration test for ideas on the privilege escalation process.
 #### Tools
 * [*Privilege Escalation/Tools/linuxprivchecker.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) - This is a mirror of a tool commonly used during the post-exploutation phase of the penetration test of a LINUX system.
 
