@@ -1,4 +1,6 @@
 #!/bin/bash
+# 2018 Douglas Berdeaux - WeakNetLabs.com
+#
 count=0;
 function usage {
 	echo -e "\nUsage: ./bf.script <URI> <WORDLIST> <UID>\n"
