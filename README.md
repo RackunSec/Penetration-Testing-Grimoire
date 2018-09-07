@@ -1,6 +1,13 @@
 # The Penetration Testing Grimoire
 Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. During my studies in labs, I decided to start making notes of these since I won't be using (all of) them on a daily basis.
 
+
+### gri·moire
+#### /ɡrimˈwär/
+noun
+
+a book of magic spells and invocations.
+
 ## Recon Tools
 These are custom scripts or tools that I whipped up during the lab experience. 
 * [*Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
