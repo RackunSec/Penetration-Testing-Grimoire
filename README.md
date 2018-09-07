@@ -1,8 +1,8 @@
-# OSCP-tools
-Custom Tools, Cheat Sheets, and Notes from my OSCP PWK experience. A lot of the OSCP training is left up to the user. The video and PDF materials are just enough to whet the pentester's appetite to want to learn more. During my studies and labs, I decided to start making notes of these since I won't be using them on a daily basis.
+# The Penetration Testing Grimoire
+Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. During my studies in labs, I decided to start making notes of these since I won't be using (all of) them on a daily basis.
 
 ## Recon Tools
-These are custom scripts or tools that I whipped up during the lab training. 
+These are custom scripts or tools that I whipped up during the lab experience. 
 * [*Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
   * Run with `chmod +x robots.txt.test.sh && ./robots.txt.test.sh`
 * [*ntlm-bf.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/ntlm-bf.sh) - This tool will loop through a text file and try every password with the username of "admin"
