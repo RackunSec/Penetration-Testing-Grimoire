@@ -53,8 +53,9 @@ These cheat sheets and tools should be used to identify ways to escalate privile
 * [*Privilege Escalation/Tools/linuxprivchecker.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) - This is a mirror of a tool commonly used during the post-exploutation phase of the penetration test of a LINUX system.
 
 ### Vulnerabilities:
-These cheat sheets are focused on identifiying and exploiting vulnerabilities in the target systems during a penetrtation test.
+These cheat sheets are focused on identifiying and exploiting common vulnerabilities and misconfigurations, and post exploitation practices to gain further access or information in target systems during a penetration test. 
 #### Web Vulnerabilities
+This subsection includes commmon web vulnerabilities to look for during a penetration test.
 * [*Vulnerabilities/Web/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Vulnerabilities/Web/initial_scan.md) - This cheat sheet contains all steps taken when a web application service is discovered on the target host.
 * [*Vulnerabilities/Web/LFI.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Vulnerabilities/Web/LFI.md) - This cheat sheet covers all basics for enumerating files on a remote server and including files on a remote server which has an open Local File Inclusion, LFI, vulnerabiltiy.
 * [*Vulnerabilities/Web/hydra-brute-force.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Vulnerabilities/Web/hydra-brute-force.md) - This module contains all of the syntax used during successful brute force attacks during penetration tests. Some of the hydra syntax is often tricky and "most users [ will get ] it mixed up."
