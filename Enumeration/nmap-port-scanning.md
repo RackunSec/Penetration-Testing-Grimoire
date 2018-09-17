@@ -4,9 +4,9 @@ This module will cover some of the basics used while perfoming typical remotely 
 ## Initial Port Scan
 The Initial `nmap` scan should be done without specifying a port range or service fingerprinting simply as,
 
-`nmap (TARGET IP ADDRESS)`
+`nmap -vv (TARGET IP ADDRESS) -p 1-65535`
 
-This type of scan takes a considerable amount of time to complete depending on the bandwith of the network and responses from the target system. 
+This type of scan takes a considerable amount of time to complete depending on the bandwith of the network and responses from the target system. It will scan every single port from 1 to 65,535 which is a lot of requests. The `-vv` increases the verbosity which causes `nmap` to output open ports as they are found rather than waiting all the way until the end of the scan. This way you can perform further fingerprinting and investigation to the target system concurrently during the `nmap` scan.
 
 ## Specifying Ports
 Nmap allows us to specify single, multiple, or ranges of port(s) to scan. Knowning what ports that we want to discover will make the scanning and service enumeration process faster and more efficient. 
