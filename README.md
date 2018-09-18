@@ -8,7 +8,7 @@ Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. Du
 
 a book of magic spells and invocations.
 
-## Recon Tools
+## Custom-Built Tools
 These are custom scripts or tools that I whipped up during the lab experience. 
 * [*Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
   * Run with `chmod +x robots.txt.test.sh && ./robots.txt.test.sh`
