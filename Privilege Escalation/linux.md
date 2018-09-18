@@ -1,7 +1,7 @@
 # LINUX
 This sheet serves as a resource for processes commonly used to escalate privileges of a low-privilege user access during the post-exploitation phase of the penetration test.
 ## Run the LINUX Privilege Checker Python Script
-If Python is installed, **make sure that this script is ran immediately** upon gaining low-level access to a target system. This script will provide quick insight into possible misconfigurations in the target system.
+If Python is installed, **make sure that this script is ran immediately** [LinuxPrivChecker Python script](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) upon gaining low-level access to a target system. This script will provide quick insight into possible misconfigurations in the target system.
 
 ## SUDO Test
 Testing for sudo will sometimes reveal a nice surprise. The [LinuxPrivChecker Python script](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) will tell you exactly which commands/programs are installed with interactive shells that can be escaped from. For instance, some older version of `nmap` had a interactivbe shell. This meant that on certain systems in which a default account has non-authenticated sudo access to it, it could easily lead to a root shell.
