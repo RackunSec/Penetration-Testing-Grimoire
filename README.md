@@ -52,9 +52,11 @@ These cheat sheets and tools should be used to identify ways to escalate privile
 * [*Privilege Escalation/Tools/linuxprivchecker.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Tools/linuxprivchecker.py) - This is a mirror of a tool commonly used during the post-exploutation phase of the penetration test of a LINUX system.
 
 ### Brute Force
-Brute force is a very noisy, brute-like, method for attacking something. In most cases it is credentials or authorizations during penetration testing. 
+Brute force is a very noisy, brute-like, method for attacking something. In most cases it is credentials or authorizations during penetration testing.
+#### Tools
 * [*Brute Force/thc-hydra.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/thc-hydra.md) - This cheat sheet contains syntax on how to use THC Hydra for attempting to brute force credentials used by several types of services on the target machine.
-
+#### Wordlists
+* [*Brute Force/wordlists/500-worst-passwords.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/500-worst-passwords.txt) - This wordlisty is commonly used for a quick brute force attack on credentials for a service and is only 500 words in length.
 ### Vulnerabilities:
 These cheat sheets are focused on identifiying and exploiting common vulnerabilities and misconfigurations, and post exploitation practices to gain further access or information in target systems during a penetration test. 
 #### Web Vulnerabilities
