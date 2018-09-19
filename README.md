@@ -56,6 +56,13 @@ Brute force is a very noisy, brute-like, method for attacking something. In most
 #### Tools
 * [*Brute Force/thc-hydra.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/thc-hydra.md) - This cheat sheet contains syntax on how to use THC Hydra for attempting to brute force credentials used by several types of services on the target machine.
 #### Wordlists
+These wordlists came from many different online sources. The primary source is [g0tmi1k's SecLists](https://github.com/danielmiessler/SecLists/).
+* [*Brute Force/wordlists/apache.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/apache.txt) - Common Apache files
+* [*Brute Force/wordlists/big.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/big.txt) - The largest of the wordlists offered here.
+* [*Brute Force/wordlists/cgi.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/cgi.txt) - Common CGI ddirectories and files.
+* [*Brute Force/wordlists/coldfusion-cfide.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/coldfusion-cfide.txt) - Common locations for the Coldfusion Administrator interface
+* [*Brute Force/wordlists/common.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/common.txt) - Common file names (very generic)
+* [*Brute Force/wordlists/tomcat.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/tomcat.txt) - Common Apache Tomcat Admin Interface locations
 * [*Brute Force/wordlists/500-worst-passwords.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/500-worst-passwords.txt) - This wordlisty is commonly used for a quick brute force attack on credentials for a service and is only 500 words in length.
 ### Vulnerabilities:
 These cheat sheets are focused on identifiying and exploiting common vulnerabilities and misconfigurations, and post exploitation practices to gain further access or information in target systems during a penetration test. 
