@@ -14,6 +14,7 @@ These are custom scripts or tools that I whipped up during the lab experience.
   * Run with `chmod +x robots.txt.test.sh && ./robots.txt.test.sh`
 * [*ntlm-bf.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/ntlm-bf.sh) - This tool will loop through a text file and try every password with the username of "admin"
   * Run with `chmod +x bf.sh && ./bf.sh (URI) (PATH TO WORD LIST) (UID)`
+* [*Tools/nmap-parse-ports.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/nmap-parse-ports.sh) - Thi tool parses the normal `nmap -v (TARAGET IP ADDRESS)` output into a CSV for `nmap -A -p (CSV) (TARGET IP ADDRESS)` See Tools.md in that folder for full reference.
 
 ## Cheat Sheets
 These sheets should be used for quick reference during penetration tests.
