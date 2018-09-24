@@ -1,7 +1,7 @@
 # Custom-Built Tools and Scripts
 This readme is for usage on all custom-build tools and scripts used during penetration testing. Copy these tools into your path, e.g.: `/usr/local/bin:/usr/local/sbin` etc, to be called quickly during the penetration test. Remember that accuracy is VERY important, but so is time. These script are meant to save a little time during the penetration test.
-## NMAP-2-CSV
-This script will parse the `nmap` initial scan output for a full port/service discovery scan-worthy CSV.
+## NMAP-Parse-Output
+[Tools/nmap-parse-ports.sh](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/nmap-parse-ports.sh) will parse the `nmap` initial scan output for a full port/service discovery scan-worthy CSV.
 Usage:
 
 `nmap -v (TARGET IP ADDRESS)`
