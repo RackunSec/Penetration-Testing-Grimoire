@@ -31,7 +31,7 @@ These sheets should be used for quick reference during penetration tests.
 * [*Post Exploitation/shells-post-exploitation.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/shells-post-exploitation.md) - This cheat sheet contains all shell-related tasks done during the penetration tests on the OSCP/PWK labs.
 * [*Post Exploitation/meterpreter-shell.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/meterpreter-shell.md) - This sheet contains Meterpreter commands that should be used upon every spawn on the service on a target system.
 * [*Post Exploitation/cadaver.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/cadaver.md) - Syntax and setup for exploiting WebDAV permissions using the Cadaver, webDAV Client Tool in Kali.
-* [*Post Exploitation/manual-hashdump.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/manual-hashdump.md) - Manually gathering and processing the hashes from a Microsoft Windows system - similar to `hashump` from Metasploit's Meterpreter payload.
+* [*Post Exploitation/manual-hashdump.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Post%20Exploitation/manual-hashdump.md) - Manually gathering and processing the hashes from a Microsoft Windows system - similar to `hashdump` from Metasploit's Meterpreter payload.
 #### FILE ENUMERATION
 **Microsoft Windows**
 * [*Post Exploitation/File Enumeration/WINDOWS.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Post%20Exploitation/File%20Enumeration/WINDOWS.md) - This cheat sheet can be used with a file disclosure vulnerability, such as LFI on a Microsoft Windows server.
