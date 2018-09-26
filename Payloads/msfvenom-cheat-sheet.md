@@ -3,7 +3,7 @@ This sheet is for all of the use-case scenarios in which I have and will use MSF
 
 `OS`+`TYPE`+`PORT`.extension
 
-For instance, a Linux ELF binary, Bind Shell, Binds to port 4567 would be, `LinBind4567.elf`. Windows ELF binary, Reverse Meterpreter, returns to port 5555 would be, `WinRevMeter5555.exe`. Keep these payloads readily available as tie is of the essence. 
+For instance, a Linux ELF binary, Bind Shell, Binds to port 4567 would be, `LinBind4567.elf`. Windows ELF binary, Reverse Meterpreter, returns to port 5555 would be, `WinRevMeter5555.exe`. Keep these payloads readily available as time is of the essence. 
 
 If you are working the Offensive Security PWK labs, make sure that you don't use Meterpreter when possible as they do not condone it and it is not allowed in the exam. Hey, if it's confusing - think about it this way, some people still buy vinyl records, I guess nostalgia and doing things by hand is their thing. 
 
