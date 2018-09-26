@@ -58,6 +58,9 @@ These cheat sheets and tools should be used to identify ways to escalate privile
 Brute force is a very noisy, brute-like, method for attacking something. In most cases it is credentials or authorizations during penetration testing.
 #### Tools
 * [*Brute Force/thc-hydra.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/thc-hydra.md) - This cheat sheet contains syntax on how to use THC Hydra for attempting to brute force credentials used by several types of services on the target machine.
+* [*Brute Force/ncrack.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/ncrack.md) - Ncrack credential brute force tool.
+* [*Brute Force/wpscan.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wpscan.md) - WPScan Wordpress CMS credential brute force.
+* [*Brute Force/cewl.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/cewl.md) - CeWL wordlist generation tool.
 #### Wordlists
 These wordlists came from many different online sources. The primary source is [SecLists](https://github.com/danielmiessler/SecLists/).
 * [*Brute Force/wordlists/apache.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/apache.txt) - Common Apache files for attempting to discover hidden Apache-related directories.
