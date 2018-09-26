@@ -5,7 +5,7 @@ This sheet is for all of the use-case scenarios in which I have and will use MSF
 
 For instance, a Linux ELF binary, Bind Shell, Binds to port 4567 would be, `LinBind4567.elf`. Windows ELF binary, Reverse Meterpreter, returns to port 5555 would be, `WinRevMeter5555.exe`. Keep these payloads readily available as time is of the essence. 
 
-If you are working the Offensive Security PWK labs, make sure that you don't use Meterpreter when possible as they do not condone it and it is not allowed in the exam. Hey, if it's confusing - think about it this way, some people still buy vinyl records, I guess nostalgia and doing things by hand is their thing. 
+If you are working the Offensive Security PWK labs, make sure that you don't use Meterpreter when possible as [they do not condone it and it is not allowed in the exam.](https://support.offensive-security.com/#!oscp-exam-guide.mdhttps://support.offensive-security.com/#!oscp-exam-guide.md) Hey, if it's confusing - think about it this way, some people still buy vinyl records for nostalgia, I guess not adopting new tools and methods is their thing. 
 
 ## WINDOWS
 This section is for all Windows binary creation techniques used with MSFVenom
