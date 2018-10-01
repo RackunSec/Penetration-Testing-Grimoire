@@ -1,6 +1,6 @@
 # THC Hydra
 [THC Hydra](https://sectools.org/tool/hydra/) is a tool commonly used to brute force user credentials. Always remember that you are at the mercy of your wordlists during these types of attacks. The longer, more accurate/finely-tuned wordlist = the fatser you get positive results.
-## SSH Brute Force
+## SSH
 To brute force SSH credentials, use the following command. This will brute force the credentials for the `root` user.
 
 ```
@@ -14,7 +14,7 @@ recommended to reduce the tasks: use -t 4
 [STATUS] 231.14 tries/min, 1618 tries in 00:00h, 0 to do in 07:00h, 14342806 active
 ```
 
-## FTP Brute Force
+## FTP
 To brute for an FTP service with a known username try the following command.
 
 `hydra -l (UID) -P /path/to/500-worst-passwords.txt (TARGET IP ADDRESS) ftp`
