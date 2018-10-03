@@ -70,6 +70,7 @@ These wordlists came from many different online sources. The primary source is [
 * [*Brute Force/wordlists/common.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/common.txt) - Common file names (very generic)
 * [*Brute Force/wordlists/tomcat.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/tomcat.txt) - Common Apache Tomcat Admin Interface locations
 * [*Brute Force/wordlists/500-worst-passwords.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/500-worst-passwords.txt) - This wordlist is commonly used for a quick brute force attack on credentials for a service and is only 500 words in length.
+* [*Brute Force/wordlists/nix-common-users.txt*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/nix-common-users.txt) - Commonly found LINUX/UNIX users on target systems.
 ### Vulnerabilities:
 These cheat sheets are focused on identifiying and exploiting common vulnerabilities and misconfigurations, and post exploitation practices to gain further access or information in target systems during a penetration test. 
 #### Web Vulnerabilities
