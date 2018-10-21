@@ -8,13 +8,17 @@ Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. Du
 
 a book of magic spells and invocations.
 
-## Custom-Built Tools
+## [Custom-Built Tools](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/Tools.md)
 These are custom scripts or tools that I whipped up during the lab experience. 
-* [*Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
+* [*Tools/Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
   * Run with `chmod +x robots.txt.test.sh && ./robots.txt.test.sh`
-* [*ntlm-bf.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/ntlm-bf.sh) - This tool will loop through a text file and try every password with the username of "admin"
+* [*Tools/ntlm-bf.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/ntlm-bf.sh) - This tool will loop through a text file and try every password with the username of "admin"
   * Run with `chmod +x bf.sh && ./bf.sh (URI) (PATH TO WORD LIST) (UID)`
 * [*Tools/nmap-parse-ports.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/nmap-parse-ports.sh) - Thi tool parses the normal `nmap -v (TARAGET IP ADDRESS)` output into a CSV for `nmap -A -p (CSV) (TARGET IP ADDRESS)` See Tools.md in that folder for full reference.
+* [*Tools/php-get-bf.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/php-get-bf.sh) - PHP GET parameter fuzzer / brute force tool. Simply place an asterisk, \*, where you want the fuzz.
+* [*Tools/nmap-parse-ports.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/nmap-parse-ports.sh) - NMAP Parse ports. Parse the output of nmap into a small CSV to re-scan using the NSE/timely scripts.
+* [*Tools/Apache2-README-Scraper.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/Apache2-README-Scraper.sh) - Apache2 README scraping tool. Scrape out all of the image files for local exif/stego analysis during CTF.
+* [*Tools/port-knocking.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/port-knocking.sh) - Port knocking sequence tool. 
 
 ## Cheat Sheets
 These sheets should be used for quick reference during penetration tests.
