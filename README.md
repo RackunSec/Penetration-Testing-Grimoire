@@ -9,7 +9,7 @@ Custom Tools, Cheat Sheets, and Notes from my penetration testing experience. Du
 a book of magic spells and invocations.
 
 ## [Custom-Built Tools](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/Tools.md)
-These are custom scripts or tools that I whipped up during the lab experience. 
+These are custom scripts or tools that I whipped up during penetration testing labs, CTF, VulnHUB, and Hack the Box exercises. 
 * [*Tools/Robots.txt.test.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/robots.txt.test.sh) - This tool will grab the robots.txt file and run through each entry to display the HTTP status of the file.
   * Run with `chmod +x robots.txt.test.sh && ./robots.txt.test.sh`
 * [*Tools/ntlm-bf.sh*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Tools/ntlm-bf.sh) - This tool will loop through a text file and try every password with the username of "admin"
