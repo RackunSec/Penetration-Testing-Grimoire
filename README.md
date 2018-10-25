@@ -19,6 +19,7 @@ These are custom scripts or tools that I whipped up during penetration testing l
 * [*Tools/nmap-parse-ports.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/nmap-parse-ports.sh) - NMAP Parse ports. Parse the output of nmap into a small CSV to re-scan using the NSE/timely scripts.
 * [*Tools/Apache2-README-Scraper.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/Apache2-README-Scraper.sh) - Apache2 README scraping tool. Scrape out all of the image files for local exif/stego analysis during CTF.
 * [*Tools/port-knocking.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/port-knocking.sh) - Port knocking sequence tool. 
+* [*Tools/hex2dec.c*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/hex2dec.c) - Hex2Dec conversion tool for reverse engineering/malware anlysis, or just plain math purposes.
 
 ## Cheat Sheets
 These sheets should be used for quick reference during penetration tests.
