@@ -26,3 +26,7 @@ So, it is **very important** that all of these are tested with sudo.
 
 ## SUID Test
 Some of the aforementioned applciations which can be escaped from may have a SUID bit set in the permissions. This means that the effective user ID becomes that of the file's owner. **Again, test all of these** applications, **without sudo** if the attack above is unsuccessful because some of the file permissions may not be set correctly. You'd be surprised.
+
+```
+find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {} \; 2>/dev/null
+```
