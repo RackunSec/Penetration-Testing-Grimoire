@@ -20,7 +20,7 @@ These are custom scripts or tools that I whipped up during penetration testing l
 * [*Tools/Apache2-README-Scraper.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/Apache2-README-Scraper.sh) - Apache2 README scraping tool. Scrape out all of the image files for local exif/stego analysis during CTF.
 * [*Tools/port-knocking.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/port-knocking.sh) - Port knocking sequence tool. 
 * [*Tools/hex2dec.c*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/hex2dec.c) - Hex2Dec conversion tool for reverse engineering/malware anlysis, or just plain math purposes.
-* [*/Brute%20Force/Tools/drupalUserEnum.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/Tools/drupalUserEnum.py) - A tool that can be used to enumerate valid users of a Drupal CMS installation on the target host.
+* [*/Brute Force/Tools/drupalUserEnum.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/Tools/drupalUserEnum.py) - A tool that can be used to enumerate valid users of a Drupal CMS installation on the target host.
 
 ## Cheat Sheets
 These sheets should be used for quick reference during penetration tests.
