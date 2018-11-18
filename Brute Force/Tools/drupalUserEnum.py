@@ -1,16 +1,18 @@
 #!/usr/bin/python
+# drupalUserEnum.py Python Script for Drupal7
+# Douglas Berdeaux (weaknetlabs@gmail.com)
+# 2018
 import urllib2	# to make HTTP requests
 import urllib	# to encode POST data
 import sys	# to exit()
 import re 	# Regular Expressions
 print """
-
 Drupal7 User Enum Script.
 2018 WeakNet Labs.
 
 """
 if len(sys.argv) != 3:
- print "Usage: ./drupalUserEnum.py (BASE URL of DRUPAL INSTALLATION) (USERS LIST FILE)"
+ print "Usage: ./drupalUserEnum.py (BASE URL of DRUPAL INSTALLATION) (USERS LIST FILE)\n"
  sys.exit() # exit
 
 # Arguments:
@@ -47,4 +49,5 @@ for user in userFileHandle:
   print "\033[92m[!] Found User:",userStrip,'\033[0m'
 
 userFileHandle.close() # close up the file
+print "\n[*] Script Completed. Exiting.\n\n"
 sys.exit() # Goodbye.
