@@ -151,9 +151,7 @@ if "debian" in sysInfo["KERNEL"]["results"][0] or "ubuntu" in sysInfo["KERNEL"][
 else:
     getPkgs = "rpm -qa | sort -u" # RH/other
 
-getAppProc = {"PROCS":{"cmd":"ps aux | awk '{print $1,$2,$9,$10,$11}'", "msg":"Current processes", "results":results},
-              "PKGS":{"cmd":getPkgs, "msg":"Installed Packages", "results":results}
-	     }
+getAppProc = ""
 
 getAppProc = execCmd(getAppProc)
 printResults(getAppProc) # comment to reduce output
