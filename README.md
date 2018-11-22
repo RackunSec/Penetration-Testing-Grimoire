@@ -29,6 +29,11 @@ These sheets should be used for quick reference during penetration tests.
 * [*Enumeration/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/initial_scans.md)
 * [*Enumeration/SMB/initial_scan.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/SMB/initial_scan.md) - This module contains method sof gathering information from targets that have Samaba, or the Windows sharing service (SMB) enabled.
 * [*Enumeration/nmap-port-scanning.md*](https://github.com/weaknetlabs/OSCP-tools/blob/master/Enumeration/nmap-port-scanning.md) - The NMAP host discovery and service enumeration scanning tool.
+* [*Enumeration/dns-service.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/dns-service.md) - DNS enumeration of DNS service provided by the target system.
+* [*Enumeration/ftp.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/ftp.md) - FTP Enumeration of FTP services provided by the target system.
+* [*Enumeration/mount-remote-nfs.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/mount-remote-nfs.md) - NFS enumertaion of NFS services provided by the target system.
+* [*Enumeration/smtp-user-enumeration.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/smtp-user-enumeration.md) - Enumeration of SMTP mail services provided by a target system.
+* [*Enumeration/snmp.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/snmp.md) - SNMP enumeration of SNMP services provided by target systems.
 
 ### Post Exploitation of a Vulnerability:
 **SHELL SYNTAX**
