@@ -1,5 +1,7 @@
 # (DNS) Name Server Information Gathering
-Often times, if DNS is running on port 53, you can gather additional information from nameservers, find new websites via virtual hosting and much more. This sheet will offer syntax that you can use to utilize a DNS service on a target host.
+Often times, if DNS is running on port 53, you can gather additional information from nameservers, find new websites via virtual hosting and much more. This sheet will offer syntax that you can use to utilize a DNS service on a target host. 
+
+**NOTE:** Even though an IP address resolves to a hostname and vice versa, a virtual hosting system can resolve many hostnames (domain names) to a sinlg eIP address. So, browsing to the Ip address of a web site will often respond with something other than the web site. No stone shall be left unturned in our quest for information gathering of a target system.
 ## NSLookup
 You can use `nslookup` to see if any results are returned for internal IP addresses, such as `127.0.0.1` as so,
 ```
