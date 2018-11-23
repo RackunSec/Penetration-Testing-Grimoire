@@ -20,7 +20,6 @@ for passwd in $(cat $wordlist)
     # openssl enc -d -aes128 -salt -in drupal.txt -out opensslDecryptOutput/drupal.txt.decrypt -k friends | head -n 1
     if [[ $result != 'bad decrypt' ]]; # It wasn't a failure according to openSSL
      then
-      printf "[!] Possible Passphrase found: $passwd\n";
       if [[ -f "opensslDecryptOutput/${passwd}.decrypted" ]] # does the file exist?
        then
         stringSearchPassword=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'password' |wc -l)
@@ -30,10 +29,10 @@ for passwd in $(cat $wordlist)
         stringSearchRoot=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'root'|wc -l)
         if [[ $stringSearchDrupal -gt 0 || $stringSearchUser -gt 0 || $stringSearchDrupal -gt 0 || $stringSearchFlag -gt 0 || $stringSearchRoot -gt 0 ]]
          then
-          printf "[!] Possible Passwd Found !!\nPASSWD: $passwd\n\n"
+          printf "\n\n[!] Possible Passwd Found !!\nPASSWD: $passwd\n\n"
         fi
       else
-       printf "[!] Could not create a decrypted file. Something went wrong with the input.\n"
+       printf "[!] Could not create a decrypted file. Something went wrong with the input.\n[*] Error: $result\n\n"
        exit 1;
       fi
      fi
@@ -46,6 +45,6 @@ for passwd in $(cat $wordlist)
   fi
   if [[ $((count % 1000)) -eq 0 ]]
    then
-    printf "[*] $count Passwords tried.\n"
+    printf "[*] $count Passwords tried. ($passwd)\n"
   fi
 done
