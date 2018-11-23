@@ -22,12 +22,9 @@ for passwd in $(cat $wordlist)
      then
       if [[ -f "opensslDecryptOutput/${passwd}.decrypted" ]] # does the file exist?
        then
-        stringSearchPassword=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'password' |wc -l)
-        stringSearchUser=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'user'|wc -l)
-        stringSearchDrupal=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'drupal'|wc -l)
-        stringSearchFlag=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'flag'|wc -l)
-        stringSearchRoot=$(strings opensslDecryptOutput/${passwd}.decrypted | egrep -i 'root'|wc -l)
-        if [[ $stringSearchDrupal -gt 0 || $stringSearchUser -gt 0 || $stringSearchDrupal -gt 0 || $stringSearchFlag -gt 0 || $stringSearchRoot -gt 0 ]]
+	#printf "[*] Trying: $passwd\n"; # DEBUG
+        resultTest=$(file opensslDecryptOutput/${passwd}.decrypted | grep ASCII | wc -l)
+        if [[ $resultTest -eq 1 ]]
          then
           printf "\n\n[!] Possible Passwd Found !!\nPASSWD: $passwd\n\n"
         fi
