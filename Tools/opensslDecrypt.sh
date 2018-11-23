@@ -9,14 +9,14 @@ printf "\nOpenSSLDecrypt Brute Force Tool.\n\n[*] Destroying and Creating tempor
 rm -rf opensslDecryptOutput
 mkdir opensslDecryptOutput
 count=0
-for passwd in $(cat $wordlist)
- do 
+#for passwd in $(cat $wordlist)
+while read -r passwd
+ do
   let "count++"
   passwd=$(echo $passwd | sed 's/[^0-9A-Za-z]//g') # remove all but alpha/num
   if [[ $passwd != "" ]] # we need an actual password to try
    then # Get the decrypted version:
-    result=$(openssl enc -d -$cipher -salt -in $encryptedFile -out opensslDecryptOutput/${passwd}.decrypted -k $passwd 2>/dev/stdout| head -n 1)
-    #printf "DBUG: $result\n";
+    result=$(openssl enc -$cipher -d -a -in $encryptedFile -out opensslDecryptOutput/${passwd}.decrypted -d -pass pass:"$passwd" 2>/dev/stdout| head -n 1)
     # openssl enc -d -aes128 -salt -in drupal.txt -out opensslDecryptOutput/drupal.txt.decrypt -k friends | head -n 1
     if [[ $result != 'bad decrypt' ]]; # It wasn't a failure according to openSSL
      then
@@ -44,4 +44,4 @@ for passwd in $(cat $wordlist)
    then
     printf "[*] $count Passwords tried. ($passwd)\n"
   fi
-done
+done < $wordlist
