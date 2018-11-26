@@ -31,14 +31,21 @@ wnl8:/pwnt/windows/smbmap# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b5
 ## SMBClient
 SMBClient is very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samaba (LINUX)/Windows shares.
 ### Target information
+Attempt to mapp the share without any credentials,
 
-`smbclient -N -L (TARGET IP)`
+```smbclient -N -L (TARGET IP)```
+
 ### Mounting shares
 To mount a share without knowing any valid users (anonymous/guest login),
+
 ```smbclient "\\\\(TARGET IP)\\IPC\$\\" -N```
+
 To mount a share with an enumerated username,
+
 ```smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)```
+
 To mount a share with a username and stolen NTLM hash,
+
 ```root@attacker-machine:~# smbclient \\\\(TARGET IP ADDRESS)\\(SHARE NAME)\\ -U (DOMAIN NAME)\(USERNAME)%(FULL NTLM HASH)```
 
 ### File Transfers
