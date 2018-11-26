@@ -6,14 +6,30 @@ This module contains method sof gathering information from targets that have Sam
 
 ## NBTScan
 
-`nbtscan (TARGET IP)`
+```nbtscan (TARGET IP ADDRESS)```
 
 ## SMBMap
-
-`smbmap -H (TARGET IP)`
-
+The basic syntax fo `smbmap` is as follows,
+```smbmap -H (TARGET IP ADDRESS)```
+But, if you have access to an NTLM hash, let's use `0B186E661BBDBDFFFFFFFFFFF8B9FD8B` for example, you can append the common Windows NULL string along with a colon, `aad3b435b51404eeaad3b435b51404ee` to it as,
+```
+aad3b435b51404eeaad3b435b51404ee:0B186E661BBDBDFFFFFFFFFFF8B9FD8B
+```
+and pass along the username, let's say `user123` for example, of the credentials to get more SMB map information like so,
+```
+wnl8:/pwnt/windows/smbmap# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b51404ee:0B186E661BBDBDFFFFFFFFFFF8B9FD8B' -H (TARGET IP ADDRESS)
+[+] Finding open SMB ports....
+[+] Hash detected, using pass-the-hash to authentiate
+[+] User session establishd on (TARGET IP ADDRESS)...
+[+] IP: (TARGET IP ADDRESS):445	Name: ypuffy.hackthebox.htb                             
+	Disk                                                  	Permissions
+	----                                                  	-----------
+	user123's Files                                    	READ, WRITE
+	IPC$                                              	NO ACCESS
+'
+```
 ## SMBClient
-This section describes methods for mounting and listing directories in Samaba (LINUX)/Windows shares.
+SMBClient is very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samaba (LINUX)/Windows shares.
 ### Target information
 
 `smbclient -N -L (TARGET IP)`
