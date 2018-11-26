@@ -35,12 +35,11 @@ SMBClient is very bad software and I believe it's because there are too many var
 `smbclient -N -L (TARGET IP)`
 ### Mounting shares
 To mount a share without knowing any valid users (anonymous/guest login),
-
-`smbclient "\\\\(TARGET IP)\\IPC\$\\" -N`
-
+```smbclient "\\\\(TARGET IP)\\IPC\$\\" -N```
 To mount a share with an enumerated username,
-
-`smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)`
+```smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)```
+To mount a share with a username and stolen NTLM hash,
+```root@attacker-machine:~# smbclient \\\\(TARGET IP ADDRESS)\\(SHARE NAME)\\ -U (DOMAIN NAME)\(USERNAME)%(FULL NTLM HASH)```
 
 ### File Transfers
 To get a file from the target server,
