@@ -35,6 +35,8 @@ These sheets should be used for quick reference during penetration tests.
 * [*Enumeration/mount-remote-nfs.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/mount-remote-nfs.md) - NFS enumertaion of NFS services provided by the target system.
 * [*Enumeration/smtp-user-enumeration.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/smtp-user-enumeration.md) - Enumeration of SMTP mail services provided by a target system.
 * [*Enumeration/snmp.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/snmp.md) - SNMP enumeration of SNMP services provided by target systems.
+* [*Enumeration/ldap.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/ldap.md) - LDAP ennumeration tools and techniques.
+* [*Enumeration/host-discovery.md*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/host-discovery.md) - Host discovery tools and techniques cheat sheet.
 
 ### Post Exploitation of a Vulnerability:
 **SHELL SYNTAX**
