@@ -28,5 +28,10 @@ So, it is **very important** that all of these are tested with sudo.
 Some of the aforementioned applciations which can be escaped from may have a SUID bit set in the permissions. This means that the effective user ID becomes that of the file's owner. **Again, test all of these** applications, **without sudo** if the attack above is unsuccessful because some of the file permissions may not be set correctly. You'd be surprised.
 
 ```
-find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {} \; 2>/dev/null
+root@attacker-machine:~# find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {} \; 2>/dev/null
+```
+## Capabilities
+Sometimes files have extra capabilities. To find special capabilities on files, you can try using the `getcap` command on every file in the file system. This can be very slow on actual physical machines - but for VMs and solid state drives, it shouldn't be too bad. You can utilize the `find` command to do this as so,
+```
+root@attacker-machine:~# find . * 2>/dev/null | xargs -I {} getcap {} 2>/dev/null
 ```
