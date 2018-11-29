@@ -34,4 +34,6 @@ root@attacker-machine:~# find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {}
 Sometimes files have extra capabilities. To find special capabilities on files, you can try using the `getcap` command on every file in the file system. This can be very slow on actual physical machines - but for VMs and solid state drives, it shouldn't be too bad. You can utilize the `find` command to do this as so,
 ```
 root@attacker-machine:~# find . * 2>/dev/null | xargs -I {} getcap {} 2>/dev/null
+/usr/bin/command = cap_dac_read_search+ei
 ```
+Then, we can try to analyze the command as a binary with `strings`, `gdb`, or test it by fuzzing, or execution trial an error.
