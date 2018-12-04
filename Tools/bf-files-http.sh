@@ -1,9 +1,11 @@
 #!/bin/bash
 # 2018 WeakNetLabs.com Douglas Berdeaux
+# Description: Brute force file names on an (non-indexable) HTTP server
+# Usage: ./bfhttp.sh (URL) (/PATH/TO/WORDLIST)
 #
 if [[ "$2" == "" ]] # nothing passed
  then
-  printf "Usage: ./bfhttp.sh (URL) (/PATH/TO/WORDLIST)
+  printf "Usage: ./bfhttp.sh (URL) (/PATH/TO/WORDLIST)"
   exit 1
 fi
 
