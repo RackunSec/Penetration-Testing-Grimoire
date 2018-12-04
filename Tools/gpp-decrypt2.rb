@@ -1,3 +1,9 @@
+#!/usr/bin/ruby
+# 2018 WeakNetLabs - Douglas Berdeaux
+# Original Work: https://tools.kali.org/password-attacks/gpp-decrypt
+# Description: Crack a "cpassword" value from a Groups.XML file using Microsoft's public key
+#  Usefule during penetration testing or capture the flag
+#
 require 'rubygems'
 require 'openssl'
 require 'base64'
