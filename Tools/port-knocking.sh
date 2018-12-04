@@ -3,6 +3,9 @@
 # 2018 Douglas Berdeaux
 # WeakNetLabs.com
 #
+# Description: Port Knocking: https://en.wikipedia.org/wiki/Port_knocking
+#  This script will attempt to find opened ports after knocking on given ports.
+#  
 function usage {
  echo "Port Knocker Script: ";
  exit 1;
