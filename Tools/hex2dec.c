@@ -1,7 +1,7 @@
 /*
  Hex2Dec conversion tool.
  2018, Douglas Berdeaux, WeakNet Labs
- Provide hex as "0x0..0xfff" format and get decimal value.
+ Decription: Provide hex as "0x0..0xfff" format and get decimal value.
 */
 #include<stdio.h>
 #include<stdlib.h> // str 2 ul
