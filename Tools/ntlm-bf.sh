@@ -2,7 +2,7 @@
 # 2018 Douglas Berdeaux - WeakNetLabs.com
 # Description: Brute for an HTTP login which requires NTLM as input
 #  This will create the NTLM for each word in the worldlisat before
-#  passing it to the target server.
+#  passing it to the target server all using $(curl).
 #
 count=0;
 function usage {
