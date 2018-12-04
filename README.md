@@ -22,7 +22,7 @@ These are custom scripts or tools that I whipped up during penetration testing l
 * [*Tools/hex2dec.c*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/hex2dec.c) - Hex2Dec conversion tool for reverse engineering/malware anlysis, or just plain math purposes.
 * [*Brute Force/Tools/drupalUserEnum.py*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/Tools/drupalUserEnum.py) - A tool that can be used to enumerate valid users of a Drupal CMS installation on the target host.
 * [*Tools/opensslDecrypt.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/opensslDecrypt.sh) - Crack an `.enc` openSSL encrypted text file using this simple brute-force script that I wrote.
-* [*Tools/bfhttp.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bfhttp.sh) - an HTTP file enumeration tool that will ignore empty responses. 
+* [*Tools/bf-files-http.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bf-files-http.sh) - an HTTP file enumeration tool that will ignore empty responses. 
 * [*Tools/gpp-decrypt2.rb*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/gpp-decrypt2.rb) - Hacked up/Reworked the ol' GPP-Decrypt tool to take user input.
 
 ## Cheat Sheets
