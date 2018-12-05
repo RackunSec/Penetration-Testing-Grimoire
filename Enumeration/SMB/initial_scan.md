@@ -29,7 +29,10 @@ wnl8:/pwnt/windows/smbmap# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b5
 '
 ```
 ## SMBClient
-SMBClient is very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samaba (LINUX)/Windows shares.
+SMBClient is very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samba (LINUX)/Windows shares.
+
+Sometimes, it is required to specify the SMB version number using the `-m smb(n)` argument for the NT service to allow a connection.
+
 ### Target information
 Attempt to mapp the share without any credentials,
 
