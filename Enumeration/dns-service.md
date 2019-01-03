@@ -30,7 +30,7 @@ root@attacker-machine:~# dig afxr (TARGET IP ADDRESS)
 ```
 and again using the hostname of the target system as so,
 ```
-root@attacker-machine:~# dig afxr (TARGET HOSTNAME (INCLUDING DOMAIN))
+root@attacker-machine:~# dig afxr (TARGET HOSTNAME) (DOMAIN) +nostat +nocomments +nocmd
 ; <<>> DIG Version Number
 ; 1 Server found;; global options
 ... (snipped) ...
