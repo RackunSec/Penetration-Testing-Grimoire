@@ -5,7 +5,7 @@
 ### Initial Scan
 The initial scan is done simply by creating a wordpress-content directory to store files in and starting `wpscan` by passing in the URL as so,
 ```
-wnl8:/pwnt/www# wpscan --url http://192.168.233.172/wordpress/ --wp-content-dir wp-content
+root@attacker:~# wpscan --url http://192.168.233.172/wordpress/ --wp-content-dir wp-content
 
 [+] URL: http://192.168.233.172/wordpress/
 [+] Started: Thu Jan  3 11:31:27 2019
@@ -44,7 +44,6 @@ Interesting Finding(s):
 [+] Data Received: 129.981 KB
 [+] Memory used: 52.836 MB
 [+] Elapsed time: 00:00:01
-wnl8:/pwnt/www# 
 ```
 ### Username Enumeration
 We can use WPScan to enumerate users as so, 
