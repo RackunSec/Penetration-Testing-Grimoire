@@ -1,6 +1,11 @@
 # MySQL User Defined Function Exploitation
 ## Exploit Enumeration
-This exploit is used for privilege escalation and requires `File_priv` access fo rthe current user. To check this, try,
+Is MySQL running as EUID `root` ?? If so, this exploit is used for privilege escalation and requires `File_priv` access for the current user. First, we check MySQL as running effective UID,
+```
+attacker@target:~# ps aux | grep mysq[l]d
+root        916  0.0 10.8 885088 53580 ?        Sl   Jan03   0:10 /usr/sbin/mysqld
+```
+Perfect. Next, we check for file-write permissions in MySQL monitor console. To check this, try,
 ```
 mysql> select File_priv from mysql.user where user = substring_index(user(), '@', 1) ;
 +-----------+
