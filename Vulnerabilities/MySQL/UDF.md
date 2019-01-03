@@ -22,8 +22,7 @@ As you can see, I have the permission denoted as 'Y'.
 
 Next, we need to see the MySQL services host OS and compiled variable names with the following two SQL queries,
 ```
-mysql> select @@version_compile_os, @@version_compile_machine;select \
-> @@version_compile_os, @@version_compile_machine;
+mysql> select @@version_compile_os, @@version_compile_machine;
 
 +----------------------+---------------------------+
 | @@version_compile_os | @@version_compile_machine |
