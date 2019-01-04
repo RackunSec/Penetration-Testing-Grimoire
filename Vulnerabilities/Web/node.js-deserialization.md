@@ -76,4 +76,3 @@ Connected!
 id
 uid=1001(jaws) gid=1001(jaws) groups=1001(jaws)
 ```
-```
