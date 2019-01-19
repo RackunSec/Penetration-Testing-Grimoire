@@ -14,3 +14,14 @@ This is the most commonly used version as the time of writing this document.
 root@attacker-machine:~# snmpwalk -c pubic -v2c (TARGET IP ADDRESS)
 ```
 ### Version 3
+You can also use `snmpwalk` with SNMP Version 3, but version 3 does not have an "easily guessable" or default community string.
+## OneSixtyOne
+Another great tool for SNMP service enumeration is [OneSixtyOne](https://github.com/trailofbits/onesixtyone)
+```
+root@attacker-machine:~# git clone https://github.com/trailofbits/onesixtyone && cd onesixtyone
+root@attacker-machine:~# make
+root@attacker-machine:~# ./onesixtyone -c /pwnt/passwords/wordlists/SecLists/Discovery/SNMP/snmp.txt (TARGET IP ADDRESS)
+scanning 1 hosts, 122 communities
+(TARGET IP ADDRESS) [communityStringName] Linux (TARGET HOSTNAME) (TARGET KERNEL UNAME) 
+```
+As you can see, it returned the SNMP community string of "communityStringName" that we can use to get more information.
