@@ -25,3 +25,13 @@ scanning 1 hosts, 122 communities
 (TARGET IP ADDRESS) [communityStringName] Linux (TARGET HOSTNAME) (TARGET KERNEL UNAME) 
 ```
 As you can see, it returned the SNMP community string of "communityStringName" that we can use to get more information.
+## SNMP-Mibs
+To translate information returned by `snmpwalk` you may have to use the `snmp-mibs` package and re-run the `snmpwalk` commands. This will translate the decmial output to hexidecimal and ASCII.
+```
+root@attacker-machine:~# apt install snmp-mibs-downloader
+root@attacker-machine:~# vim /etc/snmp/snmp.conf 
+```
+Comment out the line that says "mibs :" and save the file and quit Vim
+```
+root@attacker-machine:~# 
+```
