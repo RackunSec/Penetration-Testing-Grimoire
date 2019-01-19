@@ -36,3 +36,7 @@ To test the validity, get the ethernet device name, in my case is `ens33` for th
 root@attacker-machine:~# ping6 fe08::0523:45ff:fe67:8901%ens33
 PING fe08::0523:45ff:fe67:8901 (fe08::0523:45ff:fe67:8901) 56 data bytes
 ```
+Because a socket is defined as (IP ADDRESS):(PORT), to browse to an IPV6 afddress, you need to place the entire address into square brackets, like so,
+```
+http://[fe08::0523:45ff:fe67:8901]
+```
