@@ -16,7 +16,7 @@ root@attacker-machine:~# snmpwalk -c pubic -v2c (TARGET IP ADDRESS)
 ### Version 3
 You can also use `snmpwalk` with SNMP Version 3, but version 3 does not have an "easily guessable" or default community string.
 ## OneSixtyOne
-Another great tool for SNMP service enumeration is [OneSixtyOne](https://github.com/trailofbits/onesixtyone)
+Another great tool for SNMP service community string enumeration is [OneSixtyOne](https://github.com/trailofbits/onesixtyone)
 ```
 root@attacker-machine:~# git clone https://github.com/trailofbits/onesixtyone && cd onesixtyone
 root@attacker-machine:~# make
