@@ -88,9 +88,9 @@ The above code shows tha the extention itself is used to verify the file type.
 Next, let's look at the upload location. This is the combination of a few files. In `index.php` we have an include of `includes/bootstrap.php`. This PHP code sets up the controllers for the requests. Upon a file attachment submission and the code analyzing the file extension, as we saw above, the following code creates the file on the file system, found in `submit_ticket_controller.php`
 ```
 $ext = pathinfo($_FILES['attachment']['name'], PATHINFO_EXTENSION);
-						$filename = md5($_FILES['attachment']['name'].time()).".".$ext;
-						$fileuploaded[] = array('name' => $_FILES['attachment']['name'], 'enc' => $filename, 'size' => formatBytes($_FILES['attachment']['size']), 'filetype' => $_FILES['attachment']['type']);
-						$uploadedfile = $uploaddir.$filename;
+ $filename = md5($_FILES['attachment']['name'].time()).".".$ext;
+ $fileuploaded[] = array('name' => $_FILES['attachment']['name'], 'enc' => $filename, 'size' => formatBytes($_FILES['attachment']['size']), 'filetype' => $_FILES['attachment']['type']);
+ $uploadedfile = $uploaddir.$filename;
 ```
 This code does the follwoing operations and is what I used to build my script above,
 
