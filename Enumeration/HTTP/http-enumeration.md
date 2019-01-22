@@ -22,6 +22,8 @@ Use the Burp Suite CE to test different verbs in the HTTP headers of your reques
 * PUT
 * HEAD
 
+The tool, `nikto.pl` mentioned below will test for these verbs and tell you which are commpatible with the system or not.
+
 ## DIRB
 [DIRB](http://dirb.sourceforge.net/) is a lightweight, fast-scanning tool written in C.
 This should be the first step in doing enumeration on a discovered HTTP Service on the target system. This can be done using `dirb` as so,
@@ -85,7 +87,7 @@ root@attacker-machine:~#
 ```
 
 ## Nikto
-Use the Nikto Perl script to potentially find vulnerabilities, files, and more about a web service.
+Use the [Nikto Perl script](https://cirt.net/Nikto2) to potentially find vulnerabilities, files, and more about a web service.
 ```
 root@attacker-machine:~# perl nikto.pl -h http://(TARGET IP ADDRESS)
 ```
