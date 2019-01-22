@@ -6,6 +6,36 @@ This should be the first step in doing enumeration on a discovered HTTP Service 
 ```
 root@attacker:~# dirb http://(TARGET IP ADDRESS)
 ```
+### Extensions
+Test these common extension using DIRB,
+* aspx
+* asp
+* php
+* php5
+* conf
+* txt
+* html/htm
+* swf
+* java
+* jsp
+* xml
+* do
+* cfm
+* jar
+* pl
+* py
+* rb/rhtml
+* rss
+* cgi
+To add an extension in your DIRB search, use the `-X` argument as shown in the example below. NOTE don't forget the period. DIRB does not add the period by default to make it more extensible.
+```
+root@attacker-machine:~# dirb http://(TARGET IP ADDRESS) -X .php
+```
+## Nikto
+Use the Nikto Perl script to potentially find vulnerabilities, files, and more about a web service.
+```
+root@attacker-machine:~# perl nikto.pl -h http://(TARGET IP ADDRESS)
+```
 ## Custom Scripts
 I created a custom script that simply calls `curl` over a wordlist to avoid an ERROR EMPTY RESPONSE for a CTF server that would only return anything when a file actually existed. It can be found here: [*Tools/bfhttp.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bfhttp.sh)
 # 2. Wordlist Generation
