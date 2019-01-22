@@ -1,5 +1,27 @@
 # 1. File Discovery Scan
 For web servers that do not allow indexing of the directories, you can easily brute force file names for any response code that is not 404 (not found) or empty responses.
+## Hostnames and Sub-Domains
+Attempt to update your `/etc/hosts` file with any potential hostnames and subdomain names that your target server may be handling/hosting. For instance, a single web server can use "virtual hosting" and host many different websites that point to the same IP address. An example of the `/etc/hosts` file looks like so,
+```cat /etc/hosts
+127.0.0.1       localhost wnl8
+127.0.1.1	wnl8	wln8
+
+# Hack the Box Machines:
+10.10.10.108	zipper.htb
+
+... (SNIPPED) ...
+```
+## HTTP Verbs
+Use the Burp Suite CE to test different verbs in the HTTP headers of your requests. Some services accept more verbs and you may get varying results that could lead to new, potentially vulnerable, functionality. Common HTTP verbs are,
+* POST 
+* GET
+* OPTIONS
+* DEBUG
+* DELETE
+* PATCH
+* PUT
+* HEAD
+
 ## DIRB
 [DIRB](http://dirb.sourceforge.net/) is a lightweight, fast-scanning tool written in C.
 This should be the first step in doing enumeration on a discovered HTTP Service on the target system. This can be done using `dirb` as so,
@@ -72,4 +94,4 @@ I created a custom script that simply calls `curl` over a wordlist to avoid an E
 # 2. Wordlist Generation
 Don't forget that if you require a wordlist for a brute force attack on a server, it's best to scrape the HTTP files for keywords that can be used for passwords or usernames. This process can be easily done using CeWL
 ## CeWL
-CeWL can be used to create wordlists to be used against the target.
+[CeWL](https://digi.ninja/projects/cewl.php) can be used to create wordlists to be used against the target.
