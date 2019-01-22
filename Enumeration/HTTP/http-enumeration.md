@@ -31,6 +31,37 @@ To add an extension in your DIRB search, use the `-X` argument as shown in the e
 ```
 root@attacker-machine:~# dirb http://(TARGET IP ADDRESS) -X .php
 ```
+Below is a simple script I wrote that will test each extention in hopes to find the web programming language capabilities of the web server.
+```
+#!/bin/bash
+# 2019 Douglas Berdeaux - WeakNet Labs, Demon Linux
+# Pass a URL to me.
+url=$1
+extensions=( "aspx" "asp" "php" "php5" "conf"\
+ "txt" "html" "htm" "swf" "java" "jsp" "xml"\
+ "do" "cfm" "jar" "pl" "py" "rb" "rhtml" "rss" "cgi" )
+for ext in ${extensions[@]}; do
+ printf "[*] Testing: $ext ... ";
+ resp=$(curl -s -I ${url}/index.${ext}|head -n 1 | awk '{print $2}')
+ if [[ "$resp" -eq 200 ]]; then
+  printf "worked! \n[!] Extension found! - $ext\n";
+  exit
+ else
+  printf "failed.\n"
+ fi
+done
+printf "[*] Scan completed.\n"
+```
+The output would look like so,
+```
+root@attacker-machine:~# ./extension_test.sh http://(TARGET IP ADDRESS/HOSTNAME)/
+[*] Testing: aspx ... failed.
+[*] Testing: asp ... failed.
+[*] Testing: php ... worked! 
+[!] Extension found! - php
+root@attacker-machine:~#
+```
+
 ## Nikto
 Use the Nikto Perl script to potentially find vulnerabilities, files, and more about a web service.
 ```
