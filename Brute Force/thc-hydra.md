@@ -21,7 +21,7 @@ To brute for an FTP service with a known username try the following command.
 
 ## HTTP
 To brute for an HTTP form, try the following syntax with `hydra`:
-### Generic HTT POST Form
+### HTTP POST Form
 `hydra -l (USERNAME) -P /path/to/wordlist.txt (TARGET IP ADDRESS) http-post-form "/URI/path/to/login.php:(HTML FORM USERNAME ATTRIBUTE)=^USER^&(HTML FORM PASSWORD ATTRIBUTE)=^PASS^&Login=Login:(FAILED LOGIN MESSAGE)"`
 
 Where `HTML FORM USERNAME ATTRIBUTE` is the HTML form username "name" attribute. E.g.: `<input type=text name="username" />` In that example, the `username` value for the attribute `name` is what would be used. Same gfoes for the password: `<input type=password name="passwd" />` In that exmaple `passwd` would be used to construct the command as it is the value of the password input's name attribute. The command would then look something like so:
@@ -29,6 +29,17 @@ Where `HTML FORM USERNAME ATTRIBUTE` is the HTML form username "name" attribute.
   ... `:username=^USER^&passwd=^PASS^` ...
   
   `hydra` will fill in the `^USER^` and `^PASS^` values upon every single HTTP request with each username and password that you mean to test.
+### HTTP GET Form
+The GET parameters, that you seein the URL bar, are rarely used for HTTP authentication. This is because developers do not want to make your username and password "bookmarkable." Some cases in CTF, penetratiuon testing, etc, beg to differ. To perform a GET request for a password brute force, you must understand there are some caveats. 
+1. You cannot use certain characters in your password. 
+This is because of the URL/HTTP transport encoding. FOr instance, sometimes a "#" in a password from `rockyou.txt` will cause an HTTP 400 Bad Request repose from the server.
+
+Let's take a look at an HTTP GET login password brute force attempt using THC-Hydra,
+```
+root@attacker-machine:~# hydra -l admin -P /pwnt/passwords/wordlists/rockyou.txt (TARGET IP ADDRESS) http-get-form "/login.php:username=^USER^&password=^PASS^&Login=Login:Please Login|Bad Request"
+```
+As you can see, I used a pipe "|" to say "OR" to ignore Error 400 Bad Request responses form the target server.
+
 ### Drupal 7
 In Drupal 7 we need to first get the form_build_id from the `./user/` directory as so,
 ```
