@@ -65,7 +65,7 @@ This should be the first step in doing enumeration on a discovered HTTP Service 
 ```
 root@attacker:~# dirb http://(TARGET IP ADDRESS)
 ```
-### Extensions
+## HTTP Programming Extensions
 Test these common extension using DIRB,
 * aspx
 * asp
@@ -90,26 +90,7 @@ To add an extension in your DIRB search, use the `-X` argument as shown in the e
 ```
 root@attacker-machine:~# dirb http://(TARGET IP ADDRESS) -X .php
 ```
-Below is a simple script I wrote that will test each extention in hopes to find the web programming language capabilities of the web server.
-```
-#!/bin/bash
-# 2019 Douglas Berdeaux - WeakNet Labs, Demon Linux
-# Pass a URL to me.
-url=$1
-extensions=( "aspx" "asp" "php" "php5" "conf"\
- "txt" "html" "htm" "swf" "java" "jsp" "xml"\
- "do" "cfm" "jar" "pl" "py" "rb" "rhtml" "rss" "cgi" )
-for ext in ${extensions[@]}; do
- printf "[*] Testing: $ext ... ";
- resp=$(curl -s -I ${url}/index.${ext}|head -n 1 | awk '{print $2}')
- if [[ "$resp" -eq 200 ]]; then
-  printf "worked! \n[!] Extension found! - $ext\n";
-  exit
- else
-  printf "failed.\n"
- fi
-done
-printf "[*] Scan completed.\n"
+[Here is a program](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/http-ext-test.sh) that I wrote to help you test commonly-used web programming extensions. This script relies on an index.* file existing on the target server.
 ```
 The output would look like so,
 ```
