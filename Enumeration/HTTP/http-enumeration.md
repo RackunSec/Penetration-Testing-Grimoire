@@ -86,15 +86,17 @@ Test these common extension using DIRB,
 * rb/rhtml
 * rss
 * cgi
+
 To add an extension in your DIRB search, use the `-X` argument as shown in the example below. NOTE don't forget the period. DIRB does not add the period by default to make it more extensible.
 ```
 root@attacker-machine:~# dirb http://(TARGET IP ADDRESS) -X .php
 ```
 [Here is a program](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/http-ext-test.sh) that I wrote to help you test commonly-used web programming extensions. This script relies on an index.* file existing on the target server.
-```
+
 The output would look like so,
 ```
 root@attacker-machine:~# ./extension_test.sh http://(TARGET IP ADDRESS/HOSTNAME)/
+[*] Testing URL: http://(TARGET IP ADDRESS/HOSTNAME)/
 [*] Testing: aspx ... failed.
 [*] Testing: asp ... failed.
 [*] Testing: php ... worked! 
