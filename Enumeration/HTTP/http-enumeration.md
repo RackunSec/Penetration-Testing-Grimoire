@@ -22,8 +22,32 @@ Use the Burp Suite CE to test different verbs in the HTTP headers of your reques
 * PUT
 * HEAD
 
-The tool, `nikto.pl` mentioned below will test for these verbs and tell you which are commpatible with the system or not.
-
+Below is a program I have written to test each verb,
+```
+#!/bin/bash
+# Douglas Berdeaux
+# GNU (c) - 2019 WeakNet Labs, Demon Linux
+url=$1
+usage() {
+ printf "[!] Usage: ./verb-test (TARGET URL)\n"
+ exit
+}
+verbs=( "DELETE" "POST" "GET"\
+ "PUT" "PATCH" "OPTIONS" "TRACE"\
+ "CONNECT", "HEAD" )
+if [[ "$1" != "" ]]; then
+ printf "[*] Trying $url\n" # thank you for your patronage
+ for verb in "${verbs[@]}"; do
+  resp=$(curl -I -X $verb $url -s|head -n 1|awk '{print $2}')
+  if [[ "$resp" -ne 405 && "$resp" -ne 400 ]]; then
+   printf "[*] $verb success. Got HTTP code ($resp)\n";
+  fi
+ done
+else
+ usage
+fi
+printf "[*] Scan completed.\n"
+```
 ## DIRB
 [DIRB](http://dirb.sourceforge.net/) is a lightweight, fast-scanning tool written in C.
 This should be the first step in doing enumeration on a discovered HTTP Service on the target system. This can be done using `dirb` as so,
