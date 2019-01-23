@@ -24,6 +24,7 @@ These are custom scripts or tools that I whipped up during penetration testing l
 * [*Tools/opensslDecrypt.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/opensslDecrypt.sh) - Crack an `.enc` openSSL encrypted text file using this simple brute-force script that I wrote.
 * [*Tools/bf-files-http.sh*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bf-files-http.sh) - an HTTP file enumeration tool that will ignore empty responses. 
 * [*Tools/gpp-decrypt2.rb*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/gpp-decrypt2.rb) - Hacked up/Reworked the ol' GPP-Decrypt tool to take user input.
+* [*Tools/http-ext-test*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/http-ext-test.sh) - Test commonly used web programming interpreter extensions when trying to enumerate a web server. This relies on an index.* file existing. 
 
 ## Cheat Sheets
 These sheets should be used for quick reference during penetration tests.
