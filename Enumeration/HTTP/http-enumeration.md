@@ -48,6 +48,17 @@ else
 fi
 printf "[*] Scan completed.\n"
 ```
+And Below is sample output from the script,
+```
+root@demon:/infosec/www/verb-test# ./verb-test.sh https://www.weaknetlabs.com
+[*] Trying https://www.weaknetlabs.com
+[*] POST success. Got HTTP code (411)
+[*] GET success. Got HTTP code (200)
+[*] PUT success. Got HTTP code (411)
+[*] HEAD success. Got HTTP code (200)
+[*] Scan completed.
+root@demon:/infosec/www/verb-test# 
+```
 ## DIRB
 [DIRB](http://dirb.sourceforge.net/) is a lightweight, fast-scanning tool written in C.
 This should be the first step in doing enumeration on a discovered HTTP Service on the target system. This can be done using `dirb` as so,
