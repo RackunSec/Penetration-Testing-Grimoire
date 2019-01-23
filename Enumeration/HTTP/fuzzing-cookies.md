@@ -1,5 +1,5 @@
 ## Fuzzing Cookies
-We can easily fuzz cookies with `wfuzz`. To view your cookie values, click on the Cookie Editor installed in Firefox in Demon Linux. Next, grab the name and value of the cookie. Say, we want to fuzz the "passwd" cookie. We can do so with,
+We can easily fuzz cookies with [wfuzz](https://github.com/xmendez/wfuzz). To view your cookie values, click on the [Cookie Quick Manager](https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/) installed in Firefox in Demon Linux. Next, grab the name and value of the cookie. Say, we want to fuzz the "passwd" cookie. We can do so with,
 ```
 root@attacker-machine:~# wfuzz -z \
  file,/infosec/SecLists/Passwords/Common-Credentials/10-million-password-list-top-500.txt\
