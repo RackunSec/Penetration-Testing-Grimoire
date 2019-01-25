@@ -99,4 +99,4 @@ root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 Use the BurpSuite Community Edition to analyze all requests from the server. 
 1. Turn on the proxy for Intercept in the BurpSuite CE window
 2. Set the proxy in your web browser.
-3. Make an HHTP request to multiple resources in the web application and analyze the results for more clues.
+3. Make an HTTP request to multiple resources in the web application and analyze the results for more clues.
