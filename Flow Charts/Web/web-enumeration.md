@@ -90,7 +90,7 @@ Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.p
 root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 ```
 2. **SQL Injection** - [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
-3. **File Inclusion** - Fuzz Web GET and POST parameters.
+3. **File Inclusion** - Fuzz Web GET and POST parameters. You can also use **BurpSuite CE** in the *Intruder* tab to attempt an LFi Attack on the target system's HTTP requests parameters.
    1. `?file=foo.txt` may be vulnerable to local file includion (LFi)
    2. `?page=foo` may be vulnerable to local file inclusion (LFi)
    3. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
