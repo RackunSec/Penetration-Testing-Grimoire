@@ -85,15 +85,16 @@ By right clicking in our browser on the site, choosing inspect element, clicking
 Use this version number to search exploit resources, such as [exploit-db.com](exploit-db.com) for known vulnerabilties.
 ## 5. OWASP Top 10 Project
 Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project] web vulnerabilties for each input handler found on the web application.
-1. *Directory Traveral* - [DotDotPwn](https://github.com/wireghoul/dotdotpwn) to attempt directory traversal
+1. **Directory Traversal** - [DotDotPwn](https://github.com/wireghoul/dotdotpwn) to attempt directory traversal
 ```
 root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 ```
-2. *SQL Injection* - [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
-3. *File Inclusion* - Fuzz Web GET and POST parameters.
+2. **SQL Injection** - [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
+3. **File Inclusion** - Fuzz Web GET and POST parameters.
    1. `?file=foo.txt` may be vulnerable to local file includion (LFi)
    2. `?page=foo` may be vulnerable to local file inclusion (LFi)
    3. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
+4. **Session Management** - Use the [Quick Cookie Manager](https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/) Firefox plugin to analyze and set cookies.
 ## 6. Burp Suite CE
 Use the BurpSuite Community Edition to analyze all requests from the server. 
 1. Turn on the proxy for Intercept in the BurpSuite CE window
