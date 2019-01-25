@@ -90,4 +90,12 @@ Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.p
 root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 ```
 2. [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
-3. ...
+3. Fuzz Web GET and POST parameters.
+   1. `?file=foo.txt` may be vulnerable to local file includion (LFi)
+   2. `?page=foo` may be vulnerable to local file inclusion (LFi)
+   3. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
+## 6. Burp Suite CE
+Use the BurpSuite Community Edition to analyze all requests from the server. 
+1. Turn on the proxy for Intercept in the BurpSuite CE window
+2. Set the proxy in your web browser.
+3. Make an HHTP request to multiple resources in the web application and analyze the results for more clues.
