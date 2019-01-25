@@ -65,7 +65,7 @@ We also need to enumerate a valid username. We can hlearn how to do so from the 
 `root@kali:~# hydra (TARGET IP ADDRESS) smtp -l (USERNAME) -P /path/to/wordlist.txt -V -s (TARGET PORT)`
 
 ## MySQL
-To brute force MySQL services (usually running on port 3306 of the target system), use thf ollowing syntax with THC-Hydra,
+To brute force MySQL services (usually running on port 3306 of the target system), use the following syntax with THC-Hydra,
 ```
 root@attacker-system:~# hydra -l root -P /path/to/wordlist.txt (TARGET IP ADDRESS) mysql
 ```
