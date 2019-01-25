@@ -87,7 +87,7 @@ Use this version number to search exploit resources, such as [exploit-db.com](ex
 Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project] web vulnerabilties for each input handler found on the web application.
 1. [DotDotPwn](https://github.com/wireghoul/dotdotpwn) to attempt directory traversal
 ```
-root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http
+root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 ```
 2. [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
 3. ...
