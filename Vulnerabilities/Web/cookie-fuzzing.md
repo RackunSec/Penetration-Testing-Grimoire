@@ -7,6 +7,7 @@ For instance, say that a web application has a particular cookie vulnerabiltiy t
  if(isset($_COOKIE['lang']){
   include("lang/".$_COOKIE['lang']);
  }
+ ... (SNIPPED) ...
 ```
 Just by looking at that code, we can see the vulnerability of local file inclusion. If we set our Cookie as so,
 ```
