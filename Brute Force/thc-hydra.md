@@ -63,3 +63,9 @@ To brute force SMTP via SSL Authentication, you must first enumerate which port 
 We also need to enumerate a valid username. We can hlearn how to do so from the [SMTP User Enumeration Module](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/smtp-user-enumeration.md). After gathering these two pieces of information, we can use `hydra` to try to brute force the authentication like so:
 
 `root@kali:~# hydra (TARGET IP ADDRESS) smtp -l (USERNAME) -P /path/to/wordlist.txt -V -s (TARGET PORT)`
+
+## MySQL
+To brute force MySQL services (usually running on port 3306 of the target system), use thf ollowing syntax with THC-Hydra,
+```
+root@attacker-system:~# hydra -l root -P /path/to/wordlist.txt (TARGET IP ADDRESS) mysql
+```
