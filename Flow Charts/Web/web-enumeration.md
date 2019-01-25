@@ -1,5 +1,5 @@
 # Web Service Enumeration Flow Chart
-Let's draw out recommended steps to take when we find a web service on a target system during CTF, or penetration testing. THis can be found via NMAP scans or otherwise. I have anothewr file with tool-specific details [listed here](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/HTTP/http-enumeration.md) that I recommend reading as well.
+Let's draw out recommended steps to take when we find a web service on a target system during CTF, or penetration testing. This can be found via NMAP scans or otherwise. I have anothewr file with tool-specific details [listed here](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/HTTP/http-enumeration.md) that I recommend reading as well.
 ### Edit the /etc/hosts File
 Setting the hostname with the IP address will allow you to make HTTP requests with the hostname to the target system. This is used in enumerating any virtual hosts / domains that the target system may be hosting. A single IP address can hosts many web sites by handliong the incoming HTTP request information and mapping the hostname to an area on the file system.
 
@@ -83,3 +83,8 @@ Server: Apache/2.4.10 (Debian)
 By right clicking in our browser on the site, choosing inspect element, clicking the Network tab and refreshing the page. Then select the index file in the bottom panel and view the headers on the right side of the developer tools box.
 
 Use this version number to search exploit resources, such as [exploit-db.com](exploit-db.com) for known vulnerabilties.
+## 5. OWASP Top 10 Project
+Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project] web vulnerabilties for each input handler found on the web application.
+1. DotDotPwn to attempt directory traversal
+2. SQLMap can be used to test advanced SQL Injection
+3. ...
