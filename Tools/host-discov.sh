@@ -13,6 +13,6 @@ if [[ "$range" == "" ]] # need to pass an argument.
   usage;
 fi # okay go:
 printf "[*] Got ${first3Octs} - ${range}\n";
-for oct in $(seq $range); do
- ping -c 1 ${first3Octs}.${oct} &>/dev/null && printf "[*] Online: ${first3Octs}.${oct}\n"
+for oct in $(seq $range); do # "is alive." like the old days of Sun <3
+ ping -c 1 ${first3Octs}.${oct} &>/dev/null && printf "[*] ${first3Octs}.${oct} is alive.\n"
 done
