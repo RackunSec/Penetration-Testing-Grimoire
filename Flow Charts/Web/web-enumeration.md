@@ -17,6 +17,18 @@ There are a few different ways to inspect a web application / web page.
 1. Hit CTRL+U and analyze the source code of then entire rendered page.
 2. Right click and inspect elements
 This can often lead to clues as to the development process, leak info in comments, or, very rarely, leak credentials.
+### Inspect all Images
+Make sure to download and inspect all images from the site, especially if this is a CTF exercise. Use tools such as,
+* binwalk
+* steghide
+* stegcracker
+* strings
+#### Reverse Google Image Search
+Also, for more clues on what type of framework, web service, etc, is running on the target, it may benefit to do a simple reverse Google Image Search. Do this on any
+* icons - favicon.ico
+* thumbnails
+* logos
+* splash images
 ### Developer Tools
 Hit F12 to enter the developer tools.
 1. Look at the resources that are being accessed by the web site/web app.
