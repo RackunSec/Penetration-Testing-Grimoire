@@ -25,3 +25,14 @@ wnl8:/pwnt/smtp#
 ```
 
 As you can see, when a valid user is identified by the mail server via the `VRFY` command, it returned `252 2.0.0 (USERNAME)` and when an invalid user was tested via `VRFY` the service returned `550 5.1.1 (USERNAME)`
+
+## SMTP User Enumeration Automation
+We can easily script this process by echoing the VRFY command directly into a netcat connection command for each name in a word list against the target server as so,
+```
+#!/bin/bash
+while read user;
+ do
+  echo VRFY $user | nc (TARGET IP ADDRESS) (TARGET SMTP PORT) | egrep "^252"
+ done
+> /path/to/usernames.txt
+```
