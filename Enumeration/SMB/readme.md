@@ -1,23 +1,29 @@
 # SMB Scanning
 This module contains method sof gathering information from targets that have Samaba, or the Windows sharing service (SMB) enabled.
 ## Enum4LINUX
-
-`enum4linux (TARGET IP)`
+[Enum4Linux](https://github.com/portcullislabs/enum4linux) can be used to gather information from a target system via the SMB protocol as so,
+```
+root@attacker-machine:~# enum4linux (TARGET IP)
+```
 
 ## NBTScan
-
-```nbtscan (TARGET IP ADDRESS)```
+[NBTScan](http://www.unixwiz.net/tools/nbtscan.html) can be used to gather information from a target system via the SMB protocol as so,
+```
+root@attacker-machine:~# nbtscan (TARGET IP ADDRESS)
+```
 
 ## SMBMap
-The basic syntax fo `smbmap` is as follows,
-```smbmap -H (TARGET IP ADDRESS)```
+[SMBMap](https://github.com/ShawnDEvans/smbmap) is ool that can gather information about a remote shared FS via the SMB protocol. The basic syntax for`smbmap` is as follows,
+```
+root@attacker-machine:~# smbmap -H (TARGET IP ADDRESS)
+```
 But, if you have access to an NTLM hash, let's use `0B186E661BBDBDFFFFFFFFFFF8B9FD8B` for example, you can append the common Windows NULL string along with a colon, `aad3b435b51404eeaad3b435b51404ee` to it as,
 ```
 aad3b435b51404eeaad3b435b51404ee:0B186E661BBDBDFFFFFFFFFFF8B9FD8B
 ```
 and pass along the username, let's say `user123` for example, of the credentials to get more SMB map information like so,
 ```
-wnl8:/pwnt/windows/smbmap# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b51404ee:0B186E661BBDBDFFFFFFFFFFF8B9FD8B' -H (TARGET IP ADDRESS)
+root@attacker-machine:~# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b51404ee:0B186E661BBDBDFFFFFFFFFFF8B9FD8B' -H (TARGET IP ADDRESS)
 [+] Finding open SMB ports....
 [+] Hash detected, using pass-the-hash to authentiate
 [+] User session establishd on (TARGET IP ADDRESS)...
@@ -29,17 +35,15 @@ wnl8:/pwnt/windows/smbmap# ./smbmap.py -u user123 -p 'aad3b435b51404eeaad3b435b5
 '
 ```
 ## SMBClient
-SMBClient is very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samba (LINUX)/Windows shares.
+[MBClient](https://www.samba.org/samba/docs/current/man-html/smbclient.1.html) very bad software and I believe it's because there are too many variables at stake when trying to successfully use it. Your results may vary, and please do not take any authentication or listing errors as true. Test your enumerated credentials and data using other tools as well. This section describes methods for mounting and listing directories in Samba (LINUX)/Windows shares.
 
 Sometimes, it is required to specify the SMB version number using the `-m smb(n)` argument for the NT service to allow a connection.
 
 ### Target information
-Attempt to mapp the share without any credentials,
-
+Attempt to map the share without any credentials (a NULL session)
 ```
 root@attacker-machine:~# smbclient -N -L (TARGET IP)
 ```
-
 ### Mounting shares
 To mount a share without knowing any valid users (anonymous/guest login),
 ```
