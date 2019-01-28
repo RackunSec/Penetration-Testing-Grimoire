@@ -16,7 +16,13 @@ Things to look for in the compromised user's home directory include,
 * Potentially vulnerable homebrew development code
 * Strange permissions
 * `~/.ssh` private key files
-* cached credentials `grep -iR 'passw'`
+* cached credentials - `grep -iR 'passw'`
+### Web Root
+Things to look for in the web root of a compromised system are,
+* Credentials for databases in PHP files - `grep -iR passw` in `/var/www/`
+* Strange permissions
+    * Does the root user own files there?
+    * Are any files SUID to root?
 ### Check The Kernel
 Does the Linux system's kernel have any known vulnerabilities and published exploits in exploit-db.com ?
 ```
