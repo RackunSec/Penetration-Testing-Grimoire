@@ -36,16 +36,18 @@ Sometimes, it is required to specify the SMB version number using the `-m smb(n)
 ### Target information
 Attempt to mapp the share without any credentials,
 
-```smbclient -N -L (TARGET IP)```
+```
+root@attacker-machine:~# smbclient -N -L (TARGET IP)
+```
 
 ### Mounting shares
 To mount a share without knowing any valid users (anonymous/guest login),
 ```
-smbclient "\\\\(TARGET IP)\\IPC\$\\" -N
+root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N
 ```
 To mount a share with an enumerated username,
 ```
-smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)
+root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)
 ```
 To mount a share with a username and stolen NTLM hash,
 ```
@@ -58,10 +60,14 @@ root@attacker-machine:~# smbclient --user=arm554 --pw-nt-hash -m smb3 -L 172.16.
 
 ### File Transfers
 To get a file from the target server,
-
-`get "filename with or without spaces.txt"`
-
+```
+smb> get "filename with or without spaces.txt"`
+```
 ## NMAP
 The NMAP Scripting Engine (NSE) can be used to brute-force accounts on the server,
-
-`nmap --script smb-brute.nse -p445 (TARGET IP)`
+```
+root@attacker-machine:~# nmap --script smb-brute.nse -p445 (TARGET IP ADDRESS)
+```
+Another Nmap NSE script tyhat we can try will attempt to gather information on SMB NULL sessions and users as so,
+```
+root@attacker-machine:~# nmap -p 139.445 --script smb-enum-users (TARGET IP ADDRESS)
