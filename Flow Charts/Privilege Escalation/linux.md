@@ -11,6 +11,17 @@ These tools include,
 
 ## Manual Process
 In this workflow we will examine steps to take manually on a compromised target system in attempt to get administrative access.
+### Home Directory
+Things to look for in the compromised user's home directory include,
+* Potentially vulnerable homebrew development code
+* Strange permissions
+* `~/.ssh` private key files
+* cached credentials `grep -iR 'passw'`
+### Check The Kernel
+Does the Linux system's kernel have any known vulnerabilities and published exploits in exploit-db.com ?
+```
+user@target-machine:$ uname -a
+```
 ### Running Processes
 Some running processes could easily lead to privilege escalation. Check the running processes like so,
 ```
