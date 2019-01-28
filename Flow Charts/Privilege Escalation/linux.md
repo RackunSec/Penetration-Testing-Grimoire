@@ -31,7 +31,12 @@ Some of the Password Management files that we should check are,
 * Check the `/etc/passwd` file for user information. 
 * Check if we can read `/etc/shadow` - whoops, almost never the case, but includes hashes that may be cracked easily.
 ### All Home Directories
-Are any of the directories and dat in the `/home` or `/root` available for read/write? 
+Are any of the directories and dat in the `/home` or `/root` available for read/write? If so, check for the following,
+* The flag files, duh.
+* The `.ssh` directories for private/public keys.
+* The `.bash_history` files for clues to how the system was used before you got there.
+* Any potentially vulnerable homebrew code
+* Cached credentials from the user's browsers, etc - `grep -iR 'passw'`
 ### Running Processes
 Some running processes could easily lead to privilege escalation. Check the running processes like so,
 ```
