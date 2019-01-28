@@ -32,7 +32,7 @@ We can easily script this process by echoing the VRFY command directly into a ne
 #!/bin/bash
 while read user;
  do
-  echo VRFY $user | nc (TARGET IP ADDRESS) (TARGET SMTP PORT) | egrep "^252"
+  echo VRFY $user | nc -nv -w (TARGET IP ADDRESS) (TARGET SMTP PORT) 2>/dev/null | egrep "^252"
  done
 < /path/to/usernames.txt
 ```
