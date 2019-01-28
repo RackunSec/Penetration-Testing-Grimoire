@@ -5,6 +5,8 @@ A remote buffer overflow is a way of passing input into a remote handler than do
 You can download the Windows 7 (64bit) VM [from Microsoft directly](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/).
 ### Install Immunity Debugger
 You can download the Immunity Debugger application that we will use to analyze what the application is doing [from here.](https://www.immunityinc.com/products/debugger/)
+### Install Mona.py
+Download `mona.py` from [here](https://github.com/corelan/mona) and place it into the directory, `C:\Program Files(x86)\Immunity Debugger\PyCommands\`. This will aloow us to use `Mona.py` directly from the command input in Immunity Debugger.
 ### Disable the Windows VM FW
 For ICMP and HTTP requests to work from our attacker machine to our Windows 7 box, we will need to first diable the firewall on the Windows VM. You will recognize the issue when you try to ping the Attacker machine from the Windows VM, then vice versa. The latter will not work out-of-the-box.
 ## Running Brainpan Locally
