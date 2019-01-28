@@ -34,5 +34,5 @@ while read user;
  do
   echo VRFY $user | nc (TARGET IP ADDRESS) (TARGET SMTP PORT) | egrep "^252"
  done
-> /path/to/usernames.txt
+< /path/to/usernames.txt
 ```
