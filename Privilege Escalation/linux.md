@@ -30,6 +30,10 @@ Some of the aforementioned applciations which can be escaped from may have a SUI
 ```
 user@target-machine:~$ find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {} \; 2>/dev/null
 ```
+To filter out directories we can use a regexp like so,
+```
+user@target-machine:~$ find / \( -perm -2000 -o -perm -4000 \) -exec ls -ld {} \; 2>/dev/null | egrep -v '^d`
+```
 Search for the sticky bit:
 ```
 user@target-machine:~$ find / -perm -u=s -type f 2>/dev/null 
