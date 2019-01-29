@@ -18,7 +18,7 @@ The #1 step for binary analysis on our Attacker system is to run the `file` comm
 1. What type of file we have, in our case ELF 32-bit
 2. Which libraries/interpreters are required for the binary to execute, in our case was , `/lib/ld-linux.so.2`
 
-So, to get `/lib/ld-linux.so.2` installed on our local Attacker system, we will need the `libc6-i686` package.
+So, to get [`/lib/ld-linux.so.2`](https://packages.debian.org/stretch/libc6-i386) installed on our local Attacker system, we will need the `libc6-i686` package.
 ```
 root@attacker-machine:~# apt install libc6-i386
 ```
