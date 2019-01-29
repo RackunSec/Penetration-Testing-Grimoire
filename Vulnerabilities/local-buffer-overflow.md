@@ -31,7 +31,28 @@ passed.
 ```
 So, we know that the application does handle input.
 ### Fuzz it
-Next, we simply pass the application input in increasing sizes until we get it to Segmentation Fault.
+Next, we simply pass the application input in increasing sizes until we get it to Segmentation Fault. I wrote a nice little script that will determnine the buffer size for us below. Simply pass the binary's name, n our case `validate`, as an argument.
 ```
-root@attacker-machine:~# ./validate
+#!/bin/bash
+# Standard In C program fuzzer
+# 2019 WeakNet Labs, Douglas Berdeaux
+buf="" # this will be the buffer overflow
+appname=$1 # pass to me the app name
+while [ 1 ]
+ do
+  buf+="A"
+  #printf "[*] buf is now: $buf\n";
+  seg=$(./${appname} $buf || echo "0x031337" | egrep "0x031337"| wc -l)
+  if [[ "$seg" == "1" ]]
+   then
+    printf "[!] Segmentation Fault Successful! ($(echo -n $buf|wc -m)) bytes.\n"
+    exit;
+  fi
+done;
+```
+and the output,
+```
+root@attacker-machine:~# ./stdin-fuzz.sh validate
+[!] Segmentation Fault Successful! (112) bytes.
+root@attacker-machine:~#
 ```
