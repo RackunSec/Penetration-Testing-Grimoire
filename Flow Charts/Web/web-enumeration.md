@@ -12,6 +12,8 @@ E.g.:
 ```
 ## 1. Browse to the Web App
 First, go to the service using a web browser and view it with eyeballs/or if impaired using a text browser or `curl`. This will often present clues to frameworks or other services that may be employed by the target system. Remember, that during the enumertaion phase of any service, **leave no stone unturned.**
+### Robots.txt
+Often this file will contain directories, files or other resources that the author does not intend to be public.
 ### View Page Sources
 There are a few different ways to inspect a web application / web page.
 1. Hit CTRL+U and analyze the source code of then entire rendered page.
