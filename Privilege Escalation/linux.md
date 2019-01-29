@@ -85,3 +85,8 @@ Compile it so that the binary is on the mounted NFS share and run it,
 ```
 root@attacker-machine:/mnt/nfs:# gcc execute.c -m32 -o execute
 ```
+## Cron Jobs
+Do any cron jobs run that execute scripts or binaries that we have write access to?
+```
+ls -la /etc/cron*
+```
