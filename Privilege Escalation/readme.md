@@ -4,7 +4,7 @@ These cheat sheets will provide us with tools, steps to take, and more about pri
 * [*Tools*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Privilege%20Escalation/Tools)
 
 ## Microsoft Windows
-* [*Microsoft Windows*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/windows.md)
+* [*Microsoft Windows*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Flow%20Charts/Privilege%20Escalation/windows.md)
 ## Linux
 * [*Linux*](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/linux.md)
 
