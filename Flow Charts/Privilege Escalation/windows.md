@@ -164,6 +164,12 @@ The access rights that we are looking for in the service to fully exploit it are
 * GENERIC_WRITE
 * GENERIC_ALL
 The important thing to remember is that we find out what user groups our compromised session belongs to. As mentioned previously "Power Users" is also considered to be a low privileged user group. "Power Users" have their own set of vulnerabilities, Mark Russinovich has written a very interesting article on the subject.
+
+Do any services have unquoted paths with spaces?
+```
+C:> wmic service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:windows\" |findstr /i /v """
+C:> gwmi -class Win32_Service -Property Name, DisplayName, PathName, StartMode | Where {$_.StartMode -eq "Auto" -and $_.PathName -notlike "C:\Windows*" -and $_.PathName -notlike '"*'} | select PathName,DisplayName,Name
+```
 ### Windows Processes
 We can gather information on the currently-running processes with the following commands,
 ```
@@ -187,6 +193,8 @@ C:> accesschk.exe -uwdqs "Authenticated Users" c:\
 C:> accesschk.exe -uwqs Users c:\*.*
 C:> accesschk.exe -uwqs "Authenticated Users" c:\*.*
 ```
+## Kernel Exploits
+[Here is a list](https://github.com/SecWiki/windows-kernel-exploits) of fully functional Microsoft Windows Kernal exploits that we can attempt.
 # References
 In this document, I referenced the following resources,
 * [*http://www.fuzzysecurity.com/tutorials/16.html*](http://www.fuzzysecurity.com/tutorials/16.html)
