@@ -22,8 +22,9 @@ If we happne to find no results, we can turn to a UDP scan with NMAP like so,
 root@attacker-machine:~# nmap -r -vv -sU (TARGET IP ADDRESS)
 ```
 ## SMB
-If we happne to find a service that supports the SMB protocol on the target system, we can use the folloing wootls to attempt to enumerate information from the target system.
-#### 1. Smbclient
-#### 2. SMBMap
-#### 3. Enum4Linux
-#### 4. NBTScan
+If we happnen to find a service that supports the SMB protocol on the target system, we can use the cheat sheet to attempt to enumerate information from the target system.
+* [SMB Cheat Sheet](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Enumeration/SMB)
+
+## SNMP
+If we happnen to find a service that supports SNMP on the target system, we can use the cheat sheet to attempt to enumerate information from the target system.
+* [SNMP Cheat Sheet](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/snmp.md)
