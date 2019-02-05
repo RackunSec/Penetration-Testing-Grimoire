@@ -23,11 +23,11 @@ root@attacker-machine:~# nmap -r -vv -sU (TARGET IP ADDRESS)
 ```
 ## SMB
 If we happen to find a service that supports the SMB protocol on the target system, we can use the cheat sheet to attempt to enumerate information from the target system.
-* [SMB Cheat Sheet](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Enumeration/SMB)
+* [Complete SMB Enumeration](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Enumeration/SMB)
 
 ## SNMP
 If we happen to find a service that supports SNMP on the target system, we can use the cheat sheet to attempt to enumerate information from the target system.
-* [SNMP Cheat Sheet](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/snmp.md)
+* [Complete SNMP Enumeration](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/snmp.md)
 
 ## Web Services
 Web services are often the entry point for the initial foothold on a lot of CTF and pen test exercises. Below are some steps to help enumerate information about a service or host using discovered web services.
