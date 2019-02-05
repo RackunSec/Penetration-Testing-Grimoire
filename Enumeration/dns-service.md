@@ -2,6 +2,28 @@
 Often times, if DNS is running on port 53, you can gather additional information from nameservers, find new websites via virtual hosting and much more. This sheet will offer syntax that you can use to utilize a DNS service on a target host. 
 
 **NOTE:** Even though an IP address resolves to a hostname and vice versa, a virtual hosting system can resolve many hostnames (domain names) to a sinlg eIP address. So, browsing to the Ip address of a web site will often respond with something other than the web site. No stone shall be left unturned in our quest for information gathering of a target system.
+## Subdomains
+We can use [wfuzz]() to fuzz subdomains using the following syntax,
+```
+root@attacker-machine:~# ./wfuzz -u https://(TARGET DOMAIN NAME) -w /infosec/wordlists/SecLists/Discovery/DNS/subdomains-list-5000.txt -H "Host: FUZZ.(TARGET DOMAIN NAME)"
+```
+Then, filter out the commons, flase p;ositives using wfuzz's great filtering system,
+```
+root@attacker-machine:~# ./wfuzz -u https://(TARGET DOMAIN NAME) -w /infosec/wordlists/SecLists/Discovery/DNS/subdomains-list-5000.txt -H "Host: FUZZ.(TARGET DOMAIN NAME)"
+**
+* Wfuzz
+**
+
+Target: https://(TARGET DOMAIN)
+Total requests: 100
+
+==
+ID
+==
+000001:   C=301   9 L   28 W   320 Ch   "mail"
+... (SNIPPED) ...
+```
+
 ## NSLookup
 You can use `nslookup` to see if any results are returned for internal IP addresses, such as `127.0.0.1` as so,
 ```
