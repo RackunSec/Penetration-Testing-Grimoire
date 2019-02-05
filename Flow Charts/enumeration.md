@@ -36,8 +36,10 @@ Web services are often the entry point for the initial foothold on a lot of CTF 
 * [Complete HTTP Enumeration](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/HTTP/http-enumeration.md)
 * [Fuzzing Cookies](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/HTTP/fuzzing-cookies.md)
 * [Wordpress Enumeration](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/HTTP/wordpress-cms.md)
+### Custom Tools
+Below are custom tool sthat I built that come with the Grimoire project package. These can be used to test web services.
 * [Tool - Brute Force Files](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bf-files-http.sh)
 * [Tool - Brute for POST usernames](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/bf-http-post-usernames.sh)
 * [Tool - Brute Force HTTP Extensions](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/http-ext-test.sh)
 * [Tool - Brute Force PHP pages](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/php-get-bf.sh)
-* [Tools - Robots.txt.sh](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/robots.txt.test.sh)
+* [Tool - Robots.txt.sh](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools/robots.txt.test.sh)
