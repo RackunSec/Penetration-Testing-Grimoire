@@ -62,6 +62,50 @@ Browser credentials could lead to escalation if the credentials are reused on ot
 ### PowerUp
 The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc) PowerSploit module can be used to search for injectable DLLs, service permissions, autologin credentials, web configuration credentials and many other areas of the OS and FS that can be used specifically for privilege escalation.
 
+### PowerLess
+[Powerless](https://github.com/M4ximuss/Powerless) is a batch script that will do Windows enumeration and save the output to a file. NOTE: *Also (although the script will run without it), it recommened you copy (an older verison of) AccessChk.exe to the same location. It is recommended you use an older version of AccessChk.exe as the latest verison will not work on some older Windows machines.* You can get Accesschk.exe from [here](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/windows-binaries/accesschk.exe).
+
+### Windows Exploit Suggester
+[The Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester) is a simple python script that will utilize the output of the `systeminfo` DOS command. Below you will find the basic usage,
+```
+C:> systeminfo > systeminfo.txt
+```
+```
+$ ./windows-exploit-suggester.py --update
+[*] initiating...
+[*] successfully requested base url
+[*] scraped ms download url
+[+] writing to file 2014-06-06-mssb.xlsx
+[*] done
+```
+install python-xlrd, 
+```
+root@attacker-machine:~# pip install xlrd --upgrade
+```
+Now, run the Exploit Suggester on the systeminfo.txt file as so,
+```
+root@attacker-machine:~# ./windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo systeminfo.txt 
+[*] initiating...
+[*] database file detected as xls or xlsx based on extension
+[*] reading from the systeminfo input file
+[*] querying database file for potential vulnerabilities
+[*] comparing the 15 hotfix(es) against the 173 potential bulletins(s)
+[*] there are now 168 remaining vulns
+[+] windows version identified as 'Windows 7 SP1 32-bit'
+[*] 
+[M] MS14-012: Cumulative Security Update for Internet Explorer (2925418) - Critical
+[E] MS13-101: Vulnerabilities in Windows Kernel-Mode Drivers Could Allow Elevation of Privilege (2880430) - Important
+[M] MS13-090: Cumulative Security Update of ActiveX Kill Bits (2900986) - Critical
+[M] MS13-080: Cumulative Security Update for Internet Explorer (2879017) - Critical
+[M] MS13-069: Cumulative Security Update for Internet Explorer (2870699) - Critical
+[M] MS13-059: Cumulative Security Update for Internet Explorer (2862772) - Critical
+[M] MS13-055: Cumulative Security Update for Internet Explorer (2846071) - Critical
+[M] MS13-053: Vulnerabilities in Windows Kernel-Mode Drivers Could Allow Remote Code Execution (2850851) - Critical
+[M] MS13-009: Cumulative Security Update for Internet Explorer (2792100) - Critical
+[M] MS13-005: Vulnerability in Windows Kernel-Mode Driver Could Allow Elevation of Privilege (2778930) - Important
+[*] done
+```
+
 ### AlwaysInstallElevated
 This option in the Windows registry will aloow us to execute a binary that does `execv()` and adds an admin user no matter what privilege we current are. This will only work if both registry keys contain "AlwaysInstallElevated" with DWORD values of 1.
 ```
