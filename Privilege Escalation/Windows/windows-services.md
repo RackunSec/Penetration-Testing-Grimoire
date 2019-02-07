@@ -61,3 +61,18 @@ C:> accesschk.exe -uwdqs "Authenticated Users" c:\
 C:> accesschk.exe -uwqs Users c:\*.*
 C:> accesschk.exe -uwqs "Authenticated Users" c:\*.*
 ```
+## Unquoted Service Binary Paths
+In Windows environments when a service is started the system is attempting to find the location of the executable in order to successfully launch the service. If the executable is enclosed in quote tags “” then the system will know where to find it. However if the path of where the application binary is located doesn’t contain any quotes then Windows will try to find it and execute it inside every folder of this path until they reach the executable.
+
+This can be abused in order to elevate privileges if the service is running under SYSTEM privileges. The following command can be used to quickly identify if any Windows services have unquoted paths,
+```
+C:> wmic service get name,displayname,pathname,startmode |findstr /i “auto” |findstr /i /v “c:\windows\\” |findstr /i /v “””
+```
+Next, simply check the EUID of the running process. If it is SYSTEM, then we should attempt to exploit the unquoted path vulnerability. First, we need to use `icacls` to ensure that we have write access to any of the binary path's directories. If we do, we simply need to create a payload using MSFVenom, name it the same name as the binary in the unquoted path, and place it into a directory that is located in the path of the unquote binary path. 
+
+We can then use `sc` to stop and start the service like so,
+```
+C:> sc stop ServiceName
+C:> sc start ServiceName
+```
+But, ensure that the listener of our reverse connection, if used as payload during the binary creation process with MSFVenom, is running on the right port of our attacker machine.
