@@ -11,5 +11,8 @@ C:\> runas /savecred /user:Administrator "cmd.exe /c type C:\Users\Administrator
 ``` 
 6. [Credential Searching](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/credential-search.md) - Sometimes, privilege escalation may be as easy as searching for credentials on the target system. This sheet provides many ares and commands to use and check during the privilege escalation process.
 7. [Windows Services](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/windows-services.md) - Many times we can exploit services running on Windows machines that have weak permissions for the binaries, files, or configurations.
-8. [Windows Kernel Exploits](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/windows-kernel-exploits.md) - We can try to download and run pre-compiled Windows Kernel exploits.
+8. [Windows Kernel Exploits](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/windows-kernel-exploits.md) - We can try to download and run pre-compiled Windows Kernel exploits. We can also use Google to search the [Exploit-DB](https://exploit-db.com/) database with an example of the Google Dork to use below,
+```
+site:exploit-db.com privilege escalation windows 7
+```
 9. [Standalone PrivEsc Binaries](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/privesc-windows-binaries.md) - This is a list of binaries that can be infiltrated to target systems to test for weaknesses that may lead to successful privilege escalation on Microsoft Windows systems. This list includes EXE binaries and scripts.
