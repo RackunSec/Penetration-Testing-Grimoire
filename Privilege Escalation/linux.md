@@ -82,6 +82,10 @@ user@target-machine:~$ dmesg | grep -i nfs
 [    3.961057] NFSD: Using /var/lib/nfs/v4recovery as the NFSv4 state recovery directory
 [    3.961244] NFSD: starting 90-second grace period (net c16580c0)
 ```
+Another dead give-away is the port being open for NFS. We would see the following line in our [NMAP](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Enumeration/nmap-port-scanning.md) output,
+```
+2049/tcp open     nfs_acl      syn-ack ttl 64      2-3 (RPC #100227)
+```
 Next, we can verify the location of the NFS mount point on the target system by running the following command on the target system,
 ```
 user@target-system:~$ /sbin/showmount -e (TARGET IP ADDRESS)
