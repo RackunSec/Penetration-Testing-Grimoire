@@ -56,19 +56,16 @@ C:> wmic qfe get Caption, Description, HotFixID, InstalledOn
 C:> wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB.." /C:"KB.."
 ```
 Then do a search in Exploit-DB with `searchsploit` in Kali Linux.
-## Browser Credentials
-Browser credentials could lead to escalation if the credentials are reused on other systems and services. 
-
+## Powershell Scripts
+Below are a few different Powershell scripts and resources to test during the privilege escalation phase of the penetration test.
 ### PowerUp
 The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc) PowerSploit module can be used to search for injectable DLLs, service permissions, autologin credentials, web configuration credentials and many other areas of the OS and FS that can be used specifically for privilege escalation.
-
 ### JAWS
 [JAWS](https://github.com/411Hall/JAWS) is a PowerShell script designed to help penetration testers (and CTFers) quickly identify potential privilege escalation vectors on Microsoft Windows systems. It is written using PowerShell 2.0 so 'should' run on every Windows version since Windows 7.
-
 ### PowerLess
 [Powerless](https://github.com/M4ximuss/Powerless) is a batch script that will do Windows enumeration and save the output to a file. NOTE: *Also (although the script will run without it), it recommened you copy (an older verison of) AccessChk.exe to the same location. It is recommended you use an older version of AccessChk.exe as the latest verison will not work on some older Windows machines.* You can get Accesschk.exe from [here](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/windows-binaries/accesschk.exe).
 
-### Windows Exploit Suggester
+## Windows Exploit Suggester
 [The Windows Exploit Suggester](https://github.com/GDSSecurity/Windows-Exploit-Suggester) is a simple python script that will utilize the output of the `systeminfo` DOS command. Below you will find the basic usage,
 ```
 C:> systeminfo > systeminfo.txt
@@ -109,22 +106,20 @@ root@attacker-machine:~# ./windows-exploit-suggester.py --database 2014-06-06-ms
 [*] done
 ```
 
-### AlwaysInstallElevated
+## Registry Value for "AlwaysInstallElevated"
 This option in the Windows registry will aloow us to execute a binary that does `execv()` and adds an admin user no matter what privilege we current are. This will only work if both registry keys contain "AlwaysInstallElevated" with DWORD values of 1.
 ```
 C:\Windows\system32> reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
 C:\Windows\system32> reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
 ```
-### RunAs
+## RunAs DOS Command
 You can try the `runas` command with the `/savecred` in hopes that an admin credential has been saved for scripting purposes. For instance, spawn a new shell and write the contents of a protected file to one that you can read, like so,
 ```
 C:\> runas /savecred /user:Administrator "cmd.exe /c type C:\Users\Administrator\Desktop\flag.txt > C:\Users\PwnedUser\Desktop\flag.txt"
 ```
 If the credentials are in fact stored, you will get a new file in the pwned user's desktop called "flag.txt"
 
-### WMIC
-Windows Management Instrumentation Console can sometimes be leveraged for privilege escalation.
-
+## Simple Credential Searches
 ### Mass Install of Windows to Labs
 Sometimes the mass-install process of many Microsoft Windows machines in the same environment can leave behind log files with sensitive information in them. We can check a few of these files if they exist on the file system onthe compromised target Windows machine,
 ```
@@ -177,7 +172,7 @@ WiFi Passwords
 C:> netsh wlan show profile
 C:> netsh wlan show profile (SSID) key=clear
 ```
-### Windows Services
+## Windows Services
 Next, we can try Microsoft Windows Services with the following command,
 ```
 C:> sc qc Sploiler
