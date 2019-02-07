@@ -16,3 +16,4 @@ C:\> runas /savecred /user:Administrator "cmd.exe /c type C:\Users\Administrator
 site:exploit-db.com privilege escalation windows 7
 ```
 9. [Standalone PrivEsc Binaries](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/privesc-windows-binaries.md) - This is a list of binaries that can be infiltrated to target systems to test for weaknesses that may lead to successful privilege escalation on Microsoft Windows systems. This list includes EXE binaries and scripts.
+10. [DLL Reflective Injection](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/dll-injection.md) - It may be possible to create a malicious DLL usingf MSFVenom and inject that DLL into a currently running process which will execute our code as the EUID of the process.
