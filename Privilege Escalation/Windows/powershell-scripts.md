@@ -10,3 +10,5 @@ The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/
 [Session Gopher](https://github.com/Arvanaghi/SessionGopher) - is a PowerShell tool that finds and decrypts saved session information for remote access tools. 
 ## Sherlock
 [Sherlock](https://github.com/rasta-mouse/Sherlock) - PowerShell script to quickly find missing software patches for local privilege escalation vulnerabilities.
+## PrivEsc
+[PrivEsc](https://github.com/enjoiz/Privesc) - PowerShell script that finds misconfiguration issues which can lead to privilege escalation. Batch script uses [accesschk.exe](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Privilege%20Escalation/windows-binaries) from Sysinternals. This executable is mandatory and can be downloaded with this GitHUB repository in `/Privilege Escalation/windows-binaries/`
