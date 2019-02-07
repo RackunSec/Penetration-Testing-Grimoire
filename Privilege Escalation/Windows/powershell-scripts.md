@@ -8,3 +8,5 @@ The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/
 [Powerless](https://github.com/M4ximuss/Powerless) is a batch script that will do Windows enumeration and save the output to a file. NOTE: *Also (although the script will run without it), it recommened you copy (an older verison of) AccessChk.exe to the same location. It is recommended you use an older version of AccessChk.exe as the latest verison will not work on some older Windows machines.* You can get Accesschk.exe from [here](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/windows-binaries/accesschk.exe).
 ## Session Gopher
 [Session Gopher](https://github.com/Arvanaghi/SessionGopher) - is a PowerShell tool that finds and decrypts saved session information for remote access tools. 
+## Sherlock
+[Sherlock](https://github.com/rasta-mouse/Sherlock) - PowerShell script to quickly find missing software patches for local privilege escalation vulnerabilities.
