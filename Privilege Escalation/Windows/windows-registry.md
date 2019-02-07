@@ -5,3 +5,4 @@ This option in the Windows registry will aloow us to execute a binary that does 
 ```
 C:\Windows\system32> reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
 C:\Windows\system32> reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer\AlwaysInstallElevated
+```
