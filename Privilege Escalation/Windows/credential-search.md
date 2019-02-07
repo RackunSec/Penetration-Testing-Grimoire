@@ -44,3 +44,9 @@ C:\Windows\Panther\Unattend\Unattend.xml
 C:\Windows\system32\sysprep.inf
 C:\Windows\system32\sysprep\sysprep.xml
 ```
+## WiFi Passwords
+We might be able to reuse a WiFi password on a compromised system if we have view access to it.
+```
+C:> netsh wlan show profile
+C:> netsh wlan show profile (SSID) key=clear
+```
