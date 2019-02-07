@@ -146,3 +146,10 @@ awk 'BEGIN {system("/bin/bash")}'
 * echo os.system('/bin/bash')
 #### FTP
 * !/bin/sh
+
+## Weak Services
+We an check weak services wit the following command,
+```
+user@target-machine:~$ find / -perm -2 ! -type l -ls 2>/dev/null
+```
+Check for services with world writeable binaries or scripts.
