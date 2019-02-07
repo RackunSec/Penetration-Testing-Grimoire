@@ -17,3 +17,8 @@ site:exploit-db.com privilege escalation windows 7
 ```
 9. [Standalone PrivEsc Binaries](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/privesc-windows-binaries.md) - This is a list of binaries that can be infiltrated to target systems to test for weaknesses that may lead to successful privilege escalation on Microsoft Windows systems. This list includes EXE binaries and scripts.
 10. [DLL Reflective Injection](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/dll-injection.md) - It may be possible to create a malicious DLL usingf MSFVenom and inject that DLL into a currently running process which will execute our code as the EUID of the process.
+11. [Always Install Elevated](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Privilege%20Escalation/Windows/always-install-elevated.md) - If the two registry keys liosted below are present and both equal "0x1", then we can exploit these permissions to spawn a reverse shell using a specially crafted MSI file.
+```
+reg query HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer
+```
