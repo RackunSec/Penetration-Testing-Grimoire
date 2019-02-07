@@ -20,3 +20,27 @@ The AES decryption key, published by Microsoft themselves, is,
 f4 96 e8 06  cc 05 79 90  20 9b 09 a4  33 b6 6c 1b
 ```
 There is a PowerSploit Power Shell script that we can use to automate the password reveal [located here.](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1)
+## More Possible Credential Files
+```
+C:> dir /s *pass* == *cred* == *vnc* == *.config*
+C:> findstr /si password *.xml *.ini *.txt
+C:> reg query HKLM /f password /t REG_SZ /s
+C:> reg query HKCU /f password /t REG_SZ /s
+```
+We can check the following files for credentials
+```
+%SYSTEMROOT%\repair\SAM
+%SYSTEMROOT%\System32\config\RegBack\SAM
+%SYSTEMROOT%\System32\config\SAM
+%SYSTEMROOT%\repair\system
+%SYSTEMROOT%\System32\config\SYSTEM
+%SYSTEMROOT%\System32\config\RegBack\system
+```
+Unattend XML Files may contain passwords also,
+```
+C:\unattend.xml
+C:\Windows\Panther\Unattend.xml
+C:\Windows\Panther\Unattend\Unattend.xml
+C:\Windows\system32\sysprep.inf
+C:\Windows\system32\sysprep\sysprep.xml
+```
