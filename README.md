@@ -7,3 +7,5 @@ Custom Tools, Cheat Sheets, and Notes from my penetration testing and CTF experi
 *noun*
 
 a book of magic spells and invocations.
+
+![The Grimoire](the-grimoire.png)
