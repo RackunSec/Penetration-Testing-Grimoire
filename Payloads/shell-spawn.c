@@ -5,6 +5,6 @@
 #include<stdlib.h>
 #include<stdio.h>
 int main(void){
-  system("/bin/bash");
+  system("/bin/bash -p");
   return 0;
 }
