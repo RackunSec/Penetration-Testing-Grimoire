@@ -1,5 +1,5 @@
 ## Enumeration Flow Chart
-This document can be used as a reference during the enumeration pahse of the penetration test.
+This document can be used as a reference during the enumeration phase of the penetration test. Target enumeratoin is a talent that can only be mastered through lots of hands on experience. Not every one of these situations will apply, as each enumeration phase may lead in drastically different directions depending on what we will encounter.
 ## OS and Service Enumeration
 ### NMAP
 The very first thingh that we do for eunerating a target's potentially vulnerable services is to run a full NMAP scan on the target. 
