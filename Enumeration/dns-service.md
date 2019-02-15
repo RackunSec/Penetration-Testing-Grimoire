@@ -42,6 +42,11 @@ root@attacker-machine:~# nslookup
 Server: (TARGET IP ADDRESS)
 Address: (TARGET IP ADDRESS)#53
 ```
+## Host
+The `host` command can provide detilas of a DNS server if a **zone transfer** is possible. If the target is running DNS on port `53`, we can try to perform a simple zone transfer as shown in the following terminal listing.
+```
+root@attacker-machine:~# host -l (TARGET DOMAIN) (TARGET IP ADDRESS)
+```
 ## DIG
 The `dig` tool can be used for a "zone-transfer" with the `axfr` argument. We should try this with the target's IP address and hostname also (if known) as so,
 ```
