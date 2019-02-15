@@ -45,18 +45,11 @@ Address: (TARGET IP ADDRESS)#53
 ## Host
 The `host` command can provide detilas of a DNS server if a **zone transfer** is possible. If the target is running DNS on port `53`, we can try to perform a simple zone transfer as shown in the following terminal listing.
 ```
-root@demon:~/Penetration Testing/HTB/FriendZone# host -l friendzone.red 10.10.10.123
-Using domain server:
-Name: 10.10.10.123
-Address: 10.10.10.123#53
-Aliases: 
-
-friendzone.red has IPv6 address ::1
-friendzone.red name server localhost.
-friendzone.red has address 127.0.0.1
-administrator1.friendzone.red has address 127.0.0.1
-hr.friendzone.red has address 127.0.0.1
-uploads.friendzone.red has address 127.0.0.1
+root@demon:~/Penetration Testing/HTB/FriendZone# host -l friendzone.red 10.10.10.123| grep 'has address'|awk '{print $1}'
+friendzone.red
+administrator1.friendzone.red
+hr.friendzone.red
+uploads.friendzone.red
 root@demon:~/Penetration Testing/HTB/FriendZone# 
 ```
 ## DIG
