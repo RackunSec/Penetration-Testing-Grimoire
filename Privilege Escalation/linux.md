@@ -133,6 +133,9 @@ Do any cron jobs run that execute scripts or binaries that we have write access 
 ```
 ls -la /etc/cron*
 ```
+## Processes and Cron JObs
+You can use the [pspy32 and pspy64](https://github.com/DominicBreuker/pspy) binaries to monitor processes as a low privilege user. This can give you clues as to what is running and what files are being called.
+
 ## Network Check
 Does the compromised system connect to an internal network or possibly other vulnerable machines? 
 ```
