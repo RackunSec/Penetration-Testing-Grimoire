@@ -1,5 +1,5 @@
 # EXEC in Many Languages
-This cheat sheet will provide many different examples of how to perform system(), exec(), and more in different web languages.
+This cheat sheet will provide many different examples of how to perform system(), exec(), and more in different web languages. Usage of these code listsings depends on the situation at hand. Sometimes, they can be added into scripts, used to replace binaries call from `cron` or scheduled tasks and much more. The usage is left to the discretion of the penetration tester. 
 ## WEB LANGUAGES
 ### PHP
 PHP is widely used and can often have the system(), exec(), etc functions eenabled in the php.ini configuration file.
