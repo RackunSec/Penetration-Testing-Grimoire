@@ -6,7 +6,7 @@ The "Impersonate a client after authentication" user right (SeImpersonatePrivile
 When you assign the "Impersonate a client after authentication" user right to a user, you permit programs that run on behalf of that user to impersonate a client. 
 
 ## Rotten Potato
-[The Rotten Potato](https://github.com/breenmachine/RottenPotatoNG) - [IppSec Implemetation](https://youtu.be/EKGBskG8APc?t=1310)
+[The Rotten Potato](https://github.com/breenmachine/RottenPotatoNG) - [IppSec Implemetation](https://youtu.be/EKGBskG8APc?t=1310) - [Decoder Weblog Write Up](https://decoder.cloud/2017/12/23/the-lonely-potato/)
 
 The mechanism is quite complex, it allows us to intercept the NTLM authentication challenge which occurs during the  DCOM activation through  our endpoint listener and impersonate the user’s security access  token  (in this case SYSTEM because we are creating an instance of the BITS – Background Intelligent Transfer Service – which  is running under this account)
 
