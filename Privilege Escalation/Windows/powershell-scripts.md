@@ -12,3 +12,5 @@ The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/
 [Sherlock](https://github.com/rasta-mouse/Sherlock) - PowerShell script to quickly find missing software patches for local privilege escalation vulnerabilities.
 ## PrivEsc
 [PrivEsc](https://github.com/enjoiz/Privesc) - PowerShell script that finds misconfiguration issues which can lead to privilege escalation. Batch script uses [accesschk.exe](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/tree/master/Privilege%20Escalation/windows-binaries) from Sysinternals. This executable is mandatory and can be downloaded with this GitHUB repository in `/Privilege Escalation/windows-binaries/`
+## Nishang
+[Nishang](https://github.com/samratashok/nishang) - a framework and collection of scripts and payloads which enables usage of PowerShell for offensive security, penetration testing and red teaming. Nishang is useful during all phases of penetration testing.
