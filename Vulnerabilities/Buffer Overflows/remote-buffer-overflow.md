@@ -69,7 +69,7 @@ root@attacker-machine:~# echo -n AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 As you can see, this embedded a new substring at offset of 524 bytes of "ABCD" and then re-filled the rest of the bytes to equal 1024 total again. Now, if we send this to the Brainpan.exe service on our Windows VM from our Attacker VM, the EIP should say "ABCD" backwards in hexadecimal format as so, `44434241`
 
 ## Find the ESP
-Next, we need to find out where in the application we have a `JMP ESP` Assemblyt instruction. But before we search Brainpan.exe for that instruction, we need the "byte code" format of the instruction. This is the hexadecimal representation of the Assembly instruction that the CPU reads. We can do this with the `nasm_shell` utility in Metasploit Framework.
+Next, we need to find out where in the application we have a `JMP ESP` Assembly instruction. But before we search Brainpan.exe for that instruction, we need the "byte code" format of the instruction. This is the hexadecimal representation of the Assembly instruction that the CPU reads. We can do this with the `nasm_shell` utility in Metasploit Framework.
 ```
 root@attacker:~# /infosec/exploitation/metasploit-framework/tools/exploit/nasm_shell.rb
 nasm> jmp esp
@@ -80,6 +80,13 @@ Great, this is `\xff\xe4` as shown as the second column of the listing output fr
 !mona find -s "\xff\xe4" -m brainpan.exe
 ```
 This will give you the output in a new window. For me, this new address was `0x311712f3`.
+
+We also need to ensure that the `JMP ESP` instruction address will not chnage each time the application i started/restarted. For this we will list the modules/libraries used by the application by issuing the following Mona.py search command,
+```
+!mona modules
+```
+Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This means that we can safely use the `JMP ESP` address from this module.
+
 ## Determine Bad Bytes
 Application may not be able to handle certain bytes as input. These are often called "bad bytes" and will cause undefined behavior or cause our payloads to not execute properly. To determine the bad bytes, we need to analyze the application in a debugger and send every byte from `01` (1) to `ff` (255). We create the substring suing the simple Bash script that I made below,
 ```
