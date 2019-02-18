@@ -85,8 +85,10 @@ We also need to ensure that the `JMP ESP` instruction address will not chnage ea
 ```
 !mona modules
 ```
-Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This means that we can safely use the `JMP ESP` address from this module.
-
+Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This means that we can safely use the `JMP ESP` address from this module. FOr instance, asy the output of the previous Mona.py command showed that `essfunc.dll` had SafeSEH and ASLR set to False. Then, we could search `essfunc.dll` for the `JMP ESP` instruction with the following Mona.py command,
+```
+!mona find -s "\xff\xe4" -m essfunc.dll
+```
 ## Determine Bad Bytes
 Application may not be able to handle certain bytes as input. These are often called "bad bytes" and will cause undefined behavior or cause our payloads to not execute properly. To determine the bad bytes, we need to analyze the application in a debugger and send every byte from `01` (1) to `ff` (255). We create the substring suing the simple Bash script that I made below,
 ```
