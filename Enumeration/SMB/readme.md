@@ -42,16 +42,16 @@ Sometimes, it is required to specify the SMB version number using the `-m smb(n)
 ### Target information
 Attempt to map the share without any credentials (a NULL session)
 ```
-root@attacker-machine:~# smbclient -N -L (TARGET IP)
+root@attacker-machine:~# smbclient -N -L (TARGET IP) -m SMB2
 ```
 ### Mounting shares
 To mount a share without knowing any valid users (anonymous/guest login),
 ```
-root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N
+root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -m SMB2
 ```
 To mount a share with an enumerated username,
 ```
-root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER)
+root@attacker-machine:~# smbclient "\\\\(TARGET IP)\\IPC\$\\" -N -U (USER) -m SMB2
 ```
 To mount a share with a username and stolen NTLM hash,
 ```
