@@ -81,11 +81,11 @@ Great, this is `\xff\xe4` as shown as the second column of the listing output fr
 ```
 This will give you the output in a new window. For me, this new address was `0x311712f3`.
 
-We also need to ensure that the `JMP ESP` instruction address will not chnage each time the application i started/restarted. For this we will list the modules/libraries used by the application by issuing the following Mona.py search command,
+We also need to ensure that the `JMP ESP` instruction address will not change each time the application i started/restarted. For this we will list the modules/libraries used by the application by issuing the following Mona.py search command,
 ```
 !mona modules
 ```
-Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This means that we can safely use the `JMP ESP` address from this module. FOr instance, asy the output of the previous Mona.py command showed that `essfunc.dll` had SafeSEH and ASLR set to False. Then, we could search `essfunc.dll` for the `JMP ESP` instruction with the following Mona.py command,
+Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This means that we can safely use the `JMP ESP` address from this module. For instance, asy the output of the previous Mona.py command showed that `essfunc.dll` had SafeSEH and ASLR set to False. Another property to be aware of is `ReBase` which will relocate a module if another module is already loaded in its preferred memory location. Then, we could search `essfunc.dll` for the `JMP ESP` instruction with the following Mona.py command,
 ```
 !mona find -s "\xff\xe4" -m essfunc.dll
 ```
