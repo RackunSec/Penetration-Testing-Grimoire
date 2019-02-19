@@ -89,6 +89,15 @@ Then, search for a module which has `ASLR` and `SafeSEH` set to `FALSE`. This me
 ```
 !mona find -s "\xff\xe4" -m essfunc.dll
 ```
+If we do not find a `JMP ESP` instruction/command, we can search for a "sequence of commands" and search for an equivalent sequence of CPU instructions that match `JMP ESP` like so,
+```
+push ebp
+retn
+```
+If we still don't have a valid address for anything resembling the `JMP ESP` assembly instructions, we need to check more than the default set of modules/sections, which in Immunity's case is any "executable" modules. As in the case of SLMFC.DLL, the `.text` Assembly section is hthe only section marked as "executable", "R E". For this you simply use Mona.py and you have to hit the "GO TO ADDRESS" button at the top of the debugger and - because of a known bug in the debugger - may have to request the address multiple times before you see the `JMP ESP` instruction. 
+
+Then, simply set a breakpoint there. Once called, you hit "Next" and the address in ESP will point righ to the NOPs.
+
 ## Determine Bad Bytes
 Application may not be able to handle certain bytes as input. These are often called "bad bytes" and will cause undefined behavior or cause our payloads to not execute properly. To determine the bad bytes, we need to analyze the application in a debugger and send every byte from `01` (1) to `ff` (255). We create the substring suing the simple Bash script that I made below,
 ```
