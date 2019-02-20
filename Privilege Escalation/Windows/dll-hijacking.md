@@ -19,7 +19,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,DWORD fdwReason, LPVOID lpvReserved)
  return 0;
 }
 ```
-Compil;e the code as follows,
+Compile the code as follows,
 ```
 i686-w64-mingw32-g++ -c -DBUILDING_EXAMPLE_DLL main.cpp
 i686-w64-mingw32-g++ -shared -o main.dll main.o -Wl,--out-implib,main.a
