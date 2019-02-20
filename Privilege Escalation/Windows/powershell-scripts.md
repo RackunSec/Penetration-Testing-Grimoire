@@ -1,7 +1,16 @@
 # Powershell Scripts
 Below are a few different Powershell scripts and resources to test during the privilege escalation phase of the penetration test.
-## PowerUp
+## PowerSploit
+#### PowerUp
 The [PowerUp Power Shell script](https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc) PowerSploit module can be used to search for injectable DLLs, service permissions, autologin credentials, web configuration credentials and many other areas of the OS and FS that can be used specifically for privilege escalation.
+## PowerView
+Finds different boxes in the domain. It lists the remote machines that the current user can login as Admin.
+```
+C:> powershell.exe -exec bypass
+PS:> import-module .\powerview.ps1
+PS:> Find-LocalAdminAccess
+Aurora.SkyNet.lan
+```
 ## JAWS
 [JAWS](https://github.com/411Hall/JAWS) is a PowerShell script designed to help penetration testers (and CTFers) quickly identify potential privilege escalation vectors on Microsoft Windows systems. It is written using PowerShell 2.0 so 'should' run on every Windows version since Windows 7.
 ## PowerLess
