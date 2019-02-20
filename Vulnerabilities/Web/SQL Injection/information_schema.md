@@ -31,16 +31,3 @@ MariaDB [security]> select distinct table_name from information_schema.tables wh
 +------------+
 4 rows in set (0.00 sec)
 ```
-## Group_Concat
-Group concatenation of records can be achieved using the `GROUP_CONCAT` stored procedure in MySQL,
-```
-MariaDB [security]> select group_concat(distinct table_name separator ', ') from information_schema.tables where table_schema = 'security';
-+--------------------------------------------------+
-| group_concat(distinct table_name separator ', ') |
-+--------------------------------------------------+
-| emails, referers, uagents, users                 |
-+--------------------------------------------------+
-1 row in set (0.00 sec)
-
-```
-This way, we can acheive all records as a single string for simple SQL injection of a given column.
