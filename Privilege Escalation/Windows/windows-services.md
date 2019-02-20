@@ -61,6 +61,12 @@ C:> accesschk.exe -uwdqs "Authenticated Users" c:\
 C:> accesschk.exe -uwqs Users c:\*.*
 C:> accesschk.exe -uwqs "Authenticated Users" c:\*.*
 ```
+We can also search for "Everyone","Authenticated Users", and "Users" using the `C:\` directory as a root, like so,
+```
+C:> accesschk.exe -uwdqs "Users" c:\
+C:> accesschk.exe -uwdqs "Authenticated Users" c:\
+C:> accesschk.exe -uwdqs "Everyone" c:\
+```
 ## Unquoted Service Binary Paths
 In Windows environments when a service is started the system is attempting to find the location of the executable in order to successfully launch the service. If the executable is enclosed in quote tags “” then the system will know where to find it. However if the path of where the application binary is located doesn’t contain any quotes then Windows will try to find it and execute it inside every folder of this path until they reach the executable.
 
