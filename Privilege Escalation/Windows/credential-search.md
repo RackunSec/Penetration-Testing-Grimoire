@@ -7,7 +7,7 @@ c:\sysprep\sysprep.xml
 %WINDIR%\Panther\Unattend\Unattended.xml
 %WINDIR%\Panther\Unattended.xml
 ```
-## Groups.xml
+## Groups.xml (GPP)
 If we have access to the SYSVOL/groups.xml file, we have access to any passwords encrypted in there. When a new GPP is created, there’s an associated XML file created in SYSVOL with the relevant configuration data and if there is a password provided, it is AES-256 bit encrypted. 
 
 Since authenticated users (any domain user or users in a trusted domain) have read access to SYSVOL, anyone in the domain can search the SYSVOL share for XML files containing “cpassword” which is the value that contains the AES encrypted password.
@@ -87,4 +87,12 @@ Get-ApplicationHost
 Get-SiteListPassword
 Get-CachedGPPPassword
 Get-RegistryAutoLogon
+```
+## Config/XML/INF Files
+```
+C:\> dir /b /s web.config
+C:\> dir /b /s unattend.xml
+C:\> dir /b /s sysprep.inf
+C:\> dir /b /s sysprep.xml
+C:\> dir /b /s *pass*
 ```
