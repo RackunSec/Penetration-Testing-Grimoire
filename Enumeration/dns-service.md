@@ -7,7 +7,7 @@ We can use [wfuzz]() to fuzz subdomains using the following syntax,
 ```
 root@attacker-machine:~# ./wfuzz -u https://(TARGET DOMAIN NAME) -w /infosec/wordlists/SecLists/Discovery/DNS/subdomains-list-5000.txt -H "Host: FUZZ.(TARGET DOMAIN NAME)"
 ```
-Then, filter out the commons, flase p;ositives using wfuzz's great filtering system,
+Then, filter out the commons, false positives using wfuzz's great filtering system,
 ```
 root@attacker-machine:~# ./wfuzz -u https://(TARGET DOMAIN NAME) -w /infosec/wordlists/SecLists/Discovery/DNS/subdomains-list-5000.txt -H "Host: FUZZ.(TARGET DOMAIN NAME)"
 **
