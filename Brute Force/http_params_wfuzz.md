@@ -1,5 +1,5 @@
 # HTTP GET Parameters
-I placed a good starting point file for this type of enumeration/fuzzing in the [Brute Force/wordlists/get_post_params.txt](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/get_post_params.txt) 
+I placed a good starting point file for this type of enumeration/fuzzing in the [Brute Force/wordlists/get_post_params.txt](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/custom/get_post_params.txt) 
 ## WFuzz
 We can use `wfuzz` to fuzz GET paramaters like so,
 ```
