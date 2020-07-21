@@ -25,7 +25,7 @@ ID           Response   Lines    Word     Chars       Payload
 000000003:   200        0 L      0 W      0 Ch        "cid"
 000000002:   200        0 L      0 W      0 Ch        "bid"
 ```
-We use this as our "control" response. The length of the response "L" is 0. Now, we can filter these false positives out using the filter sytax like so,
+We use this as our "control" response. The length of the response `L` (for lines) is 0. Now, we can filter these false positives out using the filter sytax like so,
 ```
 wfuzz -c -z file,fuzz_get_params.txt --filter "l>0" https://(TARGET HOST)/file.php?FUZZ=lolhi
 ```
@@ -43,7 +43,7 @@ Use the following PHP code as an example:
 ?>
 ```
 We do not know if the application requires any inpit, because we simply see "Halt." each time we visit the page. 
-If we run WFuzz against this page using our wordlist we can see that `W` is equal to 1, like so,
+If we run WFuzz against this page using our wordlist we can see that `W` (for words) is equal to 1, like so,
 ```
 root@demon2:/infosec/www/wfuzz# ./wfuzz -c -z file,/root/fuzz_get_params.txt http://127.0.0.1/file.php?FUZZ=lolhi
 
