@@ -37,7 +37,7 @@ while read user;
 < /path/to/usernames.txt
 ```
 ## SMTP EMAIL RELAY TEST
-If you can connetc to the email server via telnet, you can test to see if we can send email via the server. Usually nmap will let us know whether or not the email server is a "relay" server with a message like,
+If you can connect to the email server via telnet, you can test to see if we can send email via the server. Usually nmap will let us know whether or not the email server is a "relay" server with a message like,
 ```
 25/tcp open  smtp    syn-ack ttl 55
 | smtp-open-relay: Server is an open relay (13/16 tests)
