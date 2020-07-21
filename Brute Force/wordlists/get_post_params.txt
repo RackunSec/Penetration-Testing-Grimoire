@@ -6,6 +6,10 @@ aaid
 ab
 abid
 ac
+acc
+accid
+account
+accountid
 acid
 ad
 adid
@@ -135,7 +139,9 @@ ceid
 cf
 cfid
 cg
+cgi
 cgid
+cgiid
 ch
 chid
 ci
@@ -147,6 +153,8 @@ ck
 ckid
 cl
 clid
+client
+clientid
 cm
 cmid
 cn
@@ -159,6 +167,8 @@ col
 colid
 column
 columnid
+container
+containerid
 cookie
 cookieid
 cp
@@ -173,6 +183,10 @@ ct
 ctid
 cu
 cuid
+customer
+customerid
+cut
+cutid
 cv
 cvid
 cw
@@ -198,6 +212,8 @@ dddid
 ddid
 de
 deid
+device
+deviceid
 df
 dfid
 dg
@@ -207,6 +223,9 @@ dhid
 di
 did
 diid
+distribution
+distro
+distroid
 dj
 djid
 dk
@@ -218,6 +237,8 @@ dmid
 dn
 dnid
 do
+docker
+dockerid
 doid
 download
 dp
@@ -371,6 +392,10 @@ fzid
 g
 ga
 gaid
+game
+gameid
+gamer
+gamerid
 gb
 gbid
 gc
@@ -680,6 +705,7 @@ lhid
 li
 lid
 liid
+linux
 lj
 ljid
 lk
@@ -737,6 +763,7 @@ mgid
 mh
 mhid
 mi
+microsoft
 mid
 miid
 mj
@@ -763,6 +790,8 @@ ms
 msg
 msgid
 msid
+msn
+msnid
 mt
 mtid
 mu
@@ -902,6 +931,9 @@ passwd
 password
 patron
 patronid
+paypal
+paypalid
+paypalme
 pb
 pbid
 pc
@@ -1108,6 +1140,8 @@ secretid
 secureid
 securityid
 seid
+semester
+semesterid
 session
 sessionid
 sf
@@ -1194,6 +1228,10 @@ teid
 tenant
 tenantid
 tenid
+term
+termid
+terminal
+terminalid
 tf
 tfid
 tg
@@ -1220,6 +1258,10 @@ tpid
 tq
 tqid
 tr
+trans
+transaction
+transactionid
+transid
 trid
 try
 trycatch
@@ -1362,6 +1404,10 @@ vzid
 w
 wa
 waid
+wall
+wallet
+walletid
+wallid
 wb
 wbid
 wc
