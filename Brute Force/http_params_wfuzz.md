@@ -92,7 +92,7 @@ Requests/sec.: 304.9998
 
 ```
 # HTTP POST Parameters
-We can do the exact same method to fuzz for a POST parameter as we did for the GET paramater above, but with the `-d` (similar to `curl`'s implementation to FUZZ for a POST parameter like so,
+We can do the exact same method to fuzz for a POST parameter as we did for the GET paramater above, but with the `-d` (similar to `curl`'s implementation to FUZZ for a POST parameter using WFuzz like so,
 ```
 ./wfuzz -c -z file,/root/fuzz_get_params.txt --filter "w>1" -d "FUZZ=lolhi" http://127.0.0.1/file.php
 ```
