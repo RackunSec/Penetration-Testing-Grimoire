@@ -96,3 +96,37 @@ We can do the exact same method to fuzz for a POST parameter as we did for the G
 ```
 ./wfuzz -c -z file,/root/fuzz_get_params.txt --filter "w>1" -d "FUZZ=lolhi" http://127.0.0.1/file.php
 ```
+## Example
+Chaneg your PHP code to be something like so,
+```
+<?php
+	if ($_POST['dddid'] == "lolhi"){
+		echo "Permissions Granted.";
+	}else{
+		echo "Halt.";
+	}
+?>
+```
+Next, use the WFuzz tool with our wordlist (just as we did above with the GET parameter) like so,
+```
+./wfuzz -c -z file,/root/fuzz_get_params.txt --filter "w>1" -d "FUZZ=lolhi" http://127.0.0.1/file.php
+
+********************************************************
+* Wfuzz 2.4.6 - The Web Fuzzer                         *
+********************************************************
+
+Target: http://127.0.0.1/file.php
+Total requests: 1570
+
+===================================================================
+ID           Response   Lines    Word     Chars       Payload
+===================================================================
+
+000000056:   200        0 L      2 W      20 Ch       "dddid"
+
+Total time: 5.153856
+Processed Requests: 1570
+Filtered Requests: 1569
+Requests/sec.: 304.6262
+
+```
