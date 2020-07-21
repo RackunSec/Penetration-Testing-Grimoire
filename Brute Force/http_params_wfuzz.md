@@ -55,16 +55,16 @@ Target: http://127.0.0.1/file.php?FUZZ=lolhi
 Total requests: 1570
 
 ===================================================================
-ID           Response   Lines    Word     Chars       Payload                                                                         
+ID           Response   Lines    Word     Chars       Payload
 ===================================================================
 
-000000002:   200        0 L      1 W      5 Ch        "bid"                                                                           
-000000003:   200        0 L      1 W      5 Ch        "cid"                                                                           
-000000006:   200        0 L      1 W      5 Ch        "fid"                                                                           
-000000007:   200        0 L      1 W      5 Ch        "gid"                                                                           
-000000008:   200        0 L      1 W      5 Ch        "hid"                                                                           
-000000009:   200        0 L      1 W      5 Ch        "iid"                                                                           
-000000001:   200        0 L      1 W      5 Ch        "aid" 
+000000002:   200        0 L      1 W      5 Ch        "bid"
+000000003:   200        0 L      1 W      5 Ch        "cid"
+000000006:   200        0 L      1 W      5 Ch        "fid"
+000000007:   200        0 L      1 W      5 Ch        "gid"
+000000008:   200        0 L      1 W      5 Ch        "hid"
+000000009:   200        0 L      1 W      5 Ch        "iid"
+000000001:   200        0 L      1 W      5 Ch        "aid"
 ```
 We can use WFuzz to try to determine the HTTP GET parameter like so,
 ```
@@ -80,10 +80,10 @@ Target: http://127.0.0.1/file.php?FUZZ=lolhi
 Total requests: 1570
 
 ===================================================================
-ID           Response   Lines    Word     Chars       Payload                                                                         
+ID           Response   Lines    Word     Chars       Payload
 ===================================================================
 
-000000056:   200        0 L      2 W      20 Ch       "dddid"                                                                         
+000000056:   200        0 L      2 W      20 Ch       "dddid"
 
 Total time: 5.147543
 Processed Requests: 1570
