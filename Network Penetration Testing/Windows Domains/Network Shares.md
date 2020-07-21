@@ -1,9 +1,14 @@
 # Small Message Block
 Small Message Block is the protocol used by Microsoft domains for Windows-based networks. 
+## Scanning for Low-Hanging Fruit
+We can use `Metasploit` with the auxiliary module, `smb_ms17_010`, to scan for hosts who are vulnerable to the EternalBlue remote exploit.
 ## Scanning for SMB
-
+We can use multiple tools to scan for SMB shares as listed in the subsections below.
 ### SMBTree
-
+Use SMBTree without authentication,
+```
+smbtree -n
+```
 ### SMBMap
 
 ### CrackMapExec
