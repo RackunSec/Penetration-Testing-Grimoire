@@ -18,11 +18,11 @@ nmap -p 445,139 -Pn --open -vv -oA smb_shares_10.0.0.0-255 -sC -sV 10.0.0.0/24
 ```
 ### CrackMapExec
 We can use CrackMapExec to scan for network shares using credentials or no credentials.
-Unauthenticated:
+#### Unauthenticated
 ```
 crackmapexec smb 10.10.10.0/24 
 ```
-Authenticated:
+#### Authenticated
 ```
 crackmapexec smb -u username -p password 10.10.10.0/24
 ```
