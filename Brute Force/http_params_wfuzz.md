@@ -1,4 +1,4 @@
-# HTTP GET Paramaters
+# HTTP GET Parameters
 I placed a good starting point file for this type of enumeration/fuzzing in the [Brute Force/wordlists/get_post_params.txt](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/get_post_params.txt) 
 ## WFuzz
 We can use `wfuzz` to fuzz GET paramaters like so,
@@ -90,4 +90,9 @@ Processed Requests: 1570
 Filtered Requests: 1569
 Requests/sec.: 304.9998
 
+```
+# HTTP POST Parameters
+We can do the exact same method to fuzz for a POST parameter as we did for the GET paramater above, but with the `-d` (similar to `curl`'s implementation to FUZZ for a POST parameter like so,
+```
+./wfuzz -c -z file,/root/fuzz_get_params.txt --filter "w>1" -d "FUZZ=lolhi" http://127.0.0.1/file.php
 ```
