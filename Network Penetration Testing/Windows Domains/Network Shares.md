@@ -11,8 +11,11 @@ Use SMBTree without authentication,
 ```
 smbtree -n
 ```
-### SMBMap
-
+### NMAP
+We can use the `nmap` tool to do SMB share discovery with a command like so,
+```
+nmap -p 445,139 -Pn --open -vv -oA smb_shares_10.0.0.0-255 -sC -sV 10.0.0.0/24 
+```
 ### CrackMapExec
 We can use CrackMapExec to scan for network shares using credentials or no credentials.
 Unauthenticated:
