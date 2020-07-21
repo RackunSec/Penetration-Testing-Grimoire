@@ -2,7 +2,7 @@
 SECTIONS
  * Network Analysis
  * Windows Domains
-   * Active Diretcory
+   * Active Directory
    * Domain Controllers
    * Outdated Protocols
 * Network Situational Awareness
