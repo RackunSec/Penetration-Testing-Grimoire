@@ -6,3 +6,7 @@ SECTIONS
    * Domain Controllers
    * Outdated Protocols
 * Network Situational Awareness
+    * Network Services and Protocols
+      * SMB
+      * RDBMS
+      * RDP
