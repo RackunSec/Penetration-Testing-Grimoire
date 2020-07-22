@@ -1,5 +1,4 @@
 # Getting to Know Databases
-We can use many tools to make connections to the Oracle RDBMS if uncovered during the penetration test.
 ## Terms
 Below if a list of key terms to become familiar with before executing a penetration test for a client who employs databases.
 * Schema - The username and password used to bind to the RDBMS for a session.
