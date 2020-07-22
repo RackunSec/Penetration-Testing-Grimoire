@@ -1,4 +1,4 @@
-# Reading MDB files is easy
+# Reading MDB Files in LINUX
 Install and use the `gmdb2` GUI-based application as so,
 ```
 root@wnl8:~# apt -y install mdbtools-gmdb
