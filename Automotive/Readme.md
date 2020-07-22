@@ -1,6 +1,6 @@
 # Automotive Penetration Testing
 Automotive Penetration Testing tests the following,
-* Effectiveness of security controls
+* Effectiveness of security controls designed by automobile manufacturers
 * Attack Surface (risk)
 * Replay Attacks
 * Physical Access
