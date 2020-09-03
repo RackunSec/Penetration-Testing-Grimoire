@@ -1,5 +1,7 @@
 # DotDotPWN
 This tool can be used as a vulnerability scanner to detect Local File Inclusion vulnerabilities on servers.
+
+[DotDotPWN](https://github.com/wireghoul/dotdotpwn)
 ## Usage
 Use the string "TRAVERSAL" as a placeholder fo dotdotpwn to fuzz, like so:
 ```
