@@ -12,3 +12,6 @@ This list should be used when running GoBuster or DIRB to uncover obfuscated web
 ## HTTP GET / POST Parameters
 This list can be used to fuzz for hidden HTTP POST and GET parameters.
 * [Brute Force/wordlists/custom/get_post_params.txt](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Brute%20Force/wordlists/custom/get_post_params.txt)
+## Coupon Codes
+Pentesting an eCommerce web app? Try these coupon codes using Burp Suite and the Intruder functionality!
+* [Brute Force/wordlists/custom/coupon_codes.txt](https://github.com/weaknetlabs/Penetration-Testing-Grimoire/blob/master/Tools%20and%20Techniques/Brute%20Force/wordlists/custom/coupon_codes.txt)
